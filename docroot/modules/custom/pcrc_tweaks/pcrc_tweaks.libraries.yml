@@ -1,0 +1,5 @@
+
+admin:
+  css:
+    theme:
+      css/pcrc_tweaks.admin.css: { weight: 500 }

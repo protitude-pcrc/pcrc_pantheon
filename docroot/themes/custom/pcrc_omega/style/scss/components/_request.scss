@@ -1,0 +1,61 @@
+.node--type-request {
+  h1.page-title {
+    @include fontSize(36px, 44px);
+    margin-bottom: 3rem;
+  }
+  .field--name-field-request-type {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: #005870;
+    @include border-radius(1.9rem);
+    @include fontSize(14px);
+    text-transform: uppercase;
+    font-weight: $fontSemibold;
+    &::before {
+      font-family: 'FontAwesome';
+      margin-right: 5px;
+      content: '\f058';
+      display: inline-block;
+    }
+  }
+  .field--name-field-data-requested {
+    .field__item{
+      position: relative;
+      a {
+        display: block;
+        padding-left: 2rem;
+      }
+      &::before {
+        font-family: 'FontAwesome';
+        margin-right: 10px;
+        content: '\f111';
+        position: absolute;
+        @include fontSize(7px);
+      }
+    }
+  }
+  .node--view-mode-full {
+    .field__label {
+      @extend h3;
+      margin-top: 0;
+    }
+    .field {
+      margin-bottom: 3rem;
+    }
+  }
+  .node--view-mode-sidebar-first {
+    @include fontSize(15px, 22px);
+    background-color: #f1f1f1;
+    padding: 4rem;
+    @include border-radius(5px);
+    .field__label {
+      text-transform: uppercase;
+      font-weight: $fontSemibold;
+      color: #222;
+    }
+    .field {
+      margin-bottom: 2rem;
+    }
+  }
+}
+

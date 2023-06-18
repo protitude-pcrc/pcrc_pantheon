@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Internal helper function
+ */
+function _sc_archetype5_clean_items($text) {
+  preg_match_all('/{start-item}(.*?){end-item}/s', $text, $matches);
+  $text = implode('', $matches[1]);
+  return $text;
+}
+
+/**
+ * Implements hook_shortcode_info_alter().
+ * 
+ * Make the A5 button shortcode the default button shortcode.
+ */
+function sc_archetype5_shortcode_info_alter(&$info) {
+  if (isset($info['buttona5'])){
+    $info['button'] = $info['buttona5'];
+    $info['button']['id'] = 'button';
+    unset($info['buttona5']);
+  }
+}
+
+/**
+ * Implements hook_filter_info_alter().
+ * 
+ * Change the shortcode filter description to make it more understandable.
+ */
+function sc_archetype5_filter_info_alter(&$info) {
+  $info['shortcode_corrector']['description'] = t('Correcting html after shortcode processing. Enable only if you using wysiwyg editor.');
+}

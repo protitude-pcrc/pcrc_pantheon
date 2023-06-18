@@ -1,0 +1,29 @@
+uuid: 9b2e0eb9-481d-4d8c-8532-07335ddc3f8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_ethnicity_coll
+    - node.type.study
+    - taxonomy.vocabulary.participant_ethnicity_collected
+id: node.study.field_participant_ethnicity_coll
+field_name: field_participant_ethnicity_coll
+entity_type: node
+bundle: study
+label: 'Participant Ethnicity Collected'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      participant_ethnicity_collected: participant_ethnicity_collected
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

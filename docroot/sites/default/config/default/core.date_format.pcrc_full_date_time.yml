@@ -1,0 +1,8 @@
+uuid: d40d1c5a-58a1-47c8-b5a4-ef17809fe1ee
+langcode: en
+status: true
+dependencies: {  }
+id: pcrc_full_date_time
+label: 'PCRC Full Date & Time'
+locked: false
+pattern: 'F j, Y g:ia'

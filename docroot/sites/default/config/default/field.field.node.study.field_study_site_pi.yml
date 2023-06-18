@@ -1,0 +1,19 @@
+uuid: e4b34896-e015-4900-8f6b-38fd2c3aee33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study_site_pi
+    - node.type.study
+id: node.study.field_study_site_pi
+field_name: field_study_site_pi
+entity_type: node
+bundle: study
+label: 'CO PI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

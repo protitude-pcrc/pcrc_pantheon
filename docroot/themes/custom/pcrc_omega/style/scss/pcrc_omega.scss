@@ -1,0 +1,15 @@
+// Default Variable Import
+@import "omega-style-vars", "omega-default-style-vars";
+
+@import "compass";
+
+@import "variables/**/*";
+@import "abstractions/**/*";
+@import "base/**/*";
+@import "components/**/*";
+@import "layout/**/*";
+
+// Safari anti alias smooting
+a, html {
+  -webkit-font-smoothing: antialiased;
+}

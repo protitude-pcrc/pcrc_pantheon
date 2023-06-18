@@ -1,0 +1,8 @@
+uuid: 1bfa86c2-b68e-4200-9a89-0bcf7b6ad0db
+langcode: en
+status: true
+dependencies: {  }
+name: 'Study Setting'
+vid: study_setting
+description: ''
+weight: 0

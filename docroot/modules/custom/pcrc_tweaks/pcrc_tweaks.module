@@ -1,0 +1,301 @@
+<?php
+
+/**
+ * @file
+ * Contains pcrc_tweaks.module..
+ */
+
+use \Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Form\FormStateInterface;
+use \Drupal\Core\Entity\EntityInterface;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_help().
+ */
+function pcrc_tweaks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the pcrc_tweaks module.
+    case 'help.page.pcrc_tweaks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Site tweaks and customizations for Palliative Care Research Cooperative') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param type $form
+ * @param FormStateInterface $form_state
+ * @param type $form_id
+ */
+function pcrc_tweaks_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['#form_id'])) {
+    //dpr($form['#form_id']);
+    if ($form['#form_id'] == 'node_study_form' || $form['#form_id'] == 'node_study_edit_form') {
+      $form['field_nct_link_field']['widget'][0]['title']['#title'] = t('Clinical Trials Registration');
+      $form['field_nct_link_field']['widget'][0]['title']['#weight'] = 0;
+      $form['field_nct_link_field']['widget'][0]['uri']['#weight'] = 10;
+    }
+    else if ($form['#form_id'] == 'node_request_form') {
+      $form['field_request_number']['#access'] = FALSE;
+    }
+    else if ($form['#form_id'] == 'node_request_edit_form') {
+      $form['field_request_number']['widget'][0]['value']['#type'] = 'item';
+      $form['field_request_number']['widget'][0]['value']['#markup'] = $form['field_request_number']['widget'][0]['value']['#default_value'];
+    }
+    else if ($form['#form_id'] == 'views_exposed_form') {
+      $view = $form_state->getStorage('view');
+      if ($view['view']->id() == 'taxonomy_term') {
+        $first_option = [ '' => 'Select Year'];
+        $years = array_combine(range(date("Y"), 2013), range(date("Y"), 2013));
+        $options = $first_option + $years;
+        $form['created'] = [
+          '#type' => 'select',
+          '#options' => $options,
+        ];
+      }
+      if ($view['view']->id() == 'pcrc_studies_search') {
+        $weight = -10;
+        $fields = [
+          'condition',
+          'age',
+          'race',
+          'gender',
+          'area',
+          'enroll',
+          'type',
+          'number',
+          'part_type',
+          'design',
+          'setting',
+        ];
+        $form['text']['#weight'] = $weight++;
+        $form['actions2'] = $form['actions'];
+        $form['actions2']['#weight'] = $weight++;
+        foreach ($fields as $field_name) {
+          if (isset($form[$field_name])) {
+            $form[$field_name]['#type'] = 'checkboxes';
+            $form[$field_name]['#select_all'] = TRUE;
+            $form[$field_name]['#weight'] = $weight++;
+          }
+        }
+        $form['actions']['#weight'] = 100;
+      }
+      else if ($view['view']->id() == 'pcrc_search_content') {
+        //unset($form['#info']['filter-search_api_fulltext']['label']);
+      }
+    }
+    else if ($form['#form_id'] == 'entity_embed_dialog') {
+      if (!empty($form['attributes']['data-entity-embed-display-settings']['responsive_image_style'])) {
+        $options = &$form['attributes']['data-entity-embed-display-settings']['responsive_image_style']['#options'];
+        foreach ($options as $machine_name => $name) {
+          if (substr($machine_name, 0, 7) !== 'inline_') {
+            //unset($options[$machine_name]);
+          }
+        }
+      }
+      if (!empty($form['attributes']['data-embed-button'])) {
+        // When Drupal filter_caption_credit is being used, the text editor may
+        // offer the ability to add a photo caption and credit.
+        $editor = $form_state->get('editor');
+        $entity_element = $form_state->get('entity_element');
+        if ($editor->getFilterFormat()->filters('filter_caption_credit')->status) {
+          $form['attributes']['data-caption'] = array(
+            '#title' => t('Caption'),
+            '#type' => 'textfield',
+            '#default_value' => isset($entity_element['data-caption']) ? Html::decodeEntities($entity_element['data-caption']) : '',
+            '#element_validate' => array('::escapeValue'),
+          );
+          $form['attributes']['data-credit'] = array(
+            '#title' => t('Photo Credit'),
+            '#type' => 'textfield',
+            '#default_value' => isset($entity_element['data-credit']) ? Html::decodeEntities($entity_element['data-credit']) : '',
+            '#element_validate' => array('::escapeValue'),
+          );
+        }
+      }
+    }
+    elseif ($form['#form_id'] == 'webform_submission_request_data_form_add_form' ||
+            $form['#form_id'] == 'user_login_form' ||
+            $form['#form_id'] == 'user_register_form' ||
+            $form['#form_id'] == 'user_pass' ||
+            $form['#form_id'] == 'user_pass_reset' ||
+            $form['#form_id'] == 'user_form') {
+      $form['actions']['submit']['#attributes']['class'][] = 'button';
+      $form['actions']['submit']['#attributes']['class'][] = 'solid';
+      $form['actions']['submit']['#attributes']['class'][] = 'green';
+      $form['actions']['submit']['#attributes']['class'][] = 'large';
+      if (empty($form['actions']['draft'])) {
+        $form['actions']['draft']['#attributes']['class'][] = 'button';
+        $form['actions']['draft']['#attributes']['class'][] = 'solid';
+        $form['actions']['draft']['#attributes']['class'][] = 'white';
+        $form['actions']['draft']['#attributes']['class'][] = 'large';
+      }
+    }
+  }
+   if ($form['#form_id'] == 'user_register_form' || $form['#form_id'] == 'user_form') {
+    $form['user_picture']['#access'] = FALSE;
+    $form['contact']['#access'] = FALSE;
+    $form['timezone']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ *
+ * Save node title as common name for area of study.
+ */
+function pcrc_tweaks_node_presave(EntityInterface $node) {
+  if ($node->getEntityType()->id() == 'node' && $node->bundle() == 'request') {
+    if ($node->get('field_request_number')->isEmpty()) {
+      if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+        $setting_name = 'last_request_number.' . $_ENV['PANTHEON_ENVIRONMENT'];
+      }
+      else {
+        $setting_name = 'last_request_number.local';
+      }
+      $year = date('Y', time());
+      $query = \Drupal::database()->select('node__field_request_number');
+      $query->addExpression("MAX(CONVERT(SUBSTR(field_request_number_value, 6), UNSIGNED INTEGER))");
+      $query->condition('field_request_number_value', $year . '%', 'LIKE');
+      $result = $query->execute()->fetchField();
+      $seq = (empty($result)) ? '1' : $result + 1;
+      $next_request = $year . '-' . str_pad($seq, 4, '0', STR_PAD_LEFT);
+      $node->field_request_number = $next_request;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_checkboxes_alter().
+ *
+ * @param array $suggestions
+ * @param array $variables
+ */
+function pcrc_tweaks_theme_suggestions_checkboxes_alter(array &$suggestions, array $variables) {
+  if (array_key_exists('#select_all', $variables)) {
+    if ($variables['element']['#select_all']) {
+      $suggestions[] = 'checkboxes__select_all';
+    }
+  }
+}
+
+/**
+ * Implements hook_ckeditor_plugin_info_alter().
+ *
+ * @param array $plugins
+ */
+//function pcrc_tweaks_ckeditor_plugin_info_alter(array &$plugins) {
+  //$plugins['internal']['class'] = 'Drupal\pcrc_tweaks\Plugin\CKEditorPlugin\CustomCK';
+//}
+
+/**
+ * Implements hook_module_implements_alter().
+ *
+ * @param type $implementations
+ * @param type $hook
+ */
+function pcrc_tweaks_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    // Move pcrc_tweaks_form_alter() to the end of the list.
+    // \Drupal::moduleHandler()->getImplementations()
+    // iterates through $implementations with a foreach loop which PHP iterates
+    // in the order that the items were added, so to move an item to the end of
+    // the array, we remove it and then add it.
+    $group = $implementations['pcrc_tweaks'];
+    unset($implementations['pcrc_tweaks']);
+    $implementations['pcrc_tweaks'] = $group;
+  }
+}
+
+/**
+ * Implements hook_ENITITY_TYPE_insert().
+ *
+ * @param UserInterface $user
+ */
+function pcrc_tweaks_user_insert(UserInterface $user) {
+  $user->addRole('request');
+  $user->save();
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function pcrc_tweaks_page_attachments(array &$attachments) {
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  if ($theme == 'seven') {
+    $attachments['#attached']['library'][] = 'pcrc_tweaks/admin';
+  }
+}
+
+/**
+ * Implements hook_link_alter().
+ */
+function pcrc_tweaks_link_alter(&$variables) {
+
+  $url = $variables['url'];
+
+  // Return early where possible.
+  if (!$url->isRouted() || $url->isExternal()) {
+    return;
+  }
+  else {
+    $route_name = $url->getRouteName();
+    if ($route_name !== 'pcrc_tweaks.account_view_redirect') {
+      return;
+    }
+    else {
+      if ($variables['text'] == 'User') {
+        $variables['text'] = t('@text', ['@text' => \Drupal::currentUser()->getDisplayName()]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function npc_tweaks_theme() {
+  return [
+    'filter_caption_credit' => [
+      'variables' => [
+        'node' => NULL,
+        'tag' => NULL,
+        'caption' => NULL,
+        'credit' => NULL,
+        'classes' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_file_embed_alter().
+ *
+ * Make sure the embedded file includes the responsive image style as a class
+ */
+function pcrc_tweaks_file_embed_alter(&$build, $entity, $context) {
+  if (isset($context['data-entity-embed-display-settings']['responsive_image_style'])) {
+    $build['#attributes']['class'][] = $context['data-entity-embed-display-settings']['responsive_image_style'];
+  }
+  // The credit text is double-encoded, so decode it here.
+  if (isset($context['data-credit'])) {
+    $context['data-credit'] = Html::decodeEntities($context['data-credit']);
+  }
+  if (isset($context['data-credit'])) {
+    $build['#attributes']['data-credit'] = $context['data-credit'];
+  }
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+function pcrc_tweaks_mail_alter(&$message) {
+  $message['reply-to'] = $message['headers']['Reply-to'] = 'pcrc@ucdenver.edu';
+}
+

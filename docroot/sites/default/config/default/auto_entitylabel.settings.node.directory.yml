@@ -1,0 +1,7 @@
+status: 1
+pattern: '[node:field_name:given] [node:field_name:family]'
+escape: false
+dependencies:
+  config:
+    - node.type.directory
+php: 0

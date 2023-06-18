@@ -1,0 +1,22 @@
+uuid: 596699fb-7e95-4e4b-9224-65fcdc1eccd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.study
+id: node.study.promote
+field_name: promote
+entity_type: node
+bundle: study
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,32 @@
+pcrc_tweaks.home:
+  path: '/home'
+  defaults:
+    _controller: '\Drupal\pcrc_tweaks\Controller\HomePage::content'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+pcrc_tweaks.file_download:
+  path: '/file/download/{fid}'
+  defaults:
+    _controller: '\Drupal\pcrc_tweaks\Controller\FileDownload::display'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+pcrc_tweaks.account_edit_redirect:
+  path: '/user/me/edit'
+  defaults:
+    _controller: '\Drupal\pcrc_tweaks\Controller\AccountRedirect::redirect_account_edit'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+pcrc_tweaks.account_view_redirect:
+  path: '/user/me'
+  defaults:
+    _controller: '\Drupal\pcrc_tweaks\Controller\AccountRedirect::redirect_account_view'
+  requirements:
+    _user_is_logged_in: 'TRUE' 
+pcrc_tweaks.request_data:
+  path: '/request-repository-data'
+  defaults:
+    _controller: '\Drupal\pcrc_tweaks\Controller\RequestDataRedirect::redirect_request_data'
+  requirements:
+    _permission: 'access content'    

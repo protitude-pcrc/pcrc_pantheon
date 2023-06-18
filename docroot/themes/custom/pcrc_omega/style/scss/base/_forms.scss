@@ -1,0 +1,42 @@
+input[type="text"], 
+input[type="tel"], 
+input[type="password"], 
+input[type="email"], 
+input[type="submit"],
+textarea, 
+select {
+  -webkit-appearance: none;
+  outline: none;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 11px 16px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  @include border-radius(3px);
+  line-height: inherit;
+}
+
+input[type="submit"] {
+  width: auto;
+  background-color: $black;
+  color: $white;
+}
+
+input#edit-reset {
+  background-color: #ccc;
+}
+
+.form--inline {
+  .form-actions {
+    clear: none;
+    float: left;
+  }
+
+  .form-type-facet-select,
+  .form-type-select,
+  .form-type-textfield {
+    width: 300px;
+  }
+
+}

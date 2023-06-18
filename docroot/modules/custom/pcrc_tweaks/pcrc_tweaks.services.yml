@@ -1,0 +1,6 @@
+services:
+  pcrc_tweaks.exception403.subscriber:
+    class: Drupal\pcrc_tweaks\EventSubscriber\RedirectOn403Subscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@current_user']

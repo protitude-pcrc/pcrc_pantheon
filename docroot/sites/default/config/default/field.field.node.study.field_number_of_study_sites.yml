@@ -1,0 +1,29 @@
+uuid: 1df36e67-fb66-426a-8540-00c767e63238
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_study_sites
+    - node.type.study
+    - taxonomy.vocabulary.number_of_study_sites
+id: node.study.field_number_of_study_sites
+field_name: field_number_of_study_sites
+entity_type: node
+bundle: study
+label: 'Number of Study Sites'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      number_of_study_sites: number_of_study_sites
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

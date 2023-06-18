@@ -1,0 +1,8 @@
+uuid: f02c00c9-e6eb-468f-a0b5-dcff8ca07b69
+langcode: en
+status: true
+dependencies: {  }
+name: 'Number of Study Sites'
+vid: number_of_study_sites
+description: ''
+weight: 0

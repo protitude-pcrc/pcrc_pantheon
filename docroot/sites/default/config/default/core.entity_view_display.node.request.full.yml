@@ -1,0 +1,78 @@
+uuid: 7ea5a488-16f8-404b-88d5-23b3fff40e2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.request.field_affiliation
+    - field.field.node.request.field_data_requested
+    - field.field.node.request.field_date_of_approval
+    - field.field.node.request.field_date_of_submission
+    - field.field.node.request.field_pcrc_project_review
+    - field.field.node.request.field_pi
+    - field.field.node.request.field_project_status
+    - field.field.node.request.field_reason_deemed_infeasible
+    - field.field.node.request.field_request_number
+    - field.field.node.request.field_request_type
+    - field.field.node.request.field_research_proposal
+    - field.field.node.request.field_research_proposal_abstract
+    - node.type.request
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - field_research_proposal_abstract
+        - field_data_requested
+id: node.request.full
+targetEntityType: node
+bundle: request
+mode: full
+content:
+  field_data_requested:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings:
+      ds:
+        ds_limit: ''
+    weight: 1
+    region: ds_content
+  field_research_proposal_abstract:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+hidden:
+  addtoany: true
+  field_affiliation: true
+  field_date_of_approval: true
+  field_date_of_submission: true
+  field_pcrc_project_review: true
+  field_pi: true
+  field_project_status: true
+  field_reason_deemed_infeasible: true
+  field_request_number: true
+  field_request_type: true
+  field_research_proposal: true
+  links: true

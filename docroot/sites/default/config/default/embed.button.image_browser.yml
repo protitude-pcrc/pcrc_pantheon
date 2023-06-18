@@ -1,0 +1,30 @@
+uuid: 7d02a8d5-6adf-4f9c-8b77-98be0a886fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_images
+    - file_entity.type.image
+  module:
+    - a5_linked_image
+    - entity_embed
+    - file
+    - image
+_core:
+  default_config_hash: 4W3en9Ol4lgjWzfjUyc0FDgRpOxBUBeg7bAjzsplnv0
+label: 'Image Browser'
+id: image_browser
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles:
+    - image
+  display_plugins:
+    - 'image:linked_responsive_image'
+  entity_browser: browse_images
+  entity_browser_settings:
+    display_review: false
+icon:
+  uri: 'public://file_browser_icon.png'
+  data: iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAA90lEQVR4Ae3WP0oDQRiG8aeQFFoLeoEwaC/kNtEiJ7IxVTxBkj2BheQGewOxlGX/gFuNi7jDsM3M5+fAgvO81STFDyYphtysMxyoscK1FBgiMlTYX66KIQ5YxY4Eq1VAQzCrmxzIgPvi/wEZyEAGntimBF5ZDDv9FbAb5p/fuALgmnf0ACXnw0p3/uSOsRW9Fui4AeCW7ueTe/w2WmDN2MP3+ZFpWw2ww++ZF86YtuAkBfzb97vgkmnuxxYD7vZjWtHLgTWSNvFAq354BYBCBezDgObx+8EyDIDhSIP8cvYsIQToy4C8NvVrukgNGKp0gOJ/75abbV+Z71+lKiSBNwAAAABJRU5ErkJggg==
+icon_uuid: null

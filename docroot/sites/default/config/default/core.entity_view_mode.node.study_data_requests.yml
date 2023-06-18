@@ -1,0 +1,10 @@
+uuid: bb07e40f-3192-479d-b728-444f708b091f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.study_data_requests
+label: 'Study data requests'
+targetEntityType: node
+cache: true

@@ -1,0 +1,10 @@
+uuid: 0ed5c558-1df5-400e-978a-ceae12d6f6c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.study_details
+label: 'Study details'
+targetEntityType: node
+cache: true

@@ -1,0 +1,14 @@
+uuid: df0b577d-048d-4626-8b1a-f796a8e19369
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.pcrc_member
+  module:
+    - user
+id: user_add_role_action.pcrc_member
+label: 'Add the PCRC Member role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: pcrc_member

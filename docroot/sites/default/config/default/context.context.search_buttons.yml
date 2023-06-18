@@ -1,0 +1,58 @@
+uuid: f4cd3768-3527-4bd5-8077-e03485074878
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+label: 'Search Buttons'
+name: search_buttons
+group: Elements
+description: 'Placement of search option buttons'
+requireAllConditions: false
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: e31f3062-fa23-4a36-b5e9-67351b1fb756
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      request: request
+      study: study
+  request_path:
+    id: request_path
+    negate: false
+    uuid: be32d0ec-7639-4c1b-9507-b5e1941fa26b
+    context_mapping: {  }
+    pages: "/requests\r\n/requests-not-feasible\r\n/studies\r\n/node/549"
+reactions:
+  blocks:
+    id: blocks
+    uuid: a5475405-28d2-41b6-88d6-5d6cae40df42
+    blocks:
+      6590d6ec-0a30-4b39-9936-e22873cfd41c:
+        uuid: 6590d6ec-0a30-4b39-9936-e22873cfd41c
+        id: 'menu_block:search-options'
+        label: 'Search Options'
+        provider: menu_block
+        label_display: '0'
+        region: postscript_third
+        weight: '0'
+        custom_id: menu_block_search_options
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: search_buttons
+        context_mapping: {  }
+        follow: 0
+        follow_parent: child
+        level: '1'
+        depth: '0'
+        expand: 0
+        parent: 'search-options:'
+        suggestion: search_options
+    include_default_blocks: 0
+    saved: false
+weight: 0

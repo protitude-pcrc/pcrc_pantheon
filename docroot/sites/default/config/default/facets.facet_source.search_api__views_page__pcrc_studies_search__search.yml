@@ -1,0 +1,12 @@
+uuid: 85db1b98-3440-4d20-ba89-455e6f7999eb
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__pcrc_studies_search__search
+name: 'search_api:views_page__pcrc_studies_search__search'
+filter_key: studies
+url_processor: query_string
+breadcrumb:
+  active: false
+  before: true
+  group: false

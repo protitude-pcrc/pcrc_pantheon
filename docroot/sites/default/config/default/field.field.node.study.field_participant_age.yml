@@ -1,0 +1,29 @@
+uuid: ac098179-45a0-40fe-93c9-2a0120da018b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_age
+    - node.type.study
+    - taxonomy.vocabulary.participant_age
+id: node.study.field_participant_age
+field_name: field_participant_age
+entity_type: node
+bundle: study
+label: 'Participant Age'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      participant_age: participant_age
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

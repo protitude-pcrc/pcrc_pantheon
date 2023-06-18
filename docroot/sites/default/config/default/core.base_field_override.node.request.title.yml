@@ -1,0 +1,18 @@
+uuid: 5d6b3e44-1278-4e1b-8f3b-0e5d19e99874
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.request
+id: node.request.title
+field_name: title
+entity_type: node
+bundle: request
+label: 'Project Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

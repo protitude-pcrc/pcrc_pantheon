@@ -1,0 +1,19 @@
+uuid: 9d18a754-0e56-404e-97fb-642af2110905
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_research_proposal_abstract
+field_name: field_research_proposal_abstract
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

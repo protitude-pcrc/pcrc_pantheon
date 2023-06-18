@@ -1,0 +1,113 @@
+uuid: 89f224df-c7cf-4697-8e1f-140767411941
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlighted_title
+    - field.field.node.study.field_annotated_crf
+    - field.field.node.study.field_approved_data_requests
+    - field.field.node.study.field_award_number
+    - field.field.node.study.field_condition_studied
+    - field.field.node.study.field_csr_summary
+    - field.field.node.study.field_data_dictionary
+    - field.field.node.study.field_data_type
+    - field.field.node.study.field_detailed_title
+    - field.field.node.study.field_enrollment
+    - field.field.node.study.field_multi_site
+    - field.field.node.study.field_nct_link_field
+    - field.field.node.study.field_number_of_study_sites
+    - field.field.node.study.field_participant_age
+    - field.field.node.study.field_participant_ethnicity_coll
+    - field.field.node.study.field_participant_race
+    - field.field.node.study.field_participant_sex
+    - field.field.node.study.field_participant_type
+    - field.field.node.study.field_pcrc_study_num
+    - field.field.node.study.field_primary_citation
+    - field.field.node.study.field_sponsor
+    - field.field.node.study.field_study_design
+    - field.field.node.study.field_study_pi
+    - field.field.node.study.field_study_pi_institution
+    - field.field.node.study.field_study_setting
+    - field.field.node.study.field_study_site_institution
+    - field.field.node.study.field_study_site_pi
+    - field.field.node.study.field_study_type
+    - field.field.node.study.field_summary
+    - field.field.node.study.field_supporting_documentation
+    - field.field.node.study.field_therapeutic_area
+    - field.field.node.study.field_total_enrollment
+    - node.type.study
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - 'bundle_field:node'
+        - field_detailed_title
+    fields:
+      'bundle_field:node':
+        plugin_id: 'bundle_field:node'
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.study.highlighted_title
+targetEntityType: node
+bundle: study
+mode: highlighted_title
+content:
+  field_detailed_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+hidden:
+  addtoany: true
+  field_annotated_crf: true
+  field_approved_data_requests: true
+  field_award_number: true
+  field_condition_studied: true
+  field_csr_summary: true
+  field_data_dictionary: true
+  field_data_type: true
+  field_enrollment: true
+  field_multi_site: true
+  field_nct_link_field: true
+  field_number_of_study_sites: true
+  field_participant_age: true
+  field_participant_ethnicity_coll: true
+  field_participant_race: true
+  field_participant_sex: true
+  field_participant_type: true
+  field_pcrc_study_num: true
+  field_primary_citation: true
+  field_sponsor: true
+  field_study_design: true
+  field_study_pi: true
+  field_study_pi_institution: true
+  field_study_setting: true
+  field_study_site_institution: true
+  field_study_site_pi: true
+  field_study_type: true
+  field_summary: true
+  field_supporting_documentation: true
+  field_therapeutic_area: true
+  field_total_enrollment: true
+  links: true

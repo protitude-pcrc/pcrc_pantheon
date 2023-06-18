@@ -1,0 +1,14 @@
+uuid: 4cae978c-8df4-4b7e-a5e5-40c7863c3114
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.request
+  module:
+    - user
+id: user_add_role_action.request
+label: 'Add the Request role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: request

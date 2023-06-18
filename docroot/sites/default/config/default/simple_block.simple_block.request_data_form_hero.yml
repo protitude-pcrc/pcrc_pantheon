@@ -1,0 +1,11 @@
+uuid: 16cf62a4-53d3-4737-b084-eca3751da0bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: request_data_form_hero
+title: 'Request Data Form Hero'
+content:
+  value: "<h1 class=\"page-title\">Request PCRC De-identified Repository (DiDR) Data</h1>\r\n"
+  format: full_html

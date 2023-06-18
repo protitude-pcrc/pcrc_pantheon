@@ -1,0 +1,8 @@
+uuid: a13159f3-f2cd-41e6-b845-844dfc318f04
+langcode: en
+status: true
+dependencies: {  }
+id: search-options
+label: 'Search Options'
+description: 'Options for search in footer'
+locked: false

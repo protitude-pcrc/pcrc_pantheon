@@ -1,0 +1,14 @@
+project:
+  machine_name: pcrc
+  local:
+    protocol: http
+    hostname: '${project.machine_name}.lndo.site'
+  phpcs:
+    filesets:
+      - files.php.custom.modules
+git:
+  default_branch: master
+  remotes:
+    - ssh://codeserver.dev.42ce210d-afbf-4006-9ecf-b53c2bb2dc75@codeserver.dev.42ce210d-afbf-4006-9ecf-b53c2bb2dc75.drush.in:2222/~/repository.git
+deploy:
+   exclude_file: ${repo.root}/blt/deploy/deploy-exclude.txt

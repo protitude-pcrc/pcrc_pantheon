@@ -1,0 +1,17 @@
+default:
+  suites:
+    default:
+      paths:
+        - '%paths.base%/features'
+  extensions:
+    Drupal\MinkExtension:
+      goutte: ~
+      ajax_timeout: 60
+    Behat\MinkExtension:
+      files_path: "%paths.base%/media"
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: "drupal"
+    jarnaiz\JUnitFormatter\JUnitFormatterExtension:
+        filename: report.xml
+        outputDir: '%paths.base%/build/tests'

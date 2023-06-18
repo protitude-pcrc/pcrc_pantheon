@@ -1,0 +1,106 @@
+uuid: a9a654b0-e0b7-4320-bcee-f2da47f95294
+langcode: en
+status: false
+dependencies:
+  config:
+    - field.field.node.directory.body
+    - field.field.node.directory.feeds_item
+    - field.field.node.directory.field_area_of_focus
+    - field.field.node.directory.field_directory_image
+    - field.field.node.directory.field_email
+    - field.field.node.directory.field_list_assignment
+    - field.field.node.directory.field_membership_title
+    - field.field.node.directory.field_name
+    - field.field.node.directory.field_organization
+    - field.field.node.directory.field_publication_title
+    - field.field.node.directory.field_scientific_title
+    - image.style.directory_profile
+    - node.type.directory
+  module:
+    - empty_fields
+    - image
+    - name
+    - user
+id: node.directory.default
+targetEntityType: node
+bundle: directory
+mode: default
+content:
+  field_area_of_focus:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_directory_image:
+    type: image
+    label: inline
+    settings:
+      image_link: ''
+      image_style: directory_profile
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      empty_fields:
+        handler: ''
+    weight: 6
+    region: content
+  field_membership_title:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_name:
+    type: name_default
+    label: inline
+    settings:
+      format: default
+      markup: none
+      list_format: default
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_organization:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings:
+      empty_fields:
+        handler: ''
+    weight: 5
+    region: content
+  field_publication_title:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_scientific_title:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  feeds_item: true
+  field_email: true
+  field_list_assignment: true
+  links: true
+  search_api_excerpt: true

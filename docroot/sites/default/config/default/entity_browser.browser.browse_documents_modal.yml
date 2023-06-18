@@ -1,0 +1,52 @@
+uuid: c40e07cc-b79d-4b65-9dac-976384979a58
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.file_entity_browser_documents
+  module:
+    - dropzonejs_eb_widget
+    - views
+_core:
+  default_config_hash: jij4d1OTrAMYFZvalWvfhbHDM3ft_H4I3XN9ad-ZbNw
+name: browse_documents_modal
+label: 'Browser for documents (modal)'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select documents'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  627a018e-c75a-408f-9cfd-25a57bc76a9e:
+    id: dropzonejs
+    uuid: 627a018e-c75a-408f-9cfd-25a57bc76a9e
+    label: 'Upload documents'
+    weight: 1
+    settings:
+      submit_text: 'Select documents'
+      auto_select: false
+      upload_location: 'public://'
+      dropzone_description: 'Click or drop documents here to upload them'
+      max_filesize: 2048M
+      extensions: 'txt doc xls pdf ppt pps odt ods odp'
+      clientside_resize: false
+      resize_width: 0
+      resize_height: 0
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+  b682553d-a52a-41f5-81ee-946c19f3e61b:
+    id: view
+    uuid: b682553d-a52a-41f5-81ee-946c19f3e61b
+    label: 'Documents listing'
+    weight: 2
+    settings:
+      submit_text: 'Select documents'
+      auto_select: false
+      view: file_entity_browser_documents
+      view_display: entity_browser_1

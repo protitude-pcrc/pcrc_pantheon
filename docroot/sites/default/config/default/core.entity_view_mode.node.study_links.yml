@@ -1,0 +1,10 @@
+uuid: 064748bd-fdd1-4b75-82ab-05ad7d64e0c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.study_links
+label: 'Study links'
+targetEntityType: node
+cache: true

@@ -1,0 +1,28 @@
+uuid: 2310dff7-7e6a-4503-8f5e-3d10fd96b85f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_approved_data_requests
+    - node.type.request
+    - node.type.study
+id: node.study.field_approved_data_requests
+field_name: field_approved_data_requests
+entity_type: node
+bundle: study
+label: 'Approved Data Requests Associated with this Study'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      request: request
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

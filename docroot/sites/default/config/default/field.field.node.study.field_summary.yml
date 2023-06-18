@@ -1,0 +1,21 @@
+uuid: cd9592f0-8173-4195-ab02-54af67579bce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.study
+  module:
+    - text
+id: node.study.field_summary
+field_name: field_summary
+entity_type: node
+bundle: study
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,130 @@
+uuid: d5c30350-a3c9-41bc-b96a-4b4d379d7518
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.request.field_affiliation
+    - field.field.node.request.field_data_requested
+    - field.field.node.request.field_date_of_approval
+    - field.field.node.request.field_date_of_submission
+    - field.field.node.request.field_pcrc_project_review
+    - field.field.node.request.field_pi
+    - field.field.node.request.field_project_status
+    - field.field.node.request.field_reason_deemed_infeasible
+    - field.field.node.request.field_request_number
+    - field.field.node.request.field_request_type
+    - field.field.node.request.field_research_proposal
+    - field.field.node.request.field_research_proposal_abstract
+    - node.type.request
+  module:
+    - datetime
+    - file
+    - text
+    - user
+id: node.request.default
+targetEntityType: node
+bundle: request
+mode: default
+content:
+  field_affiliation:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_data_requested:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_date_of_approval:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_date_of_submission:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_pcrc_project_review:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_pi:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_project_status:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_reason_deemed_infeasible:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_request_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_request_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_research_proposal:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_research_proposal_abstract:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

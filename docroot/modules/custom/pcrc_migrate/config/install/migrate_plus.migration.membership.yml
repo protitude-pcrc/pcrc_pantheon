@@ -1,0 +1,30 @@
+id: membership
+label: Import membership data into directory
+migration_group: pcrc_migration
+
+source:
+  plugin: csv
+  path: 'modules/custom/pcrc_migrate/csv/pcrc_membership.csv'
+  header_row_count: 1
+  keys:
+    - lastname
+    - firstname
+    
+process:
+  field_name:
+    plugin: namefield
+    source: firstname
+  field_organization:
+    plugin: migration
+    migration: organizations
+    source: organization
+  field_list_assignment:
+    plugin: migration
+    migration: directory_lists
+    source: assignment
+      
+destination:
+  plugin: 'entity:node'
+  default_bundle: directory
+  
+migration_dependencies: null

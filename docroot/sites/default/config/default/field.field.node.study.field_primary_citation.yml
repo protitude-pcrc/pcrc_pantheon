@@ -1,0 +1,23 @@
+uuid: d4141801-a6a1-4b64-9e16-194ffd2ad9b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_citation
+    - node.type.study
+  module:
+    - link
+id: node.study.field_primary_citation
+field_name: field_primary_citation
+entity_type: node
+bundle: study
+label: 'Primary Citation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

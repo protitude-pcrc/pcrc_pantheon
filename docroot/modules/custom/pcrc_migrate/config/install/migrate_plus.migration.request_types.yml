@@ -1,0 +1,19 @@
+id: request_types
+label: Import request types
+migration_group: pcrc_migration
+
+source:
+  plugin: csv
+  path: 'modules/custom/pcrc_migrate/csv/request_types.csv'
+  header_row_count: 1
+  keys:
+    - title
+
+process:
+  name: title
+  vid:
+    plugin: default_value
+    default_value: request_types
+
+destination:
+  plugin: entity:taxonomy_term

@@ -1,0 +1,47 @@
+uuid: 05f08976-8fb8-4572-8ef7-36547842cc5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Page Title in Highlighted'
+name: page_title_in_highlighted
+group: Elements
+description: 'Place the page title in highlighted region'
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 425a44e9-dde2-41fa-88fd-e922db072372
+    context_mapping: {  }
+    pages: '/user/*'
+  request_path_exclusion:
+    id: request_path_exclusion
+    negate: null
+    uuid: 0e775788-f428-44e8-b58a-7ea81dab15d1
+    context_mapping: {  }
+    pages: "/user/login\r\n/user/password\r\n/user/register"
+reactions:
+  blocks:
+    id: blocks
+    uuid: 9ad34cb3-d313-41d7-a464-e3382fa21a78
+    blocks:
+      7c4f9c0a-bdbe-46bf-b985-2bc493d1f426:
+        uuid: 7c4f9c0a-bdbe-46bf-b985-2bc493d1f426
+        id: page_title_block
+        label: 'Page title'
+        provider: core
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: page_title_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: page_title_in_highlighted
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

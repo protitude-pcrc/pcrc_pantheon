@@ -1,0 +1,143 @@
+uuid: 1f07bb92-d458-4e67-a94d-71fa097f2b88
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.study_links
+    - field.field.node.study.field_annotated_crf
+    - field.field.node.study.field_approved_data_requests
+    - field.field.node.study.field_award_number
+    - field.field.node.study.field_condition_studied
+    - field.field.node.study.field_csr_summary
+    - field.field.node.study.field_data_dictionary
+    - field.field.node.study.field_data_type
+    - field.field.node.study.field_detailed_title
+    - field.field.node.study.field_enrollment
+    - field.field.node.study.field_multi_site
+    - field.field.node.study.field_nct_link_field
+    - field.field.node.study.field_number_of_study_sites
+    - field.field.node.study.field_participant_age
+    - field.field.node.study.field_participant_ethnicity_coll
+    - field.field.node.study.field_participant_race
+    - field.field.node.study.field_participant_sex
+    - field.field.node.study.field_participant_type
+    - field.field.node.study.field_pcrc_study_num
+    - field.field.node.study.field_primary_citation
+    - field.field.node.study.field_sponsor
+    - field.field.node.study.field_study_design
+    - field.field.node.study.field_study_pi
+    - field.field.node.study.field_study_pi_institution
+    - field.field.node.study.field_study_setting
+    - field.field.node.study.field_study_site_institution
+    - field.field.node.study.field_study_site_pi
+    - field.field.node.study.field_study_type
+    - field.field.node.study.field_summary
+    - field.field.node.study.field_supporting_documentation
+    - field.field.node.study.field_therapeutic_area
+    - field.field.node.study.field_total_enrollment
+    - node.type.study
+  module:
+    - ds
+    - empty_fields
+    - pcrc_tweaks
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - field_nct_link_field
+        - field_primary_citation
+        - 'dynamic_twig_field:node-request_additional_information'
+    fields:
+      'dynamic_twig_field:node-request_additional_information':
+        plugin_id: 'dynamic_twig_field:node-request_additional_information'
+        weight: 2
+        label: hidden
+        formatter: default
+id: node.study.study_links
+targetEntityType: node
+bundle: study
+mode: study_links
+content:
+  field_nct_link_field:
+    type: extlink
+    label: hidden
+    settings:
+      trim_length: ''
+      target: _blank
+      link_text: 'Clinical Trials Registration'
+      url_only: false
+      url_plain: false
+      rel: 0
+    third_party_settings:
+      empty_fields:
+        handler: text
+        settings:
+          empty_text: '<span class="field--type-link">Clinical Trials Registration</span>'
+    weight: 0
+    region: ds_content
+  field_primary_citation:
+    type: extlink
+    label: hidden
+    settings:
+      trim_length: ''
+      target: _blank
+      link_text: 'Primary Citation'
+      url_only: false
+      url_plain: false
+      rel: 0
+    third_party_settings:
+      empty_fields:
+        handler: text
+        settings:
+          empty_text: '<span class="field--type-link">Primary Citation</span>'
+    weight: 1
+    region: ds_content
+hidden:
+  addtoany: true
+  field_annotated_crf: true
+  field_approved_data_requests: true
+  field_award_number: true
+  field_condition_studied: true
+  field_csr_summary: true
+  field_data_dictionary: true
+  field_data_type: true
+  field_detailed_title: true
+  field_enrollment: true
+  field_multi_site: true
+  field_number_of_study_sites: true
+  field_participant_age: true
+  field_participant_ethnicity_coll: true
+  field_participant_race: true
+  field_participant_sex: true
+  field_participant_type: true
+  field_pcrc_study_num: true
+  field_sponsor: true
+  field_study_design: true
+  field_study_pi: true
+  field_study_pi_institution: true
+  field_study_setting: true
+  field_study_site_institution: true
+  field_study_site_pi: true
+  field_study_type: true
+  field_summary: true
+  field_supporting_documentation: true
+  field_therapeutic_area: true
+  field_total_enrollment: true
+  links: true
+  search_api_excerpt: true

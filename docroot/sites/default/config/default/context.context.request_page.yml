@@ -1,0 +1,68 @@
+uuid: 2049401b-e421-45b9-8308-210bf1024599
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+label: 'Request Page'
+name: request_page
+group: Pages
+description: 'Block placement for request content type'
+requireAllConditions: true
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 10abd793-eea0-4ac8-98d0-6e36888855ca
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      request: request
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: 420744aa-0f45-4bcc-8678-7372ca735ba2
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: e8155e3d-104c-40ca-b25b-4b6760b10676
+    blocks:
+      6f322de1-bf0a-4c39-a5c1-dbe0133213d9:
+        uuid: 6f322de1-bf0a-4c39-a5c1-dbe0133213d9
+        id: 'entity_view:node'
+        label: Highlighted
+        provider: ctools
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: request_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: highlighted_title
+      96785d83-c0f0-464e-b78b-c877afe7c527:
+        uuid: 96785d83-c0f0-464e-b78b-c877afe7c527
+        id: 'entity_view:node'
+        label: 'Sidebar first'
+        provider: ctools
+        label_display: '0'
+        region: sidebar_second
+        weight: '-1'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: request_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: sidebar_first
+    include_default_blocks: 0
+    saved: false
+weight: 0

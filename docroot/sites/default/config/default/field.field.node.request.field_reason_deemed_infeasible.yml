@@ -1,0 +1,21 @@
+uuid: baafdb1c-7776-4c3a-a38e-4a097a9fc49e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reason_deemed_infeasible
+    - node.type.request
+  module:
+    - text
+id: node.request.field_reason_deemed_infeasible
+field_name: field_reason_deemed_infeasible
+entity_type: node
+bundle: request
+label: 'Reason Deemed Infeasible'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

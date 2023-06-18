@@ -1,0 +1,11 @@
+uuid: 7e7565b0-22f7-4dea-98a6-5003f0d5b119
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: search_results_hero
+title: 'Search Results Hero'
+content:
+  value: '<h1 class="page-title">Search Results</h1>'
+  format: full_html

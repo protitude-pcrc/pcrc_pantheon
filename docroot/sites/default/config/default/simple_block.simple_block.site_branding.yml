@@ -1,0 +1,11 @@
+uuid: 6fc9e30c-1e89-4375-9a88-50b7df707079
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: site_branding
+title: 'Site Branding'
+content:
+  value: "<div class=\"site-logo\"><a href=\"https://palliativecareresearch.org\">\r\n<drupal-entity alt=\"PCRC Group\" data-embed-button=\"image_browser\" data-entity-embed-display=\"image:linked_responsive_image\" data-entity-embed-display-settings=\"{&quot;responsive_image_style&quot;:&quot;wide&quot;,&quot;image_link&quot;:&quot;&quot;,&quot;link_uri&quot;:&quot;&quot;}\" data-entity-type=\"file\" data-entity-uuid=\"ff6d73d0-355a-45c0-866b-18d9fd41587c\"></drupal-entity>\r\n</a></div>\r\n"
+  format: full_html

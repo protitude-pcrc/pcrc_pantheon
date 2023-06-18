@@ -1,0 +1,10 @@
+.footer-outer-wrapper {
+  background-color: $footerBackground;
+  color: $white;
+  @include fontSize(13px, 16px);
+  padding: 2rem 0;
+  p {
+    margin: 0;
+  }
+}
+

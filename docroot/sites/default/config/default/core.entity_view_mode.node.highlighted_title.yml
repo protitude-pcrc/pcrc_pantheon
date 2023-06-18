@@ -1,0 +1,10 @@
+uuid: 303c638a-1e95-4810-9a51-1a3eed930e77
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.highlighted_title
+label: 'Highlighted title'
+targetEntityType: node
+cache: true

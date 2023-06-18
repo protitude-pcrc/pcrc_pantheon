@@ -1,0 +1,23 @@
+uuid: 31ff59df-a648-4cef-a655-ff01bd0107de
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: news_types
+label: 'News Types'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/news-type/[term:name]'
+selection_criteria:
+  557318ff-2b8e-4771-98f6-bae59b7011c9:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 557318ff-2b8e-4771-98f6-bae59b7011c9
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      news_types: news_types
+selection_logic: and
+weight: -5
+relationships: {  }

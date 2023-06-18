@@ -1,0 +1,19 @@
+uuid: d4afc003-d3b5-4920-90e4-b15aae652d70
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_primary_citation
+field_name: field_primary_citation
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

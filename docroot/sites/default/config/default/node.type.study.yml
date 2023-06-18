@@ -1,0 +1,17 @@
+uuid: 624f831b-a965-4f06-b9f6-05dd6b3a17ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Study
+type: study
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

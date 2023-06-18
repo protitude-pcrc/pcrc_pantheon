@@ -1,0 +1,45 @@
+// Units
+// --------------------------------------------------------
+
+$space: 20px;
+$regionSpacing: 0;
+
+$mobile: 0px;
+
+$mobilePortrait: 320px;
+$below_mobilePortrait: 319px;
+
+$mobileWide: 480px;
+$below_mobileWide: 479px;
+
+$mobile-only: 767px;
+
+$tablet: 768px;
+$below_tablet: 767px; 
+ 
+$desktop: 1024px; 
+$below_desktop: 1023px;
+
+$desktopWide: 1260px;
+$below_desktopWide: 1259px;
+
+$mediaMobileMin: "all and (min-width: 0px)";
+$mediaMobileWideMin: "all and (min-width: #{$mobileWide})";
+$mediaMobileWide: "all and (min-width: #{$mobileWide}) and (max-width: #{$below_tablet})";
+$mediaTabletMin: "all and (min-width: #{$tablet})";
+$mediaTablet: "all and (min-width: #{$tablet}) and (max-width: #{$below_desktop})";
+$mediaDesktopMin: "all and (min-width: #{$desktop})";
+$mediaDesktop: "all and (min-width: #{$desktop}) and (max-width: #{$below_desktopWide})";
+$mediaDesktopWideMin: "all and (min-width: #{$desktopWide})";
+
+$twidth: 100%;
+$cwidth: 60px;   
+$gutter: 20px; 
+$cols: 12;   
+$dir: 'LTR'; 
+
+//$twidth: gwidth($cols) !default;
+
+$min-width: 480;
+$correction: 0.5 / $min-width * 100;
+

@@ -1,0 +1,23 @@
+uuid: 992cf3b5-bcf8-420d-9f94-efdc4811bfb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.upcoming_events_presentations
+  module:
+    - text
+id: node.upcoming_events_presentations.body
+field_name: body
+entity_type: node
+bundle: upcoming_events_presentations
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

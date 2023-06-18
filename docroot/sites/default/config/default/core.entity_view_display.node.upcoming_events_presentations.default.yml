@@ -1,0 +1,81 @@
+uuid: 9edcbac3-19b2-4890-b8f0-745059d5ac30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.upcoming_events_presentations.body
+    - field.field.node.upcoming_events_presentations.field_news_image
+    - field.field.node.upcoming_events_presentations.field_subtitle
+    - field.field.node.upcoming_events_presentations.field_type
+    - node.type.upcoming_events_presentations
+  module:
+    - ds
+    - image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - field_subtitle
+        - body
+        - field_news_image
+        - field_type
+id: node.upcoming_events_presentations.default
+targetEntityType: node
+bundle: upcoming_events_presentations
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+  field_news_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+  field_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+hidden:
+  addtoany: true
+  links: true
+  search_api_excerpt: true

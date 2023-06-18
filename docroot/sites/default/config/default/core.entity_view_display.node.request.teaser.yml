@@ -1,0 +1,44 @@
+uuid: 355590ad-c3fa-4d04-b3f4-204f58a2d526
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.request.field_affiliation
+    - field.field.node.request.field_data_requested
+    - field.field.node.request.field_date_of_approval
+    - field.field.node.request.field_date_of_submission
+    - field.field.node.request.field_pcrc_project_review
+    - field.field.node.request.field_pi
+    - field.field.node.request.field_project_status
+    - field.field.node.request.field_reason_deemed_infeasible
+    - field.field.node.request.field_request_number
+    - field.field.node.request.field_request_type
+    - field.field.node.request.field_research_proposal
+    - field.field.node.request.field_research_proposal_abstract
+    - node.type.request
+  module:
+    - user
+id: node.request.teaser
+targetEntityType: node
+bundle: request
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_affiliation: true
+  field_data_requested: true
+  field_date_of_approval: true
+  field_date_of_submission: true
+  field_pcrc_project_review: true
+  field_pi: true
+  field_project_status: true
+  field_reason_deemed_infeasible: true
+  field_request_number: true
+  field_request_type: true
+  field_research_proposal: true
+  field_research_proposal_abstract: true

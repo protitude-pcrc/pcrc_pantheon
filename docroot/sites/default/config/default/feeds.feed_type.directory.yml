@@ -1,0 +1,66 @@
+uuid: 429fdd5e-c277-4af7-be18-74d4af194fd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.directory.field_organization
+    - node.type.directory
+  module:
+    - node
+id: directory
+label: Directory
+description: 'Import directory entries'
+help: null
+import_period: 3600
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: csv
+  directory: 'private://feeds'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: directory
+  langcode: en
+  update_existing: 1
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: true
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  insert_new: 1
+  revision: false
+custom_sources:
+  organization:
+    value: ORGANIZATION
+    label: ORGANIZATION
+    machine_name: organization
+    type: csv
+  org:
+    value: ORGANIZATION
+    label: ORGANIZATION
+    machine_name: org
+    type: csv
+  first_name:
+    value: 'FIRST NAME'
+    label: 'FIRST NAME'
+    machine_name: first_name
+    type: csv
+mappings:
+  -
+    target: field_organization
+    map:
+      target_id: org
+    settings:
+      reference_by: name
+      autocreate: false
+  -
+    target: title
+    map:
+      value: first_name
+    unique: {  }

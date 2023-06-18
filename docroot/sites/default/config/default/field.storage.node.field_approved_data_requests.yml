@@ -1,0 +1,19 @@
+uuid: 5a8a0a30-af80-496e-9b18-264a9468bff3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_approved_data_requests
+field_name: field_approved_data_requests
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

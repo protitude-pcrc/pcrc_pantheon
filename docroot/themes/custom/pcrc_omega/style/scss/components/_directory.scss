@@ -1,0 +1,116 @@
+.view-pcrc-directory-lists {
+  h1.page-title {
+    @include fontSize(44px, 52.8px);
+  }
+  .view-header { 
+    display: none;
+  }
+  &.view-pcrc-committee,
+  &.view-display-id-committee,
+  &.view-display-id-steering,
+  &.view-display-id-operations,
+  &.view-display-id-external,
+  &.view-display-id-scientific {
+    .view-content .views-row {
+      background-color: #f6f9fa;
+      @include border-radius(5px);
+      padding: 2rem 2rem;
+      .node--type-directory {
+        position: relative;
+      }
+      .group-left {
+        padding: 1.5rem 0 1.5rem 2rem;
+        float: none;
+        min-height: 9rem;
+        width: 100%;
+        padding-right: 11rem;
+      }
+      .group-right {
+        float: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 9rem;
+        height: 9rem;
+      }
+      .field--name-field-directory-image img {
+        width: 100%;
+        @include border-radius(50%);
+      }
+      .field--name-field-name {
+        @include fontSize(16px, 22px);
+        color: #222;
+        font-weight: $fontMedium;
+      }
+      .field--name-field-organization,
+      .field--name-field-area-of-focus,
+      .field--name-field-membership-title,
+      .field--name-field-publication-title,
+      .field--name-field-scientific-title {
+        @include fontSize(13.5px, 17px);
+        color: #777;
+        font-weight: $fontNormal;
+        overflow-wrap: break-word;        
+      }
+      .field--name-field-email {
+        @include fontSize(13.5px, 17px);
+        a {
+          color: #777;
+          font-weight: $fontNormal;
+          &:hover {
+            color: #777;
+          }
+        }
+        &::before {
+          color: #f47b20;
+          content: '\f0e0';
+          font-family: 'FontAwesome';
+          display: block;
+          float: left;
+          margin-right: 5px;
+          width: 20px;          
+        }
+      }
+      @media #{$mediaTabletMin} {
+        width: 48.5%;
+        margin-right: 3%;
+        float: left;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      margin-bottom: 3%;
+    }
+  }
+  &.view-display-id-operations,
+  &.view-display-id-steering,
+  &.view-display-id-external {
+    .field--name-field-membership-title,
+    .field--name-field-publication-title,
+    .field--name-field-scientific-title {
+      display: none;
+    }
+  }
+  &.view-display-id-committee {
+    .field--name-field-area-of-focus,
+    .field--name-field-publication-title,
+    .field--name-field-scientific-title {
+      display: none;
+    }
+  }
+  &.view-display-id-scientific {
+    .field--name-field-membership-title,
+    .field--name-field-publication-title,
+    .field--name-field-area-of-focus {
+      display: none;
+    }
+  }
+  &.view-display-id-publication {
+    .field--name-field-membership-title,
+    .field--name-field-scientific-title,
+    .field--name-field-area-of-focus {
+      display: none;
+    }
+  }
+}
+

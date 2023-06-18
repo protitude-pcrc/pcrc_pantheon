@@ -1,0 +1,19 @@
+uuid: 13d92832-e35c-45ef-a948-19dbe9c86337
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pcrc_study_num
+    - node.type.study
+id: node.study.field_pcrc_study_num
+field_name: field_pcrc_study_num
+entity_type: node
+bundle: study
+label: 'PCRC Study #'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

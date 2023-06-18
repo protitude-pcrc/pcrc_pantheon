@@ -1,0 +1,8 @@
+uuid: 2ad126c1-88e3-4702-814c-fa9b322fe382
+langcode: en
+status: true
+dependencies: {  }
+name: 'Participant Ethnicity Collected'
+vid: participant_ethnicity_collected
+description: ''
+weight: 0

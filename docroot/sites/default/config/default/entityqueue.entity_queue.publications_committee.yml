@@ -1,0 +1,26 @@
+uuid: d026bcaa-c9e0-4418-82ba-70361cb7e10f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: publications_committee
+label: 'Publication Committee'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory: directory
+    sort:
+      field: field_name.family
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

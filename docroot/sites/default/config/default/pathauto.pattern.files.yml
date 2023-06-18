@@ -1,0 +1,14 @@
+uuid: a5693d1d-df4c-4f11-a817-75ba387c3842
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: files
+label: Files
+type: 'canonical_entities:file'
+pattern: '/file/[file:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

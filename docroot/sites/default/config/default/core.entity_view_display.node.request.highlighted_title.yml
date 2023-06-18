@@ -1,0 +1,85 @@
+uuid: 2226943e-031e-40aa-bc8a-a72d205cd1f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlighted_title
+    - field.field.node.request.field_affiliation
+    - field.field.node.request.field_data_requested
+    - field.field.node.request.field_date_of_approval
+    - field.field.node.request.field_date_of_submission
+    - field.field.node.request.field_pcrc_project_review
+    - field.field.node.request.field_pi
+    - field.field.node.request.field_project_status
+    - field.field.node.request.field_reason_deemed_infeasible
+    - field.field.node.request.field_request_number
+    - field.field.node.request.field_request_type
+    - field.field.node.request.field_research_proposal
+    - field.field.node.request.field_research_proposal_abstract
+    - node.type.request
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - 'bundle_field:node'
+        - node_title
+        - field_request_type
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          wrapper: h1
+          class: page-title
+      'bundle_field:node':
+        plugin_id: 'bundle_field:node'
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.request.highlighted_title
+targetEntityType: node
+bundle: request
+mode: highlighted_title
+content:
+  field_request_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+hidden:
+  addtoany: true
+  field_affiliation: true
+  field_data_requested: true
+  field_date_of_approval: true
+  field_date_of_submission: true
+  field_pcrc_project_review: true
+  field_pi: true
+  field_project_status: true
+  field_reason_deemed_infeasible: true
+  field_request_number: true
+  field_research_proposal: true
+  field_research_proposal_abstract: true
+  links: true

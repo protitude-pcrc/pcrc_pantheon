@@ -1,0 +1,266 @@
+uuid: 5c9a605e-cd2a-4369-9afe-b50d97679930
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - node.type.directory
+    - node.type.news
+    - node.type.page
+    - node.type.request
+    - node.type.study
+    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.conditions_studied
+    - taxonomy.vocabulary.data_types
+    - taxonomy.vocabulary.directory_lists
+    - taxonomy.vocabulary.font_classification
+    - taxonomy.vocabulary.font_designer
+    - taxonomy.vocabulary.font_foundry
+    - taxonomy.vocabulary.font_tags
+    - taxonomy.vocabulary.languages_supported
+    - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.number_of_study_sites
+    - taxonomy.vocabulary.organizations
+    - taxonomy.vocabulary.participant_age
+    - taxonomy.vocabulary.participant_ethnicity_collected
+    - taxonomy.vocabulary.participant_race
+    - taxonomy.vocabulary.participant_sex
+    - taxonomy.vocabulary.participant_types
+    - taxonomy.vocabulary.request_types
+    - taxonomy.vocabulary.study_design
+    - taxonomy.vocabulary.study_setting
+    - taxonomy.vocabulary.study_types
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.therapeutic_areas
+    - taxonomy.vocabulary.total_enrollment
+  module:
+    - comment
+    - contact
+    - contextual
+    - dropzonejs
+    - embed
+    - entity_browser
+    - entity_clone
+    - entityqueue
+    - file
+    - file_download
+    - file_entity
+    - filter
+    - google_analytics
+    - node
+    - path
+    - recaptcha
+    - system
+    - taxonomy
+    - toolbar
+    - update
+    - webform
+id: site_admin
+label: 'Site Admin'
+weight: -5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access browse_documents entity browser pages'
+  - 'access browse_documents_modal entity browser pages'
+  - 'access browse_files entity browser pages'
+  - 'access browse_files_modal entity browser pages'
+  - 'access browse_images entity browser pages'
+  - 'access browse_images_modal entity browser pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access file download'
+  - 'access files overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'add JS snippets for google analytics'
+  - 'administer account settings'
+  - 'administer comments'
+  - 'administer contact forms'
+  - 'administer embed buttons'
+  - 'administer files'
+  - 'administer filters'
+  - 'administer google analytics'
+  - 'administer menu'
+  - 'administer recaptcha'
+  - 'administer site configuration'
+  - 'administer taxonomy'
+  - 'administer users'
+  - 'administer webform submission'
+  - 'cancel account'
+  - 'change own username'
+  - 'clone node entity'
+  - 'create directory content'
+  - 'create files'
+  - 'create news content'
+  - 'create page content'
+  - 'create request content'
+  - 'create study content'
+  - 'create terms in category'
+  - 'create terms in conditions_studied'
+  - 'create terms in data_types'
+  - 'create terms in directory_lists'
+  - 'create terms in font_classification'
+  - 'create terms in font_designer'
+  - 'create terms in font_foundry'
+  - 'create terms in font_tags'
+  - 'create terms in languages_supported'
+  - 'create terms in news_types'
+  - 'create terms in number_of_study_sites'
+  - 'create terms in organizations'
+  - 'create terms in participant_age'
+  - 'create terms in participant_ethnicity_collected'
+  - 'create terms in participant_race'
+  - 'create terms in participant_sex'
+  - 'create terms in participant_types'
+  - 'create terms in request_types'
+  - 'create terms in study_design'
+  - 'create terms in study_setting'
+  - 'create terms in study_types'
+  - 'create terms in tags'
+  - 'create terms in therapeutic_areas'
+  - 'create terms in total_enrollment'
+  - 'create url aliases'
+  - 'create webform'
+  - 'delete all revisions'
+  - 'delete any audio files'
+  - 'delete any directory content'
+  - 'delete any document files'
+  - 'delete any image files'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete any request content'
+  - 'delete any study content'
+  - 'delete any video files'
+  - 'delete any webform'
+  - 'delete any webform submission'
+  - 'delete directory revisions'
+  - 'delete news revisions'
+  - 'delete own audio files'
+  - 'delete own directory content'
+  - 'delete own document files'
+  - 'delete own image files'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own request content'
+  - 'delete own study content'
+  - 'delete own video files'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'delete page revisions'
+  - 'delete request revisions'
+  - 'delete study revisions'
+  - 'delete terms in category'
+  - 'delete terms in conditions_studied'
+  - 'delete terms in data_types'
+  - 'delete terms in directory_lists'
+  - 'delete terms in font_classification'
+  - 'delete terms in font_designer'
+  - 'delete terms in font_foundry'
+  - 'delete terms in font_tags'
+  - 'delete terms in languages_supported'
+  - 'delete terms in news_types'
+  - 'delete terms in number_of_study_sites'
+  - 'delete terms in organizations'
+  - 'delete terms in participant_age'
+  - 'delete terms in participant_ethnicity_collected'
+  - 'delete terms in participant_race'
+  - 'delete terms in participant_sex'
+  - 'delete terms in participant_types'
+  - 'delete terms in request_types'
+  - 'delete terms in study_design'
+  - 'delete terms in study_setting'
+  - 'delete terms in study_types'
+  - 'delete terms in tags'
+  - 'delete terms in therapeutic_areas'
+  - 'delete terms in total_enrollment'
+  - 'download any audio files'
+  - 'download any document files'
+  - 'download any image files'
+  - 'download any video files'
+  - 'download own audio files'
+  - 'download own document files'
+  - 'download own image files'
+  - 'download own video files'
+  - 'dropzone upload files'
+  - 'edit any audio files'
+  - 'edit any directory content'
+  - 'edit any document files'
+  - 'edit any image files'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit any request content'
+  - 'edit any study content'
+  - 'edit any video files'
+  - 'edit any webform'
+  - 'edit own audio files'
+  - 'edit own comments'
+  - 'edit own directory content'
+  - 'edit own document files'
+  - 'edit own image files'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own request content'
+  - 'edit own study content'
+  - 'edit own video files'
+  - 'edit own webform'
+  - 'edit own webform submission'
+  - 'edit terms in category'
+  - 'edit terms in conditions_studied'
+  - 'edit terms in data_types'
+  - 'edit terms in directory_lists'
+  - 'edit terms in font_classification'
+  - 'edit terms in font_designer'
+  - 'edit terms in font_foundry'
+  - 'edit terms in font_tags'
+  - 'edit terms in languages_supported'
+  - 'edit terms in news_types'
+  - 'edit terms in number_of_study_sites'
+  - 'edit terms in organizations'
+  - 'edit terms in participant_age'
+  - 'edit terms in participant_ethnicity_collected'
+  - 'edit terms in participant_race'
+  - 'edit terms in participant_sex'
+  - 'edit terms in participant_types'
+  - 'edit terms in request_types'
+  - 'edit terms in study_design'
+  - 'edit terms in study_setting'
+  - 'edit terms in study_types'
+  - 'edit terms in tags'
+  - 'edit terms in therapeutic_areas'
+  - 'edit terms in total_enrollment'
+  - 'manipulate all entityqueues'
+  - 'manipulate entityqueues'
+  - 'revert all revisions'
+  - 'revert directory revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'revert request revisions'
+  - 'revert study revisions'
+  - 'select account cancellation method'
+  - 'update external_advisory_board entityqueue'
+  - 'update membership_committee entityqueue'
+  - 'update operations entityqueue'
+  - 'update scientific_review_committee entityqueue'
+  - 'update steering_committee entityqueue'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view all revisions'
+  - 'view any webform submission'
+  - 'view directory revisions'
+  - 'view news revisions'
+  - 'view own files'
+  - 'view own private files'
+  - 'view own unpublished content'
+  - 'view own webform submission'
+  - 'view page revisions'
+  - 'view private files'
+  - 'view request revisions'
+  - 'view study revisions'
+  - 'view the administration theme'
+  - 'view update notifications'

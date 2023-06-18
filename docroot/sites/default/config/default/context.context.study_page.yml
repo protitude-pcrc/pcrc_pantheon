@@ -1,0 +1,116 @@
+uuid: ae90febe-0de0-40ac-b4ce-976f8e9e0ae0
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+label: 'Study Page'
+name: study_page
+group: Pages
+description: 'Block placement for study content type'
+requireAllConditions: true
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 7e11f369-1384-415f-89b9-a42ab02af1c2
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      study: study
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: f75b00c8-06b5-4270-b54a-114b8f1f3969
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: f88c1524-cdf1-4d2c-85f6-7ffd9d32ca5e
+    blocks:
+      9a2fcff9-0933-42fe-a4ff-963fb05bca9e:
+        uuid: 9a2fcff9-0933-42fe-a4ff-963fb05bca9e
+        id: 'entity_view:node'
+        label: Highlighted
+        provider: ctools
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: study_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: highlighted_title
+      32fdca47-53be-4f4a-8ee7-39497738a8cd:
+        uuid: 32fdca47-53be-4f4a-8ee7-39497738a8cd
+        id: 'entity_view:node'
+        label: 'Sidebar second'
+        provider: ctools
+        label_display: '0'
+        region: sidebar_second
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: study_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: sidebar_second
+      7a32aa55-5460-4860-a815-94caf743647b:
+        uuid: 7a32aa55-5460-4860-a815-94caf743647b
+        id: 'entity_view:node'
+        label: 'Study details'
+        provider: ctools
+        label_display: '0'
+        region: postscript_first
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: study_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: study_details
+      8f48eacf-29f3-4b42-87bc-39965c1d3962:
+        uuid: 8f48eacf-29f3-4b42-87bc-39965c1d3962
+        id: 'entity_view:node'
+        label: 'Study data requests'
+        provider: ctools
+        label_display: '0'
+        region: postscript_second
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: study_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: study_data_requests
+      4f47326c-e063-4e9b-bfd1-471e675f6518:
+        uuid: 4f47326c-e063-4e9b-bfd1-471e675f6518
+        id: 'entity_view:node'
+        label: 'Study links'
+        provider: ctools
+        label_display: '0'
+        region: preface_first
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: study_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: study_links
+    include_default_blocks: 0
+    saved: false
+weight: 0

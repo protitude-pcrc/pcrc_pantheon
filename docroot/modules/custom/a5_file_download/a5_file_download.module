@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Allows for files to be downloaded and tracks each file download.
+ */
+
+use Drupal\Component\Utility\Unicode;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Entity\EntityStorageInterface;
+
+/**
+ * Implements hook_help().
+ */
+function a5_file_download_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'admin/help#a5_file_download':
+      return '<p>' . t('Allows for and counts file downloads and logs a message to the watchdog table.') . '</p>';
+  }
+}
+
+function a5_file_download_log_file_download($entity) {
+  $config = \Drupal::config('a5_file_download.settings');
+  $time = REQUEST_TIME;
+  
+  // Validate file has extension that should be counted, if not return.
+  $extensions = explode(' ', mb_strtolower(trim($config->get('a5_file_download_count_excluded_file_extensions'))));
+  if (count($extensions)) {
+    $extension = mb_strtolower(pathinfo($entity->getFilename(), PATHINFO_EXTENSION));
+    if (in_array($extension, $extensions)) {
+      return;
+    }
+  }
+
+  // Count the download.
+  $account = \Drupal::currentUser();
+  $ip = Drupal::request()->getClientIp();
+  $referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : t('Direct download');
+  // Echo "<pre>";print_R($entity);exit;
+  $references = file_get_file_references($entity, NULL, EntityStorageInterface::FIELD_LOAD_REVISION, NULL);
+  foreach ($references as $field_name => $entity_map) {
+    foreach ($entity_map as $referencing_entity_type => $referencing_entities) {
+      foreach ($referencing_entities as $referencing_entity) {
+        $entity_type = $referencing_entity->getEntityTypeId();
+        $entity_id = $referencing_entity->id();
+      }
+    }
+  }
+  $connection = Database::getConnection();
+  $connection->insert('download_count')
+      ->fields(array(
+        'fid' => $entity->id(),
+        'uid' => $account->id(),
+        'type' => $entity_type,
+        'id' => $entity_id,
+        'ip_address' => $ip,
+        'referrer' => $referrer,
+        'timestamp' => $time,
+      ))
+      ->execute();
+
+  \Drupal::logger('a5_file_download')->notice('%file was downloaded by user #%uid from %ip', array('%file' => $entity->getFilename(), '%uid' => $account->id(), '%ip' => $ip));
+
+}

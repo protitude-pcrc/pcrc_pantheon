@@ -1,0 +1,23 @@
+uuid: 9b7cbd3d-0c86-484f-9940-6697d06f48da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_multi_site
+    - node.type.study
+id: node.study.field_multi_site
+field_name: field_multi_site
+entity_type: node
+bundle: study
+label: 'Multi Site'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

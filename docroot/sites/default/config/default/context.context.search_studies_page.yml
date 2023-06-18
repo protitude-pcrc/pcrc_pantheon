@@ -1,0 +1,56 @@
+uuid: 75e3331b-67fd-4ac7-a401-24c1a5ee1d7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Search Studies Page'
+name: search_studies_page
+group: Pages
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 432e95fc-618e-4126-8645-681674a0d474
+    context_mapping: {  }
+    pages: "/studies\r\n/studies/*"
+reactions:
+  blocks:
+    id: blocks
+    uuid: e0957d24-2294-4e31-9e82-f90b5ea0c9af
+    blocks:
+      30bd4872-7935-4911-ab09-c1a595aba2dd:
+        uuid: 30bd4872-7935-4911-ab09-c1a595aba2dd
+        id: 'views_exposed_filter_block:pcrc_studies_search-page_1'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: sidebar_first
+        weight: '-3'
+        custom_id: views_exposed_filter_block_pcrc_studies_search_page_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: search_studies_page
+        context_mapping: {  }
+        views_label: ''
+      2d4e9d76-78c4-4ba7-8082-23844ece5e7f:
+        uuid: 2d4e9d76-78c4-4ba7-8082-23844ece5e7f
+        id: 'simple_block:studies_hero'
+        label: 'Studies Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: simple_block_studies_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: search_studies_page
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

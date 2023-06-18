@@ -1,0 +1,29 @@
+uuid: baa671a6-e667-43e3-816c-dfe39c9f1ca7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study_setting
+    - node.type.study
+    - taxonomy.vocabulary.study_setting
+id: node.study.field_study_setting
+field_name: field_study_setting
+entity_type: node
+bundle: study
+label: 'Study Setting'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      study_setting: study_setting
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

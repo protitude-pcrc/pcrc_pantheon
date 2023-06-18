@@ -1,0 +1,21 @@
+uuid: 8a9263da-89e4-4483-870d-ea0ad997b1bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_of_approval
+    - node.type.request
+  module:
+    - datetime
+id: node.request.field_date_of_approval
+field_name: field_date_of_approval
+entity_type: node
+bundle: request
+label: 'Date of Approval'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

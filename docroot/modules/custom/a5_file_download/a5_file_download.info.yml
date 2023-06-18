@@ -1,0 +1,8 @@
+name: A5 File Download
+type: module
+description: Creates file download url and processors
+core_version_requirement: ^8.7.7 || ^9
+package: Archetype5
+dependencies:
+  - file_download
+version: 1.0

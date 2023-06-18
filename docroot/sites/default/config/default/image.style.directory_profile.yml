@@ -1,0 +1,15 @@
+uuid: 9c09d581-6f81-4591-bbfb-bf61cade6ed1
+langcode: en
+status: true
+dependencies: {  }
+name: directory_profile
+label: 'Directory profile'
+effects:
+  2dafd4df-42cf-4186-ab68-33f1d48f5e0d:
+    uuid: 2dafd4df-42cf-4186-ab68-33f1d48f5e0d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 180
+      height: 180
+      anchor: center-center

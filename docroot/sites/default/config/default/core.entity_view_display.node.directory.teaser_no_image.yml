@@ -1,0 +1,83 @@
+uuid: a171abab-8799-41eb-a6f5-01e6a00d9cc8
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_no_image
+    - field.field.node.directory.body
+    - field.field.node.directory.feeds_item
+    - field.field.node.directory.field_area_of_focus
+    - field.field.node.directory.field_directory_image
+    - field.field.node.directory.field_email
+    - field.field.node.directory.field_list_assignment
+    - field.field.node.directory.field_membership_title
+    - field.field.node.directory.field_name
+    - field.field.node.directory.field_organization
+    - field.field.node.directory.field_publication_title
+    - field.field.node.directory.field_scientific_title
+    - node.type.directory
+  module:
+    - ds
+    - name
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - field_name
+        - field_organization
+id: node.directory.teaser_no_image
+targetEntityType: node
+bundle: directory
+mode: teaser_no_image
+content:
+  field_name:
+    type: name_default
+    label: hidden
+    settings:
+      format: default
+      markup: none
+      list_format: default
+      link_target: ''
+      preferred_field_reference: ''
+      preferred_field_reference_separator: ', '
+      alternative_field_reference: ''
+      alternative_field_reference_separator: ', '
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+  field_organization:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: ds_content
+hidden:
+  addtoany: true
+  body: true
+  feeds_item: true
+  field_area_of_focus: true
+  field_directory_image: true
+  field_email: true
+  field_list_assignment: true
+  field_membership_title: true
+  field_publication_title: true
+  field_scientific_title: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,69 @@
+uuid: 9b2be109-c6ec-4a6f-9079-6bb26154eedc
+langcode: en
+status: true
+dependencies:
+  module:
+    - context_profile_role
+    - system
+label: 'My Account Page'
+name: my_account_page
+group: Pages
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  user_profile_role:
+    id: user_profile_role
+    negate: false
+    uuid: 36119204-0f1b-4204-96d7-2af909703a47
+    context_mapping:
+      user_profile: '@context_profile_role.user_profile_route_context:user_profile'
+    roles:
+      request: request
+      administrator: administrator
+  request_path:
+    id: request_path
+    negate: true
+    uuid: 0a65b27b-6b4c-475f-93f8-b6ed3f8b3a62
+    context_mapping: {  }
+    pages: '/user/*/edit'
+reactions:
+  blocks:
+    id: blocks
+    uuid: c3e6633c-b6de-4c34-9a55-2c7d4ecfb754
+    blocks:
+      d5a8a822-4e28-4f22-864e-94c1547b70e5:
+        uuid: d5a8a822-4e28-4f22-864e-94c1547b70e5
+        id: 'views_block:pcrc_file_downloads-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: postscript_first
+        weight: '0'
+        custom_id: views_block_pcrc_file_downloads_block_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: my_account_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      da11ea9d-228b-41aa-a21c-96c4207112e9:
+        uuid: da11ea9d-228b-41aa-a21c-96c4207112e9
+        id: 'views_block:pcrc_data_requests-requests'
+        label: ''
+        provider: views
+        label_display: visible
+        region: postscript_first
+        weight: '1'
+        custom_id: views_block_pcrc_data_requests_requests
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: my_account_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+    include_default_blocks: 0
+    saved: false
+weight: 0

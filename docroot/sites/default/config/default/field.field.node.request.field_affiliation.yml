@@ -1,0 +1,29 @@
+uuid: 74c005cd-d317-4340-87d4-069237341421
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_affiliation
+    - node.type.request
+    - taxonomy.vocabulary.organizations
+id: node.request.field_affiliation
+field_name: field_affiliation
+entity_type: node
+bundle: request
+label: Affiliation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      organizations: organizations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

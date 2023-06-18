@@ -1,0 +1,10 @@
+uuid: db485452-b2f6-4211-b8ff-7a3a6483daf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.sidebar_first
+label: 'Sidebar first'
+targetEntityType: node
+cache: true

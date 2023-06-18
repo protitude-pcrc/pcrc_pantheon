@@ -1,0 +1,16 @@
+uuid: 6c593c0f-7bc2-41b5-9e9d-504fa7880ef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.directory_profile
+id: original
+label: Original
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: directory_profile
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: '_original image_'

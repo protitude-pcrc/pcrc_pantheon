@@ -1,0 +1,18 @@
+uuid: 1cd5c386-b117-40e1-a02c-ccf3d13052f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_multi_site
+field_name: field_multi_site
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

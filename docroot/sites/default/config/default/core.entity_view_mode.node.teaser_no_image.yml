@@ -1,0 +1,10 @@
+uuid: 40840617-3988-4050-9355-d6df393626d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_no_image
+label: 'Teaser (no image)'
+targetEntityType: node
+cache: true

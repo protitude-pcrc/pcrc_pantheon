@@ -1,0 +1,27 @@
+uuid: 7b617c2c-30bf-43d5-ae85-31d39ace852e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_annotated_crf
+    - node.type.study
+  module:
+    - file
+id: node.study.field_annotated_crf
+field_name: field_annotated_crf
+entity_type: node
+bundle: study
+label: 'Data Collection Form'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: annotated-crfs
+  file_extensions: 'txt doc docx pdf rtf'
+  max_filesize: ''
+  description_field: false
+field_type: file

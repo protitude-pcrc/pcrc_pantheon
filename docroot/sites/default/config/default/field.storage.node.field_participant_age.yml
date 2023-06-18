@@ -1,0 +1,20 @@
+uuid: 270c2da4-7d52-43fe-9d72-49e6868e238a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_participant_age
+field_name: field_participant_age
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

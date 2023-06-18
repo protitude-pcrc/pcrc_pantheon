@@ -1,0 +1,8 @@
+uuid: ba12382e-b39a-4403-9046-4121bd50ef61
+langcode: en
+status: true
+dependencies: {  }
+name: 'Therapeutic Areas'
+vid: therapeutic_areas
+description: ''
+weight: 0

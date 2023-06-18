@@ -1,0 +1,26 @@
+uuid: 59d3273a-3dd0-46d0-98d5-95b3d6549170
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: scientific_review_committee
+label: 'Scientific Review Committee'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory: directory
+    sort:
+      field: field_name.family
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

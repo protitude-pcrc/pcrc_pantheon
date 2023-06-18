@@ -1,0 +1,8 @@
+uuid: f24faadb-2e6d-43cb-9abd-f20c2faee4b0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Directory Lists'
+vid: directory_lists
+description: ''
+weight: 0

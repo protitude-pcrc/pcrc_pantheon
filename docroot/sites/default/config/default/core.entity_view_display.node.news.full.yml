@@ -1,0 +1,107 @@
+uuid: e7018f6c-74c3-4fce-94ca-0e90dc17fbe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news.body
+    - field.field.node.news.field_news_image
+    - field.field.node.news.field_subtitle
+    - field.field.node.news.field_type
+    - node.type.news
+  module:
+    - ds
+    - empty_fields
+    - field_group
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - field_subtitle
+        - node_post_date
+        - group_meta
+        - field_type
+        - body
+    fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 0
+        label: hidden
+        formatter: ds_post_date_pcrc_full_date
+  field_group:
+    group_meta:
+      children:
+        - node_post_date
+        - field_type
+      label: Meta
+      parent_name: ''
+      region: ds_content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: news-metadata
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.news.full
+targetEntityType: node
+bundle: news
+mode: full
+content:
+  addtoany:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: ds_content
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: ds_content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: ds_content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      ds:
+        ds_limit: ''
+      empty_fields:
+        handler: ''
+    weight: 2
+    region: ds_content
+hidden:
+  field_news_image: true
+  links: true
+  search_api_excerpt: true

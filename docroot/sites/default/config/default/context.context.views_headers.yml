@@ -1,0 +1,41 @@
+uuid: 5bb0e4c6-b917-4cd0-a8ae-ae593da539aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Views headers'
+name: views_headers
+group: Elements
+description: 'Place header block for views.'
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: d23c3562-836e-4530-a057-031c8ad27775
+    context_mapping: {  }
+    pages: "/who/membership-committee\r\n/who/steering\r\n/who/scientific\r\n/who/external-advisory-board\r\n/who/publication\r\n/operations\r\n/members/org-leads\r\n/members/roster\r\n/requests\r\n/requests-not-feasible"
+reactions:
+  blocks:
+    id: blocks
+    uuid: c4f46715-a0e0-4ba7-b76a-e1cac5a4d833
+    blocks:
+      8c255007-5835-4f9b-88b6-8ec316984fe2:
+        uuid: 8c255007-5835-4f9b-88b6-8ec316984fe2
+        id: view_header_block
+        label: 'View header block'
+        provider: pcrc_tweaks
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: view_header_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: views_headers
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

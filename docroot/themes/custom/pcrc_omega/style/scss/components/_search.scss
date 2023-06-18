@@ -1,0 +1,123 @@
+#views-exposed-form-pcrc-search-content-search-content {
+  margin: 2rem 0;
+  .form--inline {
+    position: relative;
+  }
+  .form-type-textfield {
+    width: 100%;
+    margin: 0;
+    label {
+      display: none;
+    }
+  }
+  .form-text {
+    border: 1px solid white;
+    border-radius: 5px 0 0 5px;
+    padding: 13px 12px;
+    vertical-align: top;
+    @include fontSize(16px, 22px);
+    width: 89%;
+    float: left;
+    height: 50px;
+  }
+  .form-actions {
+    input {
+      display: none;
+    }
+  }
+  .search-button {
+    width: 10%;
+    border: 1px solid white;
+    border-radius: 0 5px 5px 0;
+    background-color: $white;
+    @include fontSize(20px, 20px);
+    padding: 14px 0;
+  }
+  .search-close {
+    display: none;
+  }
+}
+
+.search-overlay {
+  #views-exposed-form-pcrc-search-content-search-content {
+    label {
+      display: block;
+      width: 100%;
+      color: $white;
+      @include fontSize(24px, 28px);
+      margin-bottom: 3rem;
+      text-align: center;
+      font-weight: $fontMedium;
+    }
+    .search-close {
+      display: block;
+      color: #ccc;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.region-search .contextual {
+  display: none;
+}
+
+.view-id-pcrc_search_content {
+  .view-header {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      background-color: #f2f2f2;
+      text-transform:  uppercase;
+      font-weight: $fontSemibold;
+      @include fontSize(14px, 21px);
+      padding: 1.2rem;
+      &::before {
+        display: none;
+      }
+    }
+  }
+  .view-content {
+    .views-row {
+      h3 {
+        margin: 1rem 0;
+        @include fontSize(24px, 32px);
+        font-weight: $fontMedium;
+      }
+      .views-field-body {
+        @include fontSize(15px, 22px);
+      }
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid #eeeeee;
+      .type-label {
+        display: inline-block;
+        margin-top: 2rem;
+        color: $white;
+        padding: 0.8rem;
+        @include fontSize(10px, 12px);
+        text-transform: uppercase;
+        @include border-radius(5px);
+        font-weight: $fontSemibold;
+        &.news {
+          background-color: $green-notification;
+        }
+        &.directory {
+          display: none;
+        }
+        &.study {
+          background-color: $orange-notification;
+        }
+        &.request {
+          background-color: $blue-notification;
+        }
+        &.basic_page {
+          display: none;
+        }
+      }
+    }
+  }
+}

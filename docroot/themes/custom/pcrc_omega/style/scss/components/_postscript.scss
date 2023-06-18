@@ -1,0 +1,60 @@
+#postscript-third-outer-wrapper {
+  background-color: $heroBackground;
+  .postscript-layout {
+    padding: 7rem 0;
+    text-align: center;
+  }
+  ul.menu {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      width: 100%;
+      margin: 0;
+      a {
+        color: $white;
+        text-transform: uppercase;
+        border-radius: 1.8rem;
+        padding: 1rem 1.5rem;
+        font-weight: $fontMedium;
+        display: block;
+        @include fontSize(12px, 15px);
+        &:hover {
+          color: $white;
+        }
+        &::before {
+          font-family: 'FontAwesome';
+          margin-right: 5px;
+        }        
+      }
+      &:first-child {
+        margin-bottom: 2rem;
+        a {
+          border: 1px solid #005870;
+          background-color: #005870;
+          &::before {
+            content: '\f055';
+          }
+        }
+      }
+      &:last-child {
+        a {
+          border: 1px solid $white;
+          &::before {
+            content: '\f002';
+          }
+        }
+      }
+      @media #{$mediaTabletMin} {
+        float: left;
+        width: auto;
+        &:first-child {
+          margin-right: 1rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+

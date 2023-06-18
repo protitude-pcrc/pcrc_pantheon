@@ -1,0 +1,11 @@
+uuid: fe98c5f7-bc39-405d-8997-db3b702bdd8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: user_hero
+title: 'User Hero'
+content:
+  value: "<h1 class=\"page-title\">Login/Create Account\r\n</h1>\r\n<p class=\"subtitle\">Users must login or create an account to request Repository Data.\r\n</p>"
+  format: full_html

@@ -1,0 +1,8 @@
+uuid: 462c9f87-290f-4d86-9cd6-75336b7998cc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Conditions Studied'
+vid: conditions_studied
+description: ''
+weight: 0

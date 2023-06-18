@@ -1,0 +1,14 @@
+uuid: 8cf4c6c8-3ffe-4622-a470-f8aa92869db5
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.pcrc_member
+  module:
+    - user
+id: user_remove_role_action.pcrc_member
+label: 'Remove the PCRC Member role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: pcrc_member

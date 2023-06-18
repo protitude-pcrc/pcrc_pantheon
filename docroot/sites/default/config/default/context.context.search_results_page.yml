@@ -1,0 +1,71 @@
+uuid: a30b7a3d-1178-4e75-8a67-309b59f0ce92
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Search Results Page'
+name: search_results_page
+group: Pages
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 66b5aac4-3257-4a3f-bbb4-00a73cb5342c
+    context_mapping: {  }
+    pages: /search
+reactions:
+  blocks:
+    id: blocks
+    uuid: cd1f4b0d-a9be-42d1-b4d1-07ff7b6ebb1d
+    blocks:
+      39a15c3e-d9e1-42b8-aebf-4aa84dea531d:
+        uuid: 39a15c3e-d9e1-42b8-aebf-4aa84dea531d
+        id: 'simple_block:search_results_hero'
+        label: 'Search Results Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: simple_block_search_results_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: search_results_page
+        context_mapping: {  }
+      edb5c3d3-23df-4226-acc8-ea61414c4118:
+        uuid: edb5c3d3-23df-4226-acc8-ea61414c4118
+        id: 'simple_block:twitter'
+        label: 'Tweets from @PCRCGroup'
+        provider: simple_block
+        label_display: visible
+        region: sidebar_second
+        weight: '-1'
+        custom_id: simple_block_twitter
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: search_results_page
+        context_mapping: {  }
+      25c36f4d-97db-44d1-8950-9579b086e856:
+        uuid: 25c36f4d-97db-44d1-8950-9579b086e856
+        id: 'views_block:pcrc_nih_extramural_nexus_feeds-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: views_block_pcrc_nih_extramural_nexus_feeds_block_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: search_results_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+    include_default_blocks: 0
+    saved: false
+weight: 0

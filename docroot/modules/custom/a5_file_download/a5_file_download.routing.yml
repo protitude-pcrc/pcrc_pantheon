@@ -1,0 +1,7 @@
+a5_file_download.file_download:
+  path: '/file/download/{fid}'
+  defaults:
+    _controller: '\Drupal\a5_file_download\Controller\FileDownload::display'
+    _title: ''
+  requirements:
+    _permission: 'access content'

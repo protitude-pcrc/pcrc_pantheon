@@ -1,0 +1,53 @@
+
+.grid-sizer,
+.grid-item {
+    width: 96%;
+}
+.gutter-sizer {
+    width: 20px;
+}
+
+@media only screen and (min-width: 480px) {
+  .grid-sizer,
+  .grid-item {
+      width: 46%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-sizer,
+  .grid-item {
+      width: 30%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .grid-sizer,
+  .grid-item {
+      width: 23%;
+  }
+  .gutter-sizer {
+      width: 10px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .grid-sizer,
+  .grid-item {
+      width: 15%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .grid-sizer,
+  .grid-item {
+      width: inherit;
+  }
+  .gutter-sizer {
+      width: inherit;
+  }
+}
+
+.file-browser-form {
+  padding-bottom: 100px;
+}

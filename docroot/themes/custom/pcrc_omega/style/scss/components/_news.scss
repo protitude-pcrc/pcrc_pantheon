@@ -1,0 +1,116 @@
+.node--type-news {
+  h1.page-title {
+    color: $altHeaderText;
+    margin-bottom: 2rem;
+    @media #{$mediaMobileMin}{
+      @include fontSize(24px, 32px);
+    }
+    @media #{$mediaMobileWideMin}{
+      @include fontSize(28px, 36px);
+    }
+    @media #{$mediaTabletMin}{
+      @include fontSize(32px, 40px);
+    }
+    @media #{$mediaDesktopMin}{
+      @include fontSize(35px, 43px);
+    }
+    @media #{$mediaDesktopMin}{
+      @include fontSize(38px, 46px);
+    }
+  }
+  h2.hero-title {
+    font-family: $headFont;
+    font-weight: $fontLite;
+    @include fontSize(42px, 50px);
+    margin: 0;
+  }
+  .field--name-field-subtitle {
+    font-weight: $fontLite;
+    @include fontSize(28px, 36px);
+    color: $bodyText;
+    margin-bottom: 2rem;
+    @media #{$mediaMobileMin}{
+      @include fontSize(18px, 26px);
+    }
+    @media #{$mediaMobileWideMin}{
+      @include fontSize(20px, 28px);
+    }
+    @media #{$mediaTabletMin}{
+      @include fontSize(22px, 30px);
+    }
+    @media #{$mediaDesktopMin}{
+      @include fontSize(26px, 34px);
+    }
+    @media #{$mediaDesktopMin}{
+      @include fontSize(28px, 36px);
+    }
+  }
+  .field--name-node-changed-date,
+  .field--name-node-post-date{
+    @include fontSize(14px, 16px);
+    float: left;
+  }
+  .field--name-field-type{
+    font-size: 0px;
+    line-height: 0;
+    .field__item {
+      @include fontSize(14px, 16px);
+      display: inline;
+    }
+    .field__item + .field__item {
+      &::before {
+        content: ', ';
+      }
+    }
+    &::before {
+      content: '//';
+      @include fontSize(14px, 16px);
+      margin: 0 5px;
+      display: inline-block;
+    }
+  }
+  .addtoany_list {
+    display: block;
+    margin-top: 2rem;
+    padding-top: 3rem;
+    border-top: 1px solid #eeeeee;
+  }
+  &.node--view-mode-full {
+    .news-metadata {
+      padding: 2rem 0;
+      border-top: 1px solid #eeeeee;
+      border-bottom: 1px solid #eeeeee;
+      @include clearfix();
+      margin-bottom: 2rem;
+    }
+  }
+  &.node--view-mode-teaser {
+    h3 {
+      margin: 1rem 0;
+      @include fontSize(24px, 32px);
+      font-weight: $fontMedium;
+    }
+    .field--name-body {
+      @include fontSize(15px, 22px);
+    }
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #eeeeee;
+  }
+}
+
+.view-taxonomy-term.view-display-id-page_1 .view-header,
+.view-pcrc-news.view-display-id-all_news .view-header {
+  h2 {
+    margin-top: 0;
+    margin-bottom: 4rem;
+    background-color: #f2f2f2;
+    text-transform: uppercase;
+    font-weight: $fontSemibold;
+    @include fontSize(14px, 21px);
+    padding: 1.2rem;
+    &::before {
+      display: none;
+    }
+  }
+}

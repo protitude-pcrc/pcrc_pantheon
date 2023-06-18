@@ -1,0 +1,72 @@
+.toolbar-fixed,
+.toolbar-vertical {
+  #search-overlay-bkgd {
+    top: 39px;
+  }
+  .overlay-wrapper .overlay-inner {
+    top: 39px;
+  }
+  .block-header-logo.overlay {
+    top: 39px;
+  }
+}
+
+.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+  #search-overlay-bkgd {
+    top: 80px;
+  }
+  .overlay-wrapper .overlay-inner {
+    top: 80px;
+  }
+  .block-header-logo.overlay {
+    top: 80px;
+  }
+}
+
+#search-overlay-bkgd {
+  background-color: $black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: $white;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  z-index: 500;
+  visibility: visible;
+  @include single-transition(opacity, 1s, ease);
+  &.hide {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    visibility: hidden;
+  }
+}
+
+.search-overlay {
+  clear: both;
+  display: block;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: relative;
+  z-index: 501;
+  @include single-transition(opacity, 0.2s, ease, 0.15s);
+  &.show {
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    visibility: visible;
+  }
+  .overlay-inner {
+    top: 30% !important;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    .overlay-layout {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+  }
+}
+

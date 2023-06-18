@@ -1,0 +1,19 @@
+id: participant_ages
+label: Import participant ages
+migration_group: pcrc_migration
+
+source:
+  plugin: csv
+  path: 'modules/custom/pcrc_migrate/csv/participant_ages.csv'
+  header_row_count: 1
+  keys:
+    - title
+
+process:
+  name: title
+  vid:
+    plugin: default_value
+    default_value: participant_age
+
+destination:
+  plugin: entity:taxonomy_term

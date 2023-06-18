@@ -1,0 +1,11 @@
+uuid: 078dbd9b-239e-4071-ad86-3a45cb3b259e
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: homepage_hero
+title: 'Homepage Hero'
+content:
+  value: "<h2>A COMMUNITY OF DISCOVERY</h2>\r\n\r\n<p>The Palliative Care Research Cooperative Group (PCRC) is a vibrant interdisciplinary research community committed to advancing rigorous palliative care science and improving care for people with serious illness.</p>\r\n"
+  format: full_html

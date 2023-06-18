@@ -1,0 +1,19 @@
+uuid: fa7f7627-6860-4730-a630-f3cf33ce2419
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_area_of_focus
+    - node.type.directory
+id: node.directory.field_area_of_focus
+field_name: field_area_of_focus
+entity_type: node
+bundle: directory
+label: 'Operations Area of Focus'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

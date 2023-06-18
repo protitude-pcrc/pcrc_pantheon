@@ -1,0 +1,98 @@
+uuid: d33a55de-6640-4631-af74-1576769639af
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+label: 'Basic Page'
+name: basic_page
+group: Pages
+description: 'Block placement for basic page content type'
+requireAllConditions: true
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 8b5557d0-a60f-4e1b-976f-548d6a8f0c08
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: e1ea47d3-2ee8-42fb-9bcf-dfb736a6aa76
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: dbe7ec56-0da9-45bc-ad3b-3be28f7a9d8e
+    blocks:
+      6fe202e3-194c-4f7b-a909-126dc0738387:
+        uuid: 6fe202e3-194c-4f7b-a909-126dc0738387
+        id: 'entity_view:node'
+        label: Highlighted
+        provider: ctools
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: entity_view_node
+        theme: pcrc_omega
+        css_class: ''
+        unique: 1
+        context_id: basic_page
+        context_mapping:
+          entity: '@node.node_route_context:node'
+        view_mode: highlighted_title
+      008520da-563d-454c-abfb-19bd63594cd9:
+        uuid: 008520da-563d-454c-abfb-19bd63594cd9
+        id: 'views_block:pcrc_news-announcements'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '-1'
+        custom_id: views_block_pcrc_news_announcements
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: basic_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      c88030e5-98c6-41c9-a2ec-62e7a851b602:
+        uuid: c88030e5-98c6-41c9-a2ec-62e7a851b602
+        id: 'views_block:pcrc_nih_extramural_nexus_feeds-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '1'
+        custom_id: views_block_pcrc_nih_extramural_nexus_feeds_block_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: basic_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      d35d830a-2984-442d-9917-6ae53c7ba48b:
+        uuid: d35d830a-2984-442d-9917-6ae53c7ba48b
+        id: 'simple_block:twitter'
+        label: 'Tweets from @PCRCGroup'
+        provider: simple_block
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: simple_block_twitter
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: basic_page
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

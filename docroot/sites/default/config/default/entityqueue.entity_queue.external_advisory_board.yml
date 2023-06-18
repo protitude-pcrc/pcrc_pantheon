@@ -1,0 +1,26 @@
+uuid: 36c01165-4817-45f7-9fc0-63923b269d06
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: external_advisory_board
+label: 'External Advisory Board'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory: directory
+    sort:
+      field: field_name.family
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

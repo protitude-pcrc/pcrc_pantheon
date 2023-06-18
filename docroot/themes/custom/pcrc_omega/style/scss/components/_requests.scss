@@ -1,0 +1,64 @@
+.view-id-pcrc_requests {  
+  .view-header { 
+    display: none;
+  }
+  table.views-table {
+    th {
+      background-color: #03576f;
+      &:first-child {
+        width: 15%;
+      }
+      &:nth-child(2) {
+        width: 15%;
+      }
+      &:nth-child(4) {
+        width: 15%;
+      }
+    }
+  }
+}
+
+.section-requests {
+  #preface-second-outer-wrapper {
+    padding: 4rem 0;
+    .region--preface-second {
+      text-align: center;
+    }
+    .menu {
+      display: inline-block;
+      li {
+        margin: 0;
+        a {
+          padding: 1rem 2rem;
+          display: block;
+          border: 2px solid $green-notification;
+          color: $green-notification;
+          text-transform: uppercase;
+          font-weight: $fontSemibold;
+          @include border-radius(5px);
+          position: relative;
+          &.is-active {
+            background-color: $green-notification;
+            color: $white;
+            &::after {
+              border-top: 15px solid $green-notification;
+              border-left: 15px solid transparent;
+              border-right: 15px solid transparent;
+              bottom: 0px;
+              content: "";
+              position: absolute;
+              left: 50%;
+              margin-left: -15px;
+              width: 0;
+              height: 0;
+              top: 100%;
+            }
+          }
+        }
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+uuid: d303a4ee-3eb6-4cf5-b678-ecd965ef44f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.directory
+id: feeds_feed.directory.default
+targetEntityType: feeds_feed
+bundle: directory
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,7 @@
+uuid: 104fe6a3-94bf-4322-9a42-14026ea06a31
+langcode: en
+status: false
+dependencies: {  }
+formId: node_study_form
+captchaType: default
+label: node_study_form

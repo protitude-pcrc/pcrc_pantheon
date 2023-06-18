@@ -1,0 +1,19 @@
+uuid: 8bf74120-46f4-47fb-9da4-4c3aa715e39f
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_nct_link_field
+field_name: field_nct_link_field
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

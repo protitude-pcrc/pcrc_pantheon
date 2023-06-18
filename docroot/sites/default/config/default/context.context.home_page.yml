@@ -1,0 +1,129 @@
+uuid: ce854161-84e9-40ec-ad6f-38eded3b6061
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Home Page'
+name: home_page
+group: Pages
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 7ca84eaf-b925-4486-b537-21684a358515
+    context_mapping: {  }
+    pages: '<front>'
+reactions:
+  blocks:
+    id: blocks
+    uuid: 0305fa59-6509-4542-a920-ad294bcc5388
+    blocks:
+      0ffb7485-3cf3-439d-8055-cbfd25606e97:
+        uuid: 0ffb7485-3cf3-439d-8055-cbfd25606e97
+        id: 'views_block:pcrc_news-announcements'
+        label: ''
+        provider: views
+        label_display: visible
+        region: content
+        weight: '-3'
+        custom_id: views_block_pcrc_news_announcements
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      6bfcd7e0-8126-4e42-bc10-397bd25c095e:
+        uuid: 6bfcd7e0-8126-4e42-bc10-397bd25c095e
+        id: 'simple_block:twitter'
+        label: 'Tweets from @PCRCGroup'
+        provider: simple_block
+        label_display: visible
+        region: content
+        weight: '-2'
+        custom_id: simple_block_twitter
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+      c38939ec-44e3-4ea6-b548-b74a3a4155c7:
+        uuid: c38939ec-44e3-4ea6-b548-b74a3a4155c7
+        id: 'views_block:pcrc_nih_extramural_nexus_feeds-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: content
+        weight: '0'
+        custom_id: views_block_pcrc_nih_extramural_nexus_feeds_block_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      04e6ed93-4aae-4e77-8020-b02569803922:
+        uuid: 04e6ed93-4aae-4e77-8020-b02569803922
+        id: 'simple_block:homepage_hero'
+        label: 'Homepage Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '-3'
+        custom_id: simple_block_homepage_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+      0b4f9c08-3678-4164-8a2e-64dea2255fde:
+        uuid: 0b4f9c08-3678-4164-8a2e-64dea2255fde
+        id: 'simple_block:homepage_column_1'
+        label: 'Homepage Column 1'
+        provider: simple_block
+        label_display: '0'
+        region: preface_first
+        weight: '0'
+        custom_id: simple_block_homepage_column_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+      e49440ff-620f-42c8-8c10-e4fe06b74472:
+        uuid: e49440ff-620f-42c8-8c10-e4fe06b74472
+        id: 'simple_block:homepage_column_2'
+        label: 'Homepage Column 2'
+        provider: simple_block
+        label_display: '0'
+        region: preface_second
+        weight: '0'
+        custom_id: simple_block_homepage_column_2
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+      c8aec800-3e72-48c9-beba-029b53e1bad9:
+        uuid: c8aec800-3e72-48c9-beba-029b53e1bad9
+        id: 'simple_block:homepage_column_3'
+        label: 'Homepage Column 3'
+        provider: simple_block
+        label_display: '0'
+        region: preface_third
+        weight: '0'
+        custom_id: simple_block_homepage_column_3
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: home_page
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

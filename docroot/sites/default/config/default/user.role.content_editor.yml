@@ -1,0 +1,102 @@
+uuid: c86720d9-08d2-4173-8ac3-0d58b4ec2de5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.directory
+    - node.type.news
+    - node.type.page
+    - node.type.request
+    - node.type.study
+  module:
+    - dropzonejs
+    - entity_browser
+    - entity_clone
+    - file
+    - file_download
+    - file_entity
+    - node
+    - path
+    - system
+    - toolbar
+id: content_editor
+label: 'Content Editor'
+weight: -6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access browse_documents entity browser pages'
+  - 'access browse_documents_modal entity browser pages'
+  - 'access browse_files entity browser pages'
+  - 'access browse_files_modal entity browser pages'
+  - 'access browse_images entity browser pages'
+  - 'access browse_images_modal entity browser pages'
+  - 'access content overview'
+  - 'access file download'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'administer files'
+  - 'clone node entity'
+  - 'create directory content'
+  - 'create files'
+  - 'create news content'
+  - 'create page content'
+  - 'create request content'
+  - 'create study content'
+  - 'create url aliases'
+  - 'delete any audio files'
+  - 'delete any directory content'
+  - 'delete any document files'
+  - 'delete any image files'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete any request content'
+  - 'delete any study content'
+  - 'delete any video files'
+  - 'delete own audio files'
+  - 'delete own directory content'
+  - 'delete own document files'
+  - 'delete own image files'
+  - 'delete own news content'
+  - 'delete own page content'
+  - 'delete own request content'
+  - 'delete own study content'
+  - 'delete own video files'
+  - 'download any audio files'
+  - 'download any document files'
+  - 'download any image files'
+  - 'download any video files'
+  - 'download own audio files'
+  - 'download own document files'
+  - 'download own image files'
+  - 'download own video files'
+  - 'dropzone upload files'
+  - 'edit any audio files'
+  - 'edit any directory content'
+  - 'edit any document files'
+  - 'edit any image files'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit any request content'
+  - 'edit any study content'
+  - 'edit any video files'
+  - 'edit own audio files'
+  - 'edit own directory content'
+  - 'edit own document files'
+  - 'edit own image files'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own request content'
+  - 'edit own study content'
+  - 'edit own video files'
+  - 'view all revisions'
+  - 'view directory revisions'
+  - 'view news revisions'
+  - 'view own files'
+  - 'view own private files'
+  - 'view own unpublished content'
+  - 'view page revisions'
+  - 'view private files'
+  - 'view request revisions'
+  - 'view study revisions'
+  - 'view the administration theme'

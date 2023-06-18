@@ -1,0 +1,31 @@
+name: (A) Cron run
+on:
+  schedule:
+    - cron:  '0 */2 * * *'
+jobs:
+  cron:
+    name: Runs Cron on pantheon
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./.github/actions/dingorunner
+        env:
+          runner: cron
+          terminus_api: ${{ secrets.TERMINUS_API }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          site_name: ${{ secrets.TERMINUS_SITE_NAME }}
+          env: live
+      - uses: ./.github/actions/dingorunner
+        env:
+          runner: cron
+          terminus_api: ${{ secrets.TERMINUS_API }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          site_name: ${{ secrets.TERMINUS_SITE_NAME }}
+          env: test
+      - uses: ./.github/actions/dingorunner
+        env:
+          runner: cron
+          terminus_api: ${{ secrets.TERMINUS_API }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          site_name: ${{ secrets.TERMINUS_SITE_NAME }}
+          env: dev

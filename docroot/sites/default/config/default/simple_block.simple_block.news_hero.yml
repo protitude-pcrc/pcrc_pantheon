@@ -1,0 +1,11 @@
+uuid: a7101b99-f25a-477e-b8d7-f162e4e2395a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: news_hero
+title: 'News Hero'
+content:
+  value: "<h2 class=\"hero-title\">News &amp; Publications\r\n</h2>\r\n"
+  format: full_html

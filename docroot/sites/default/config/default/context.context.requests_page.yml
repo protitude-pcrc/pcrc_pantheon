@@ -1,0 +1,58 @@
+uuid: 2d2be139-77ad-4125-bd7a-ede3fc771f8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Requests Page'
+name: requests_page
+group: Pages
+description: 'Block placement for the requests list pages'
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: ab771e04-5ed4-43af-8e1e-e2ce52eaaa8f
+    context_mapping: {  }
+    pages: "/requests\r\n/requests-not-feasible"
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: f9e65792-312e-4f49-9903-41d1d9f2d3e1
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: 7223e419-b495-48bb-951e-795584311d38
+    blocks:
+      b3e436c8-0558-41ce-b17d-e80f32c57308:
+        uuid: b3e436c8-0558-41ce-b17d-e80f32c57308
+        id: 'menu_block:requests'
+        label: Requests
+        provider: menu_block
+        label_display: '0'
+        region: preface_second
+        weight: '0'
+        custom_id: menu_block_requests
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: requests_page
+        context_mapping: {  }
+        follow: 0
+        follow_parent: child
+        level: '1'
+        depth: '0'
+        expand: 0
+        parent: 'requests:'
+        suggestion: requests
+    include_default_blocks: 0
+    saved: false
+  body_class:
+    id: body_class
+    body_class: section-requests
+    saved: false
+weight: 0

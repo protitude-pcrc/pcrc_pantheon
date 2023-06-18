@@ -1,0 +1,11 @@
+name: A5 Entity Browsers
+type: module
+description: Entity browsers for images and documents
+core_version_requirement: ^8.7.7 || ^9
+package: Archetype5
+dependencies:
+  - entity_browser
+  - entity_embed
+  - file_browser
+  - a5_linked_image
+version: 1.0

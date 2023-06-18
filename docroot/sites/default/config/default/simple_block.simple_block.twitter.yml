@@ -1,0 +1,11 @@
+uuid: 6bdf31cf-ea43-464e-8ff8-3efc7c89eddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: twitter
+title: 'Twitter Timeline'
+content:
+  value: "<div><a class=\"twitter-timeline\" data-dnt=\"true\" data-height=\"400\" data-theme=\"light\" href=\"https://twitter.com/PCRCGroup?ref_src=twsrc%5Etfw\">Tweets by PCRCGroup</a>\r\n</div>\r\n"
+  format: full_html

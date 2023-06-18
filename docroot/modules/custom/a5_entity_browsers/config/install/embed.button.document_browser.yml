@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_embed
+    - file
+label: 'Document Browser'
+id: document_browser
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles:
+    - document
+  display_plugins:
+    - 'image:file_download_link'
+  entity_browser: browse_documents
+  entity_browser_settings:
+    display_review: false
+icon_uuid: db2cad05-1e3b-4b35-b163-99d7d036130d

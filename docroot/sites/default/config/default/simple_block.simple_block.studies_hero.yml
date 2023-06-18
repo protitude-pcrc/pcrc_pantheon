@@ -1,0 +1,11 @@
+uuid: 84eee141-4d5b-4086-8f8d-3f1f7f9a79b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: studies_hero
+title: 'Studies Hero'
+content:
+  value: "<h1 class=\"page-title\">PCRC De-identified Data Repository (DiDR) Studies</h1>\r\n\r\n<p>Search and browse available data in the PCRC DiDR</p>\r\n"
+  format: full_html

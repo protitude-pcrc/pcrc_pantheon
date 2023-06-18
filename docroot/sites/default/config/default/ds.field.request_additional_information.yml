@@ -1,0 +1,9 @@
+id: request_additional_information
+label: 'Request Additional Information'
+ui_limit: study|study_links
+type: twig
+type_label: 'Twig field'
+entities:
+  node: node
+properties:
+  content: '<a href="https://airtable.com/shrMDNEVdK5VQSC6e" target="_blank">Request Additional Information</a>'

@@ -1,0 +1,19 @@
+uuid: 5e981cd7-06ed-4eb1-9126-9a125e54c361
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study_pi_institution
+    - node.type.study
+id: node.study.field_study_pi_institution
+field_name: field_study_pi_institution
+entity_type: node
+bundle: study
+label: 'Study PI Institution'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

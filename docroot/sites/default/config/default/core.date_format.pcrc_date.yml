@@ -1,0 +1,8 @@
+uuid: 8eabca0b-c753-49a4-996a-f1771053eba1
+langcode: en
+status: true
+dependencies: {  }
+id: pcrc_date
+label: 'PCRC Date'
+locked: false
+pattern: m/d/Y

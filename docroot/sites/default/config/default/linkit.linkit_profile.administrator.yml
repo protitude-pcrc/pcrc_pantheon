@@ -1,0 +1,25 @@
+uuid: f9b153db-c32f-4223-a03b-e474b70edf55
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+label: Administrator
+id: administrator
+description: 'Main linkit profile for use by all administrators.'
+matchers:
+  c9944e1d-d03d-4ba8-9d02-8eb4eaa6164c:
+    id: 'entity:node'
+    uuid: c9944e1d-d03d-4ba8-9d02-8eb4eaa6164c
+    settings:
+      metadata: ''
+      bundles:
+        directory: directory
+        news: news
+        page: page
+        request: request
+        study: study
+      group_by_bundle: true
+      substitution_type: canonical
+      include_unpublished: false
+    weight: 0

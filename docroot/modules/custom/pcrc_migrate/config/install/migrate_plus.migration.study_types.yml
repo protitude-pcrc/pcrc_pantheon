@@ -1,0 +1,19 @@
+id: study_types
+label: Import conditions studied
+migration_group: pcrc_migration
+
+source:
+  plugin: csv
+  path: 'modules/custom/pcrc_migrate/csv/study_types.csv'
+  header_row_count: 1
+  keys:
+    - title
+
+process:
+  name: title
+  vid:
+    plugin: default_value
+    default_value: study_types
+
+destination:
+  plugin: entity:taxonomy_term

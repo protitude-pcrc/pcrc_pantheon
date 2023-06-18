@@ -1,0 +1,380 @@
+uuid: 01f60a46-b937-4ddc-8f9d-f9fda572a20c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.study.field_annotated_crf
+    - field.field.node.study.field_approved_data_requests
+    - field.field.node.study.field_award_number
+    - field.field.node.study.field_condition_studied
+    - field.field.node.study.field_csr_summary
+    - field.field.node.study.field_data_dictionary
+    - field.field.node.study.field_data_type
+    - field.field.node.study.field_detailed_title
+    - field.field.node.study.field_enrollment
+    - field.field.node.study.field_multi_site
+    - field.field.node.study.field_nct_link_field
+    - field.field.node.study.field_number_of_study_sites
+    - field.field.node.study.field_participant_age
+    - field.field.node.study.field_participant_ethnicity_coll
+    - field.field.node.study.field_participant_race
+    - field.field.node.study.field_participant_sex
+    - field.field.node.study.field_participant_type
+    - field.field.node.study.field_pcrc_study_num
+    - field.field.node.study.field_primary_citation
+    - field.field.node.study.field_sponsor
+    - field.field.node.study.field_study_design
+    - field.field.node.study.field_study_pi
+    - field.field.node.study.field_study_pi_institution
+    - field.field.node.study.field_study_setting
+    - field.field.node.study.field_study_site_institution
+    - field.field.node.study.field_study_site_pi
+    - field.field.node.study.field_study_type
+    - field.field.node.study.field_summary
+    - field.field.node.study.field_supporting_documentation
+    - field.field.node.study.field_therapeutic_area
+    - field.field.node.study.field_total_enrollment
+    - node.type.study
+  module:
+    - field_group
+    - file
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_study_inform:
+      children:
+        - field_enrollment
+        - field_study_pi
+        - field_study_pi_institution
+        - field_study_site_pi
+        - field_study_site_institution
+        - field_sponsor
+        - field_award_number
+        - field_multi_site
+      label: 'Study Information Section Fields'
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+    group_appro:
+      children:
+        - field_approved_data_requests
+      label: 'Approved Data Requests Associated with this Study'
+      region: content
+      parent_name: ''
+      weight: 10
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+    group_categorization:
+      children:
+        - field_study_type
+        - field_therapeutic_area
+        - field_condition_studied
+        - field_total_enrollment
+        - field_participant_type
+        - field_participant_age
+        - field_participant_sex
+        - field_participant_race
+        - field_participant_ethnicity_coll
+        - field_number_of_study_sites
+        - field_data_type
+        - field_study_design
+        - field_study_setting
+      label: Categorization
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details
+      format_settings:
+        classes: ''
+        id: ''
+        open: false
+        required_fields: true
+id: node.study.default
+targetEntityType: node
+bundle: study
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_annotated_crf:
+    type: file_generic
+    weight: 7
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_approved_data_requests:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_award_number:
+    type: string_textfield
+    weight: 136
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_condition_studied:
+    type: options_buttons
+    weight: 155
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_csr_summary:
+    type: file_generic
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_data_dictionary:
+    type: file_generic
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_data_type:
+    type: options_buttons
+    weight: 163
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_detailed_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_enrollment:
+    type: string_textfield
+    weight: 130
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_multi_site:
+    type: boolean_checkbox
+    weight: 137
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_nct_link_field:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_number_of_study_sites:
+    type: options_buttons
+    weight: 162
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_participant_age:
+    type: options_buttons
+    weight: 158
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_participant_ethnicity_coll:
+    type: options_buttons
+    weight: 161
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_participant_race:
+    type: options_buttons
+    weight: 160
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_participant_sex:
+    type: options_buttons
+    weight: 159
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_participant_type:
+    type: options_buttons
+    weight: 157
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pcrc_study_num:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_primary_citation:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_sponsor:
+    type: string_textfield
+    weight: 135
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_study_design:
+    type: options_buttons
+    weight: 164
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_study_pi:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_study_pi_institution:
+    type: string_textfield
+    weight: 132
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_study_setting:
+    type: options_buttons
+    weight: 165
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_study_site_institution:
+    type: string_textfield
+    weight: 134
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_study_site_pi:
+    type: string_textfield
+    weight: 133
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_study_type:
+    type: options_buttons
+    weight: 153
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_summary:
+    type: text_textarea
+    weight: 8
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_supporting_documentation:
+    type: text_textarea
+    weight: 9
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_therapeutic_area:
+    type: options_buttons
+    weight: 154
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_total_enrollment:
+    type: options_buttons
+    weight: 156
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 15
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

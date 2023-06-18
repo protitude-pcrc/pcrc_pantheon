@@ -1,0 +1,29 @@
+uuid: 01d2a085-3f96-40f2-9658-1168d4142e32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study_design
+    - node.type.study
+    - taxonomy.vocabulary.study_design
+id: node.study.field_study_design
+field_name: field_study_design
+entity_type: node
+bundle: study
+label: 'Study Design'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      study_design: study_design
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

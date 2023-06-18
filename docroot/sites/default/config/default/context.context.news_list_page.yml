@@ -1,0 +1,77 @@
+uuid: 0cfeec65-7888-4ada-bb2b-6a2879f8c246
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'News List Page'
+name: news_list_page
+group: Pages
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: c3434305-9184-4786-8dd6-5fa526980d69
+    context_mapping: {  }
+    pages: "/news\r\n/news-type/*"
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: 6de674fe-b8b6-49b9-9b52-e816bd7d0376
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: b4bd8e21-62ae-4822-a169-379ced14e06a
+    blocks:
+      7ce00256-08d0-44b0-abad-b8d476846d36:
+        uuid: 7ce00256-08d0-44b0-abad-b8d476846d36
+        id: 'simple_block:twitter'
+        label: 'Tweets from @PCRCGroup'
+        provider: simple_block
+        label_display: visible
+        region: sidebar_second
+        weight: '-1'
+        custom_id: simple_block_twitter
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_list_page
+        context_mapping: {  }
+      5d862932-2607-4ae8-a8dd-a0d8b7265a2d:
+        uuid: 5d862932-2607-4ae8-a8dd-a0d8b7265a2d
+        id: 'views_block:pcrc_nih_extramural_nexus_feeds-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: views_block_pcrc_nih_extramural_nexus_feeds_block_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_list_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      9d0e911b-136e-4004-b826-a580b8ada857:
+        uuid: 9d0e911b-136e-4004-b826-a580b8ada857
+        id: 'simple_block:news_hero'
+        label: 'News Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: simple_block_news_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_list_page
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

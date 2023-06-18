@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Helper function post migrate
+ * Fix file locations to use /sites/default/files rather than wp-content/uploads
+ */
+function pcrc_migrate_files_fix() {
+  
+  $src_files_dir_base = 'wp-content/uploads';
+  $dest_files_dir = 'sites/default/files/migrated_files';
+
+  for ($year = 2012; $year <= 2018; $year++) {
+    for ($month = 1; $month <= 12; $month++) {
+      $src_file_dir = $src_file_dir_base . '/' . $year . '/' . str_pad($month, 2, '0', STR_PAD_LEFT);
+      $result = db_query("UPDATE node__body SET body_value = REPLACE(body_value, '$src_files_dir', '$dest_files_dir') WHERE body_value LIKE '%" . $src_files_dir . "%'");
+      $result = db_query("UPDATE node_revision__body SET body_value = REPLACE(body_value, '$src_files_dir', '$dest_files_dir') WHERE body_value LIKE '%" . $src_files_dir . "%'");
+
+      $result = db_query("UPDATE node__body SET body_summary = REPLACE(body_summary, '$src_files_dir', '$dest_files_dir') WHERE body_summary LIKE '%" . $src_files_dir . "%'");
+      $result = db_query("UPDATE node_revision__body SET body_summary = REPLACE(body_summary, '$src_files_dir', '$dest_files_dir') WHERE body_summary LIKE '%" . $src_files_dir . "%'");  
+
+      $result = db_query("UPDATE block_content__body SET body_value = REPLACE(body_value, '$src_files_dir', '$dest_files_dir') WHERE body_value LIKE '%" . $src_files_dir . "%'");
+      $result = db_query("UPDATE block_content_revision__body SET body_value = REPLACE(body_value, '$src_files_dir', '$dest_files_dir') WHERE body_value LIKE '%" . $src_files_dir . "%'");
+    }
+  }
+  
+  
+}
+
+/**
+ * Helper function post migrate
+ * Fix file locations to use /sites/default/files rather than wp-content/uploads
+ */
+function pcrc_migrate_files_fix2() {
+  
+  $find_text = 'src="http://palliativecareresearch.org/sites/default/files/migrated_files/';
+  $replace_text = 'src="/sites/default/files/migrated_files/';
+
+  $result = db_query("UPDATE node__body SET body_value = REPLACE(body_value, '$find_text', '$replace_text') WHERE body_value LIKE '%" . $find_text . "%'");
+  $result = db_query("UPDATE node_revision__body SET body_value = REPLACE(body_value, '$find_text', '$replace_text') WHERE body_value LIKE '%" . $find_text . "%'");
+
+  $result = db_query("UPDATE node__body SET body_summary = REPLACE(body_summary, '$find_text', '$replace_text') WHERE body_summary LIKE '%" . $find_text . "%'");
+  $result = db_query("UPDATE node_revision__body SET body_summary = REPLACE(body_summary, '$find_text', '$replace_text') WHERE body_summary LIKE '%" . $find_text . "%'");  
+
+  $result = db_query("UPDATE block_content__body SET body_value = REPLACE(body_value, '$find_text', '$replace_text') WHERE body_value LIKE '%" . $find_text . "%'");
+  $result = db_query("UPDATE block_content_revision__body SET body_value = REPLACE(body_value, '$find_text', '$replace_text') WHERE body_value LIKE '%" . $find_text . "%'");
+  
+}

@@ -1,0 +1,47 @@
+uuid: c1ad5bb8-59bb-4418-b2b4-ccf704b2b95c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'Request Data Form'
+name: request_data_form
+group: Pages
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 8cf188d6-571f-4436-a849-55773b70b383
+    context_mapping: {  }
+    pages: /form/request-data-form
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: 0100bf33-fe34-4242-b3b2-221ebb52ac3b
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: e8af7652-3138-433a-a57c-c37c5323ca44
+    blocks:
+      964c713e-a2a4-4e61-8769-681a45dc24b3:
+        uuid: 964c713e-a2a4-4e61-8769-681a45dc24b3
+        id: 'simple_block:request_data_form_hero'
+        label: 'Request Data Form Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: simple_block_request_data_form_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: request_data_form
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

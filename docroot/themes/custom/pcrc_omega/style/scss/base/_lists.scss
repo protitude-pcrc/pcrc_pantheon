@@ -1,0 +1,80 @@
+.block-main-page-content .node .field {
+  ul, ol {
+    margin: 0 0 24px 0px;
+    padding-left: 20px;
+    list-style-type: none;
+    display: flow-root;
+    li {
+      list-style: none;
+      @include fontSize(13px, 20px);
+      line-height: 30px;
+      padding-bottom: 8px;
+      color: $bodyText;
+      ul, ol {
+        margin: 0;
+        li {
+          &:first-child {
+            padding-top: 10px;
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      p {
+        margin: 0;
+      }
+      p+p {
+        margin: 0.7em 0 0;
+      }
+      @media #{$mediaMobileWideMin} {
+        @include fontSize(14px, 21px);
+      }
+      @media #{$mediaTabletMin} {
+        @include fontSize(15px, 23px);
+      }
+      @media #{$mediaDesktopMin} {
+        @include fontSize(16px, 24px);
+      }
+    }
+  }
+  .small {
+    ul, ol {
+      li {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    li {
+      
+    }
+  }  
+  .view-content ul {
+    margin: 0;
+    padding: 0;
+    li:before {
+      display: none;
+    }
+  }
+  ol > li {
+    list-style-type: decimal;
+    ol > li {
+      list-style-type: lower-alpha;
+      ol > li {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+  ul > li {
+    list-style-type: disc;
+    ul > li {
+      list-style-type: circle;
+      ul > li {
+        list-style-type: square;
+      }
+    }
+  }  
+}

@@ -1,0 +1,11 @@
+uuid: 66136859-7635-4cb1-8578-347e77f21078
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: homepage_column_2
+title: 'Homepage Column 2'
+content:
+  value: "<h3>Learn More\r\n</h3>\r\n<ul>\r\n  <li><strong>Cores &amp; Centers for Cooperative Research</strong>\r\n    <ul>\r\n      <li><strong><a href=\"https://pcrc.box.com/s/nbi4gr229rpz50lu8x70hb4nmn76hl5w\" target=\"_blank\">How to Consult with our Research Cores</a></strong></li>\r\n      <li><strong><a href=\"/node/526\">Roles and Services of our Research Cores and Centers</a></strong></li>\r\n    </ul>\r\n  </li>\r\n  <li><strong><a href=\"https://palliativecareresearch.org/research/investigator-support-information/idc-webinar-series\">Webinars</a></strong>: Upcoming and Past Recordings</li>\r\n  <li><strong><a href=\"https://palliativecareresearch.org/research/investigator-support-information/clinical-trials-intensives\">Clinical Trial Intensives</a></strong></li>\r\n  <li><strong><a href=\"https://palliativecareresearch.org/special-interest-groups\">Special Interest Groups</a></strong></li>\r\n  <li><strong><a href=\"/node/541\">Upcoming Member Meeting</a></strong></li>\r\n  <li><strong><a href=\"/node/499\">Funding Opportunities</a></strong></li>\r\n  <li><strong><a href=\"https://pcrc.box.com/s/w6abk1urldx14yltloa5yugshyjwrwy7\" target=\"_blank\">Resources related to Social Determinants of Health</a></strong></li>\r\n</ul>\r\n"
+  format: full_html

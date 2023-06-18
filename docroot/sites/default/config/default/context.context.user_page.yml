@@ -1,0 +1,47 @@
+uuid: 43682669-9646-4678-8a23-47199d5ed0a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: 'User Page'
+name: user_page
+group: Pages
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    uuid: 0cedc96b-f3c6-48fa-a863-fbe0d62bc4cf
+    context_mapping: {  }
+    pages: "/user\r\n/user/login\r\n/user/register"
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: cd56b692-fa22-4b1b-bd33-bfb41f7f7b7a
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: df66446d-1ee3-493f-af5d-b0e73d994f5a
+    blocks:
+      40682fb0-4e1c-4276-8ac4-f214602bc1b7:
+        uuid: 40682fb0-4e1c-4276-8ac4-f214602bc1b7
+        id: 'simple_block:user_hero'
+        label: 'User Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: simple_block_user_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: user_page
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

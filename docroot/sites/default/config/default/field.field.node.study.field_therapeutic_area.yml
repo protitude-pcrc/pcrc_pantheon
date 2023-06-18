@@ -1,0 +1,29 @@
+uuid: 97ce584a-de2d-4781-b5c3-9e8877881ee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_therapeutic_area
+    - node.type.study
+    - taxonomy.vocabulary.therapeutic_areas
+id: node.study.field_therapeutic_area
+field_name: field_therapeutic_area
+entity_type: node
+bundle: study
+label: 'Therapeutic Area'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      therapeutic_areas: therapeutic_areas
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

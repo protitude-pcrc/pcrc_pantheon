@@ -1,0 +1,11 @@
+uuid: 24a9f136-5fa6-49e5-ad94-daf4e5cbc3da
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+id: footer
+title: Footer
+content:
+  value: "<div style=\"float: left\">Partnered with and generously funded by the National Institute of Nursing Research (Grant U2CNR014637)</div>\r\n\r\n<div style=\"float: right\">Contact us at <a href=\"mailto:pcrc@ucdenver.edu\" style=\"color:white\"><u>pcrc@ucdenver.edu</u></a></div>\r\n"
+  format: full_html

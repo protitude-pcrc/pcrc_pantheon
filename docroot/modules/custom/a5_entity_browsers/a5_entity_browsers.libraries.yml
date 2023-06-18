@@ -1,0 +1,4 @@
+browser:
+  css:
+    theme:
+      css/a5_entity_browsers.browser.css: {}

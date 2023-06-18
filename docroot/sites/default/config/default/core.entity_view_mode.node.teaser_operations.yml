@@ -1,0 +1,10 @@
+uuid: 4fcf5b2c-68af-4234-bc74-0477d517460a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_operations
+label: 'Teaser (operations)'
+targetEntityType: node
+cache: true

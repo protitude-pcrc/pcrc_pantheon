@@ -1,0 +1,96 @@
+uuid: f0804c2e-aaa1-4d41-a051-ed1e93bf2d34
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+label: 'News Page'
+name: news_page
+group: Pages
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9eaa1bd8-fba8-4bf2-b47a-3acf7430e329
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news: news
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: 42b40b0c-cc0d-483d-a041-b81e9dd10308
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: 92f82546-3ffc-45f4-b41c-81d2ec8015bc
+    blocks:
+      1142d99f-113f-45eb-af8c-ddae75194e71:
+        uuid: 1142d99f-113f-45eb-af8c-ddae75194e71
+        id: 'views_block:pcrc_news-announcements'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '-1'
+        custom_id: views_block_pcrc_news_announcements
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      cab92976-61d3-4047-8cb1-9d2448d1836c:
+        uuid: cab92976-61d3-4047-8cb1-9d2448d1836c
+        id: 'views_block:pcrc_nih_extramural_nexus_feeds-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '1'
+        custom_id: views_block_pcrc_nih_extramural_nexus_feeds_block_1
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_page
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+      51bfe8e7-e056-4471-946c-078d1ea816ca:
+        uuid: 51bfe8e7-e056-4471-946c-078d1ea816ca
+        id: 'simple_block:twitter'
+        label: 'Tweets from @PCRCGroup'
+        provider: simple_block
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: simple_block_twitter
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_page
+        context_mapping: {  }
+      808c8f21-a724-4e0d-af48-751521efcc59:
+        uuid: 808c8f21-a724-4e0d-af48-751521efcc59
+        id: 'simple_block:news_hero'
+        label: 'News Hero'
+        provider: simple_block
+        label_display: '0'
+        region: highlighted
+        weight: '0'
+        custom_id: simple_block_news_hero
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: news_page
+        context_mapping: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

@@ -1,0 +1,22 @@
+uuid: 3ae77804-13f4-41c7-8822-6b6a1b4cb09f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: study
+label: Study
+type: 'canonical_entities:node'
+pattern: '/study/[node:title]'
+selection_criteria:
+  4eaa3e04-eddc-478f-9667-1703a0e206ce:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 4eaa3e04-eddc-478f-9667-1703a0e206ce
+    context_mapping:
+      node: node
+    bundles:
+      study: study
+selection_logic: and
+weight: -5
+relationships: {  }

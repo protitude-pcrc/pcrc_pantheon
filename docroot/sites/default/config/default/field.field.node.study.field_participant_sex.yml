@@ -1,0 +1,29 @@
+uuid: bd485265-2dbe-48b0-8895-df6a47c38402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_sex
+    - node.type.study
+    - taxonomy.vocabulary.participant_sex
+id: node.study.field_participant_sex
+field_name: field_participant_sex
+entity_type: node
+bundle: study
+label: 'Participant Sex'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      participant_sex: participant_sex
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

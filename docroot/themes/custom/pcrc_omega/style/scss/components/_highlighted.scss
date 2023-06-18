@@ -1,0 +1,48 @@
+#highlighted-outer-wrapper {
+  background: linear-gradient(to top left,#007291,#003441);
+}
+.highlighted-layout {
+  padding: 6rem 0;
+  color: $white;
+  @extend .pcrc-container;
+  @media #{$mediaMobileMin}{
+    @include fontSize(14px, 22px);
+  }
+  @media #{$mediaTabletMin}{
+    @include fontSize(16px, 24px);
+  }
+  @media #{$mediaDesktopMin}{
+    @include fontSize(18px, 26px);
+  }
+  @media #{$mediaDesktopMin}{
+    @include fontSize(20px, 28px);
+  }
+  .region--highlighted {
+    max-width: 75%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  h2 {
+    font-weight: $fontLite;
+    @include fontSize(42px, 50px);
+    color: $white;
+    &::before {
+      display: none;
+    }
+  }
+  .field--name-bundle-fieldnode {
+    @include fontSize(16px);
+    text-transform: uppercase;
+    font-weight: $fontSemibold;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+  }
+  .subtitle {
+    max-width: 75%;
+    margin: 0 auto;
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+}
+

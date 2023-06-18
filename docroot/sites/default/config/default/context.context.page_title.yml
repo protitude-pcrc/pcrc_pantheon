@@ -1,0 +1,44 @@
+uuid: b91bf9c3-fead-433f-afd0-4c69161c8c23
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+label: 'Page Title'
+name: page_title
+group: Elements
+description: ''
+requireAllConditions: true
+disabled: false
+conditions:
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: 3e99f27f-ac51-4039-b0a8-727408d9c050
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    negate: true
+    uuid: ae736252-940d-46d2-8da8-cc4a8b9bdbd4
+    context_mapping: {  }
+    pages: "/studies\r\n/who/membership-committee\r\n/who/steering\r\n/who/scientific\r\n/who/external-advisory-board\r\n/operations\r\n/members/org-leads\r\n/members/roster\r\n/requests\r\n/requests-not-feasible\r\n/form/*\r\n/user/*\r\n/news\r\n/news-type/*\r\n/search"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: true
+    uuid: 6bed1387-aa83-4226-af00-e9fcee155230
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page
+      request: request
+      study: study
+reactions:
+  blocks:
+    id: blocks
+    uuid: fb4fa411-2b9a-4bfb-aeb7-9d187970284f
+    blocks: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

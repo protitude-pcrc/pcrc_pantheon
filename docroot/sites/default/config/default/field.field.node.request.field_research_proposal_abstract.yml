@@ -1,0 +1,21 @@
+uuid: 7ae7827f-8a50-4a3e-9e4d-c3fc37a9b4f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_research_proposal_abstract
+    - node.type.request
+  module:
+    - text
+id: node.request.field_research_proposal_abstract
+field_name: field_research_proposal_abstract
+entity_type: node
+bundle: request
+label: 'Research Proposal Abstract'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

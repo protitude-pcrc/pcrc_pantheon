@@ -1,0 +1,26 @@
+uuid: 11fe337f-5f70-48ce-bd6e-f51e7272068a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: operations
+label: Operations
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory: directory
+    sort:
+      field: field_name.family
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

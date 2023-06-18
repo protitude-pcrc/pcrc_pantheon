@@ -1,0 +1,19 @@
+uuid: 5c2b5a86-ae0f-4850-822c-319cbbde0b40
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scientific_title
+    - node.type.directory
+id: node.directory.field_scientific_title
+field_name: field_scientific_title
+entity_type: node
+bundle: directory
+label: 'Scientific Review Committee Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

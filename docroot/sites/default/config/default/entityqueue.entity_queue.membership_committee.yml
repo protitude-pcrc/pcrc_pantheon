@@ -1,0 +1,26 @@
+uuid: 52f42bd2-10ee-4306-b37f-3b894e3e8ef9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: membership_committee
+label: 'Membership Committee'
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: node
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      directory: directory
+    sort:
+      field: field_name.family
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse: false

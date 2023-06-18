@@ -1,0 +1,23 @@
+uuid: 28c001c9-28ca-4dd7-b58c-bca82758ddf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_csr_summary
+field_name: field_csr_summary
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

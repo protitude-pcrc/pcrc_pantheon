@@ -1,0 +1,22 @@
+uuid: 40f75f79-2185-4f97-a966-12afdecce6d3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: request
+label: Request
+type: 'canonical_entities:node'
+pattern: '/request/[node:field_request_number]'
+selection_criteria:
+  1f35645e-d65c-40c1-a933-6de7e2abdc9b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 1f35645e-d65c-40c1-a933-6de7e2abdc9b
+    context_mapping:
+      node: node
+    bundles:
+      request: request
+selection_logic: and
+weight: -5
+relationships: {  }

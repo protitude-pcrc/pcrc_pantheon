@@ -1,0 +1,8 @@
+uuid: d39cfba5-6127-4429-be53-384713fb75b8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Study Types'
+vid: study_types
+description: ''
+weight: 0

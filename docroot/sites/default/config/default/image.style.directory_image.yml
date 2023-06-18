@@ -1,0 +1,15 @@
+uuid: 21679465-b64a-4154-bf50-3a711de3d028
+langcode: en
+status: true
+dependencies: {  }
+name: directory_image
+label: 'Directory Image'
+effects:
+  c3120d85-0b69-4b3e-a41c-f582bb91657a:
+    uuid: c3120d85-0b69-4b3e-a41c-f582bb91657a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 278
+      height: 278
+      anchor: center-center

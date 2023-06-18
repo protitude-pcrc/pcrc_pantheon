@@ -1,0 +1,36 @@
+pcrc_omega.default.all:
+  label: All
+  mediaQuery: 'all and (min-width: 0px)'
+  weight: 0
+  multipliers:
+    - 1x
+  status: true
+  langcode: en
+  group: pcrc_omega.default
+pcrc_omega.default.narrow:
+  label: Narrow
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 1023px)'
+  weight: 3
+  multipliers:
+    - 1x
+  status: true
+  langcode: en
+  group: pcrc_omega.default
+pcrc_omega.default.normal:
+  label: Normal
+  mediaQuery: 'all and (min-width: 1024px) and (max-width: 1259px)'
+  weight: 4
+  multipliers:
+    - 1x
+  status: true
+  langcode: en
+  group: pcrc_omega.default
+pcrc_omega.default.wide:
+  label: Wide
+  mediaQuery: 'all and (min-width: 1260px)'
+  weight: 5
+  multipliers:
+    - 1x
+  status: true
+  langcode: en
+  group: pcrc_omega.default

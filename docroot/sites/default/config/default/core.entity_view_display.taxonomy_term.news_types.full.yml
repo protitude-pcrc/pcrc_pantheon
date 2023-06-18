@@ -1,0 +1,47 @@
+uuid: e9f464f1-56ef-4ed8-ab76-73ca33c8866a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - taxonomy.vocabulary.news_types
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes:
+          layout_class: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        label: ''
+    regions:
+      ds_content:
+        - taxonomy_term_title
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: false
+          wrapper: h2
+          class: ''
+id: taxonomy_term.news_types.full
+targetEntityType: taxonomy_term
+bundle: news_types
+mode: full
+content: {  }
+hidden:
+  description: true
+  search_api_excerpt: true

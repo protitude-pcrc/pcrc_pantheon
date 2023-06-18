@@ -1,0 +1,141 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $baseFont;
+  font-weight: $fontNormal;
+  color: $bodyText;
+  @media #{$mediaMobileMin}{
+    @include fontSize(14px, 22px);
+  }
+  @media #{$mediaMobileWideMin}{
+    @include fontSize(15px, 23px);
+  }
+  @media #{$mediaTabletMin}{
+    @include fontSize(16px, 25px);
+  }
+  @media #{$mediaDesktopMin}{
+    @include fontSize(17px, 28px);
+  }
+}
+
+p {
+  margin: 0 0 2.8rem 0;
+  line-height: 1.65;
+  @media #{$mediaMobileWideMin}{
+    margin: 0 0 2.8rem 0;
+  }
+  @media #{$mediaTabletMin}{
+    margin: 0 0 2.8rem 0;
+  }
+}
+
+.clearfix + p {
+  margin-top: 0;
+}
+
+ul {
+
+}
+
+h1 {
+  font-family: $headFont;
+  font-weight: $fontLite;
+  &.page-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    @media #{$mediaMobileMin}{
+      @include fontSize(24px, 32px);
+    }
+    @media #{$mediaMobileWideMin}{
+      @include fontSize(28px, 36px);
+    }
+    @media #{$mediaTabletMin}{
+      @include fontSize(32px, 40px);
+    }
+    @media #{$mediaDesktopMin}{
+      @include fontSize(36px, 44px);
+    }
+    @media #{$mediaDesktopMin}{
+      @include fontSize(42px, 50px);
+    }
+  }
+}
+
+h2 {
+  font-family: $headFont;
+  font-weight: $fontLite;
+  @include fontSize(32px, 40px);
+  color: #222;
+  margin-top: 1.5rem;
+  margin-bottom: 1.75rem;
+  &::before {
+    content: '';
+    display: block;
+    border-top: 1px solid #d9d9d9;
+    height: 1px;
+    margin-top: 4.5rem;
+    margin-bottom: 1.5rem;
+    width: 80px;
+  }
+}
+
+h3 {
+  font-family: $headFont;
+  @include fontSize(25px, 31.25px);
+  font-weight: $fontMedium;
+  margin-top: 4.5rem;
+  margin-bottom: 1.75rem;
+  color: #222;  
+}
+
+h4 {
+  font-family: $headFont;
+  @include fontSize(21px, 26.25px);
+  font-weight: $fontMedium;
+  margin-top: 4.5rem;
+  margin-bottom: 1.75rem;
+  color: #222;  
+}
+
+h5 {
+  font-family: $headFont;
+  @include fontSize(18px, 22.5px);
+  font-weight: $fontSemibold;
+  margin-top: 4.5rem;
+  margin-bottom: 1.25rem;
+  color: #222;  
+}
+
+h6 {
+  font-family: $headFont;
+  @include fontSize(16px, 20px);
+  font-weight: $fontSemibold;
+  margin-top: 4.5rem;
+  margin-bottom: 1.25rem;
+  color: #222;
+  text-transform: uppercase;
+}
+
+::-moz-selection { 
+    background-color: #fffdd0;
+}
+
+::selection {
+   background-color: #fffdd0;
+}
+
+a,
+.ui-widget-content a {
+  color: $anchorColor;
+  &:hover {
+    text-decoration: none;
+    color: $anchorHover;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+}

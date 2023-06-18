@@ -1,0 +1,48 @@
+.region-header {
+  display: flex;
+  align-items: center;  
+}
+
+.block-site-branding {
+  width: 80%;
+}
+
+.site-logo {
+  float: left;
+  line-height: 0;
+  width: 500px;
+  height: auto;
+  max-width: 100%;
+}
+
+.site-name {
+  text-transform: uppercase;
+  a {
+    @include fontSize(20px, 55px); 
+    color: $headerText;
+    font-weight: $fontBold;
+    &:hover {
+      color: $headerText;
+    }
+    .first-letter {
+      @include fontSize(28px, 55px);
+    }
+  }
+}
+.header-layout {
+  border-top: 2px solid #F47B20;
+  padding: 2rem 4rem;
+}
+
+.menu-icon {
+  margin-left: auto;
+  .fa {
+    cursor: pointer;
+    font-size: 2.6rem;
+  }
+}
+
+.sf-accordion-toggle {
+  visibility: hidden;
+  height: 0;
+}

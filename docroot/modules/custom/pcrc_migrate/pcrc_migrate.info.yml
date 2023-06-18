@@ -1,0 +1,9 @@
+name: PCRC Migrate
+type: module
+description: Site migration and import for Palliative Care Research Cooperative
+core_version_requirement: ^8.7.7 || ^9
+package: PCRC
+dependencies:
+  - migrate_drupal
+  - migrate_plus
+  - migrate_source_csv

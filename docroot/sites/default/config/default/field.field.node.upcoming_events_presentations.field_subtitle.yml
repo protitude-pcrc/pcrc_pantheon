@@ -1,0 +1,19 @@
+uuid: 11764d1f-55e5-4d1a-ba01-0949c9cfe077
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.upcoming_events_presentations
+id: node.upcoming_events_presentations.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: upcoming_events_presentations
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

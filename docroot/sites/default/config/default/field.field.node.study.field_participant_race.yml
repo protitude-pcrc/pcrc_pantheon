@@ -1,0 +1,29 @@
+uuid: 2eec0cea-6c1f-406e-bb0b-b563465ec774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participant_race
+    - node.type.study
+    - taxonomy.vocabulary.participant_race
+id: node.study.field_participant_race
+field_name: field_participant_race
+entity_type: node
+bundle: study
+label: 'Participant Race'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      participant_race: participant_race
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

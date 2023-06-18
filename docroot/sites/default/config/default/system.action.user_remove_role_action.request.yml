@@ -1,0 +1,14 @@
+uuid: 702f2ff2-e2ec-493c-a7a3-a645207964ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.request
+  module:
+    - user
+id: user_remove_role_action.request
+label: 'Remove the Request role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: request

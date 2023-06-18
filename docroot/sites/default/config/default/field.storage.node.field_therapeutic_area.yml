@@ -1,0 +1,20 @@
+uuid: 0bedfe39-3156-49ad-81b6-56ccc1747d4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_therapeutic_area
+field_name: field_therapeutic_area
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

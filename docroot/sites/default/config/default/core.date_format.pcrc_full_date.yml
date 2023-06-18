@@ -1,0 +1,8 @@
+uuid: 034678ca-0e13-457c-9964-339de22cecef
+langcode: en
+status: true
+dependencies: {  }
+id: pcrc_full_date
+label: 'PCRC Full Date'
+locked: false
+pattern: 'F j, Y'

@@ -1,0 +1,49 @@
+uuid: 96e9c879-d56b-4960-bbaa-c989c3e74ebc
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.pcrc_news
+  module:
+    - context
+    - system
+    - views
+  theme:
+    - pcrc_omega
+id: views_block__pcrc_news_announcements
+theme: pcrc_omega
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:pcrc_news-announcements'
+settings:
+  id: 'views_block:pcrc_news-announcements'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@context_profile_role.user_profile_route_context:user_profile'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context:
+    id: context
+    negate: null
+    values: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

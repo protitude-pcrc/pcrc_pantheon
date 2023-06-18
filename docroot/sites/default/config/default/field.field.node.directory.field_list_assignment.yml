@@ -1,0 +1,29 @@
+uuid: 4d52009d-ae32-4280-9892-9e780ec4e760
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_assignment
+    - node.type.directory
+    - taxonomy.vocabulary.directory_lists
+id: node.directory.field_list_assignment
+field_name: field_list_assignment
+entity_type: node
+bundle: directory
+label: 'List assignment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      directory_lists: directory_lists
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

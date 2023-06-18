@@ -1,0 +1,8 @@
+uuid: 6dcc94e6-fcc4-41fa-8bd6-8183ad676ce8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Study Design'
+vid: study_design
+description: ''
+weight: 0

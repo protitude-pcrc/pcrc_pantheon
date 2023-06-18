@@ -1,0 +1,60 @@
+<?php
+
+use \Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function a5_entity_browsers_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the npc_blocks module.
+    case 'help.page.a5_entity_browsers':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A5 Entity Browsers') . '</p>';
+      $output .= '<p>' . t('Creates entity browsers specifically for images and documents.') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+function a5_entity_browsers_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['#form_id'])) {
+    if ($form['#form_id'] == 'entity_browser_browse_images_form' ||
+        $form['#form_id'] == 'entity_browser_browse_images_modal_form' ||
+        $form['#form_id'] == 'entity_browser_browse_documents_modal_form') {
+      // Attach our library.
+      $form['#attached']['library'][] = 'file_browser/view';
+      $form['#attached']['library'][] = 'file_browser/dropzone_css';
+      $form['#attached']['library'][] = 'a5_entity_browsers/browser';
+
+      // Wrap actions so we can float them at the bottom of the browser.
+      $form['actions_wrap'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => 'file-browser-actions',
+        ],
+      ];
+
+      if (isset($form['actions'])) {
+        $form['actions_wrap'][] = $form['actions'];
+        unset($form['actions']);
+      }
+
+      if (isset($form['widget']) && isset($form['widget']['actions'])) {
+        $form['actions_wrap'][] = $form['widget']['actions'];
+        unset($form['widget']['actions']);
+      }
+
+      if (!empty($form['selection_display'])) {
+        $form['selection_display']['#weight'] = 100;
+        $form['actions_wrap'][] = $form['selection_display'];
+        unset($form['selection_display']);
+      }
+
+      // Add a class for generic styling.
+      $form['#attributes']['class'][] = 'file-browser-form';
+    }
+  }
+}

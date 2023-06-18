@@ -1,0 +1,54 @@
+langcode: und
+status: true
+dependencies:
+  config:
+    - views.view.file_entity_browser_images
+  enforced:
+    module:
+      - file_browser
+  module:
+    - dropzonejs_eb_widget
+    - views
+name: browse_images_modal
+label: 'Browse for images (modal)'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select images'
+  auto_open: false
+  widget_ids:
+    735d146c-a4b2-4327-a057-d109e0905e05: 'Upload files'
+    a4ad947c-9669-497c-9988-24351955a02f: 'Files listing'
+selection_display: no_display
+selection_display_configuration:
+  entity_type: file
+  display: thumbnail
+  display_settings:
+    image_style: file_entity_browser_small
+  select_text: 'Use selected'
+  selection_hidden: true
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  a4ad947c-9669-497c-9988-24351955a02f:
+    settings:
+      view: file_entity_browser_images
+      view_display: entity_browser_1
+      submit_text: 'Select images'
+      auto_select: false
+    uuid: a4ad947c-9669-497c-9988-24351955a02f
+    weight: 1
+    label: 'Images listing'
+    id: view
+  735d146c-a4b2-4327-a057-d109e0905e05:
+    settings:
+      upload_location: 'public://'
+      dropzone_description: 'Click or drop images here to upload them'
+      max_filesize: 100M
+      extensions: 'jpg jpeg gif png'
+      submit_text: 'Select images'
+    uuid: 735d146c-a4b2-4327-a057-d109e0905e05
+    weight: 0
+    label: 'Upload images'
+    id: dropzonejs

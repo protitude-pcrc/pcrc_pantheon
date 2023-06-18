@@ -1,0 +1,282 @@
+uuid: 29f9c4de-3a31-4187-8e09-aac37282ce6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+label: Sitewide
+name: sitewide
+group: Global
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  current_theme:
+    id: current_theme
+    theme: pcrc_omega
+    negate: 0
+    uuid: 034242d9-09d7-478d-8b66-676e13ba0920
+    context_mapping: {  }
+reactions:
+  blocks:
+    id: blocks
+    uuid: 2dd277a0-3678-497f-a43a-5b2fe0e70deb
+    blocks:
+      48e657a3-018a-4255-938a-e262771a438e:
+        uuid: 48e657a3-018a-4255-938a-e262771a438e
+        id: system_messages_block
+        label: Messages
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '-5'
+        custom_id: system_messages_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      08d1a543-be0d-4855-9270-f3f95a5b75a5:
+        uuid: 08d1a543-be0d-4855-9270-f3f95a5b75a5
+        id: help_block
+        label: Help
+        provider: help
+        label_display: '0'
+        region: content
+        weight: '-4'
+        custom_id: help_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      99a4b3cf-cc68-46f5-a9fd-b393ddff395b:
+        uuid: 99a4b3cf-cc68-46f5-a9fd-b393ddff395b
+        id: local_actions_block
+        label: 'Primary admin actions'
+        provider: core
+        label_display: '0'
+        region: content
+        weight: '-3'
+        custom_id: local_actions_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      8587c965-d098-4419-ac06-c97a31fe50db:
+        uuid: 8587c965-d098-4419-ac06-c97a31fe50db
+        id: system_main_block
+        label: 'Main page content'
+        provider: system
+        label_display: '0'
+        region: content
+        weight: '-1'
+        custom_id: system_main_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      9e0a4bc6-1df9-4c34-9ee0-5ad355238514:
+        uuid: 9e0a4bc6-1df9-4c34-9ee0-5ad355238514
+        id: 'superfish:main'
+        label: 'Main navigation'
+        provider: superfish
+        label_display: '0'
+        region: navigation
+        weight: '0'
+        custom_id: superfish_main
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+        level: '1'
+        depth: '4'
+        expand_all_items: false
+        menu_type: horizontal
+        style: none
+        arrow: 1
+        shadow: 1
+        speed: fast
+        delay: '800'
+        slide: vertical
+        supposition: 1
+        hoverintent: 1
+        touch: '0'
+        touchbh: '2'
+        touchbp: '768'
+        touchua: '0'
+        touchual: ''
+        touchuam: '0'
+        small: '2'
+        smallbp: '1024'
+        smallua: '0'
+        smallual: ''
+        smalluam: '0'
+        smallact: '1'
+        smallset: ''
+        smallasa: 0
+        smallcmc: 0
+        smallecm: ''
+        smallchc: 0
+        smallech: ''
+        smallicm: ''
+        smallich: ''
+        smallamt: ''
+        smallabt: '1'
+        supersubs: 1
+        minwidth: '12'
+        maxwidth: '27'
+        multicolumn: 0
+        multicolumn_depth: '1'
+        multicolumn_levels: '1'
+        pathlevels: '1'
+        expanded: 0
+        clone_parent: 0
+        hide_linkdescription: 0
+        add_linkdescription: 0
+        link_depth_class: 1
+        custom_list_class: ''
+        custom_item_class: ''
+        custom_link_class: ''
+      6b749431-c45f-4a2a-a0d3-72aaaeefdeb7:
+        uuid: 6b749431-c45f-4a2a-a0d3-72aaaeefdeb7
+        id: 'simple_block:site_branding'
+        label: 'Site Branding'
+        provider: simple_block
+        label_display: '0'
+        region: header
+        weight: '-4'
+        custom_id: simple_block_site_branding
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      94444db6-faf1-455a-8968-261e63cd1ce2:
+        uuid: 94444db6-faf1-455a-8968-261e63cd1ce2
+        id: 'views_exposed_filter_block:pcrc_search_content-search_content'
+        label: ''
+        provider: views
+        label_display: '0'
+        region: search
+        weight: '0'
+        custom_id: views_exposed_filter_block_pcrc_search_content_search_content
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+        views_label: ''
+      581244ed-2b64-4b67-bfe0-5f570bae78fa:
+        uuid: 581244ed-2b64-4b67-bfe0-5f570bae78fa
+        id: search_icon_block
+        label: 'Search Icon block'
+        provider: pcrc_tweaks
+        label_display: '0'
+        region: navigation
+        weight: '0'
+        custom_id: search_icon_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      ce64e0b3-d261-4691-9bc4-66b678e00d32:
+        uuid: ce64e0b3-d261-4691-9bc4-66b678e00d32
+        id: 'simple_block:footer'
+        label: Footer
+        provider: simple_block
+        label_display: '0'
+        region: footer
+        weight: '0'
+        custom_id: simple_block_footer
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+      4f31af89-66ef-422e-84c9-4b9d59c026e7:
+        uuid: 4f31af89-66ef-422e-84c9-4b9d59c026e7
+        id: 'superfish:user-menu'
+        label: 'User Menu'
+        provider: superfish
+        label_display: '0'
+        region: header
+        weight: '-3'
+        custom_id: superfish_user_menu
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+        level: '1'
+        depth: '0'
+        expand_all_items: false
+        menu_type: horizontal
+        style: none
+        arrow: 1
+        shadow: 1
+        speed: fast
+        delay: '800'
+        slide: vertical
+        supposition: 1
+        hoverintent: 1
+        touch: '0'
+        touchbh: '2'
+        touchbp: '768'
+        touchua: '0'
+        touchual: ''
+        touchuam: '0'
+        small: '2'
+        smallbp: '1024'
+        smallua: '0'
+        smallual: ''
+        smalluam: '0'
+        smallact: '1'
+        smallset: ''
+        smallasa: 0
+        smallcmc: 0
+        smallecm: ''
+        smallchc: 0
+        smallech: ''
+        smallicm: ''
+        smallich: ''
+        smallamt: ''
+        smallabt: '1'
+        supersubs: 1
+        minwidth: '6'
+        maxwidth: '12'
+        multicolumn: 0
+        multicolumn_depth: '1'
+        multicolumn_levels: '1'
+        pathlevels: '1'
+        expanded: 0
+        clone_parent: 0
+        hide_linkdescription: 0
+        add_linkdescription: 0
+        link_depth_class: 1
+        custom_list_class: ''
+        custom_item_class: ''
+        custom_link_class: ''
+      2eefbe99-1619-416d-9260-46429d12e4ff:
+        uuid: 2eefbe99-1619-416d-9260-46429d12e4ff
+        id: local_tasks_block
+        label: Tabs
+        provider: core
+        label_display: '0'
+        region: content
+        weight: '-2'
+        custom_id: local_tasks_block
+        theme: pcrc_omega
+        css_class: ''
+        unique: 0
+        context_id: sitewide
+        context_mapping: {  }
+        primary: 1
+        secondary: 1
+    include_default_blocks: 0
+    saved: false
+weight: 0

@@ -1,0 +1,28 @@
+uuid: adbd00e3-04d0-4292-ac52-960d66bdbc85
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_documents
+    - file_entity.type.document
+  module:
+    - entity_embed
+    - file
+    - file_entity
+    - image
+_core:
+  default_config_hash: j5A6YbdYDQ-A3L79RcAT3YkiTtyO1WfE6sO8rUeaB8k
+label: 'Document Browser'
+id: document_browser
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles:
+    - document
+  display_plugins:
+    - 'image:file_download_link'
+  entity_browser: browse_documents
+  entity_browser_settings:
+    display_review: false
+icon: {  }
+icon_uuid: null
