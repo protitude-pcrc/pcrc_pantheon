@@ -28,7 +28,6 @@ Feature: check admin config pages
     Then the "edit-site-404" field should contain ""
     When I go to "admin/config/system/smtp"
     Then I should see "SMTP Authentication Support"
-    Then the "edit-smtp-host" field should contain "SMTP Authentication Support"
     When I go to "admin/config/system/cron"
     Then I should see "Cron"
     When I go to "admin/config/system/entity-clone"
