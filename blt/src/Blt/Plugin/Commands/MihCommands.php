@@ -152,7 +152,7 @@ GITHUB_TOKEN=$token'>.env");
     if ($this->lando() == 'lando ') {
       $this->_exec("export $(lando ssh -s appserver -c env | grep AMP_UID)");
     }
-    $uid = Xss::filter(shell_exec("printenv AMP_UID"));
+    $uid = Xss::filter(shell_exec("printenv PCRC_UID"));
     $this->_exec($this->lando() . "drush uli --uid=$uid");
   }
 

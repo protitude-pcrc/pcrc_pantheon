@@ -137,3 +137,6 @@ $settings['skip_permissions_hardening'] = TRUE;
 $settings['trusted_host_patterns'] = [
   '.*',
 ];
+
+$settings['file_temp_path'] = '/tmp';
+
