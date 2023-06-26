@@ -52,3 +52,11 @@ jobs:
           lando blt mih:behat
         env:
           behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
+      - name: Screenshots artifact
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: tests/behat/screenshots
+          retention-days: 1
+
