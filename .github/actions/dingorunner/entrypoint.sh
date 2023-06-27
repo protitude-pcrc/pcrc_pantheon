@@ -71,7 +71,7 @@ then
   storeKey
   git branch $drupal_update
   git checkout $drupal_update
-  git remote set-url origin "https://$username:$gh_token@github.com/protitude-pcrc/pcrc.git"
+  git remote set-url origin "https://$username:$gh_token@github.com/protitude-pcrc/pcrc_pantheon.git"
   git config --global user.email \"$email\"
   git config --global user.name \"$username\"
   composer config -g github-oauth.github.com $gh_token
