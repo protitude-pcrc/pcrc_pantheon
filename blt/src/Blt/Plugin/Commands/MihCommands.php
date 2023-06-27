@@ -3,7 +3,7 @@
 namespace Example\Blt\Plugin\Commands;
 
 use Acquia\Blt\Robo\BltTasks;
-use Symfony\Component\Console\Event\ConsoleCommandEvent;
+use Drupal\Component\Utility\Crypt;
 use Drupal\Component\Utility\Xss;
 
 /**
@@ -21,31 +21,31 @@ class MihCommands extends BltTasks {
     if ($args) {
       $token = $args[0];
       $uid = $args[1];
-    } else {
+    }
+    else {
       $token = $this->ask("What is your GitHub token: ");
       $uid = $this->ask("What is your drupal user id: ");
     }
-    # Not to self: Can't place composer install in here because
-    # it needs to run before you can run this command.
+    // Not to self: Can't place composer install in here because
+    // it needs to run before you can run this command.
     $this->_exec("mkdir -p web/sites/default/settings");
     $this->_exec("mkdir -p backups");
     $this->_exec("cp blt/lando.local.settings.php web/sites/default/settings/local.settings.php");
     $this->_exec("cp blt/behat.local.yml tests/behat/local.yml");
     $this->_exec($this->lando() . "composer install --ignore-platform-reqs -n");
-    $hash = \Drupal\Component\Utility\Crypt::randomBytesBase64(55);
+    $hash = Crypt::randomBytesBase64(55);
     $this->_exec("echo 'PANTHEON_ENVIRONMENT=local
 DRUPAL_HASH_SALT=$hash
 PCRC_UID=$uid
 GITHUB_TOKEN=$token'>.env");
-    $this->say("❗️ Environment vars setup, now starting lando. ❗️");
-    $this->_exec($this->lando() . " start");
-    $this->_exec($this->lando() . " blt blt:telemetry:disable --no-interaction");
-    $this->_exec($this->lando() . " blt gh:pulldb");
-    $this->_exec($this->lando() . " blt gh:pullfiles");
-    $this->_exec("ls -al");
-    $this->_exec("ls -al backups");
-    $this->_exec($this->lando() . " blt mih:did");
-    $this->_exec($this->lando() . " drush deploy");
+    $this->say("❗️ Environment vars setup, now starting  lando. ❗️");
+    $this->_exec("lando start");
+    $this->_exec("lando blt blt:telemetry:disable --no-interaction");
+    $this->_exec("lando blt gh:pulldb");
+    $this->_exec("lando blt gh:pullfiles");
+    $this->_exec("mkdir -p web/sites/default/files/private");
+    $this->_exec("lando blt mih:did");
+    $this->_exec("lando drush deploy");
   }
 
   /**
@@ -70,7 +70,8 @@ GITHUB_TOKEN=$token'>.env");
       $this->say("❗️ Setting GITHUB_TOKEN token. ❗️");
       $this->_exec("composer config -g github-oauth.github.com $(printenv GITHUB_TOKEN)");
       $this->_exec($this->lando() . " composer config -g github-oauth.github.com $(printenv GITHUB_TOKEN)");
-    } else {
+    }
+    else {
       $this->say("❗️ GITHUB_TOKEN not set. ❗️");
     }
   }
@@ -87,20 +88,23 @@ GITHUB_TOKEN=$token'>.env");
     $lando_end = $this->lando() == 'lando ' ? "\"" : "";
     $shell_cmd = $lando . '\'google-chrome\' --headless --no-sandbox --disable-dev-shm-usage --disable-web-security --remote-debugging-port=9222 --window-size=1440,1080 &) | behat --format pretty /app/tests/behat --colors --no-interaction --stop-on-failure --config /app/tests/behat/local.yml --profile local -v 2>&1' . $lando_end;
 
-    // Open a pipe to the command and capture its output
-    $descriptorspec = array(
-      0 => array("pipe", "r"), // stdin
-      1 => array("pipe", "w"), // stdout
-      2 => array("pipe", "w"), // stderr
-    );
+    // Open a pipe to the command and capture its output.
+    $descriptorspec = [
+    // Stdin.
+      0 => ["pipe", "r"],
+    // Stdout.
+      1 => ["pipe", "w"],
+    // Stderr.
+      2 => ["pipe", "w"],
+    ];
     $process = proc_open($shell_cmd, $descriptorspec, $pipes);
 
-    // Read the output from the command in real-time
+    // Read the output from the command in real-time.
     while ($line = fgets($pipes[1])) {
       echo $line;
       $pattern = "/Failed scenarios/i";
       if (preg_match($pattern, $line)) {
-        // Close the pipes and the process
+        // Close the pipes and the process.
         fclose($pipes[0]);
         fclose($pipes[1]);
         fclose($pipes[2]);
@@ -109,7 +113,7 @@ GITHUB_TOKEN=$token'>.env");
       }
     }
 
-    // Close the pipes and the process
+    // Close the pipes and the process.
     fclose($pipes[0]);
     fclose($pipes[1]);
     fclose($pipes[2]);
@@ -165,7 +169,8 @@ GITHUB_TOKEN=$token'>.env");
   public function did() {
     if ($this->lando() == 'lando ') {
       $this->_exec("lando db-import backups/site.sql.gz");
-    } else {
+    }
+    else {
       $this->_exec("drush sql-drop -y &&
         cp backups/site.sql.gz lando-import.sql.gz &&
         gunzip lando-import.sql.gz
@@ -192,13 +197,17 @@ GITHUB_TOKEN=$token'>.env");
     if ($arrrrgs == 'drupal/core') {
       $this->_exec("composer update drupal/core drupal/core-composer-scaffold drupal/core-dev drupal/core-recommended drupal/core-project-message -W --ignore-platform-req=ext-gd >log.txt 2>&1");
       $this->composer_updates('/Upgrading (drupal)\/core \((.* \=\> .*)\)$/mU');
-    } elseif (!empty($arrrrgs)) {
+    }
+    elseif (!empty($arrrrgs)) {
       $this->_exec("composer update $arrrrgs --no-scripts --ignore-platform-req=ext-gd >log.txt 2>&1");
       $this->_exec("cat log.txt");
       $this->composer_updates('/Upgrading .*\/(.*)\((.* \=\> .*)\)$/m');
     }
   }
 
+  /**
+   *
+   */
   private function composer_updates($regex) {
     $log = file_get_contents("log.txt");
     $log = preg_match_all($regex, $log, $update_matches);
@@ -209,8 +218,8 @@ GITHUB_TOKEN=$token'>.env");
       $version = $update_matches[2][$key];
       $update_list .= "$seperator$update_match: $version";
     }
-    #$this->_exec("lando drush updatedb -y");
-    #$this->_exec("lando drush cr");
+    // $this->_exec("lando drush updatedb -y");
+    // $this->_exec("lando drush cr");
     if ($log > 0) {
       $this->say("\n The following updated:
 $update_list");
@@ -219,4 +228,5 @@ $update_list");
       $this->_exec("rm log.txt");
     }
   }
+
 }
