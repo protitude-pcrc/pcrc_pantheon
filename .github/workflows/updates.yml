@@ -30,6 +30,7 @@ jobs:
         run: |
           touch prnum.txt
           gh pr create --title "[Composer] $drupal_update" --body "$(git log -1 --pretty=%B)" | sed 's/https:\/\/github.com\/protitude-pcrc\/pcrc_pantheon\/pull\///g' > prnum.txt
+          gh pr merge --auto --merge
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REPO }}
           drupal_update: ${{ github.event.inputs.drupal_update }}
