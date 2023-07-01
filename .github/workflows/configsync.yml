@@ -1,0 +1,106 @@
+name: (A) Config Sync — Run backups
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '20 19 * * 3'
+permissions:
+  pull-requests: write
+  contents: write
+jobs:
+  sync:
+    name: Grab live db and add un-synced files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./.github/actions/dingorunner
+        env:
+          runner: bkup
+          terminus_api: ${{ secrets.TERMINUS_API }}
+          SSH_PRIVATE_KEY: ${{ secrets.PANTHEON_DEPLOY_KEY}}
+          site_name: ${{ secrets.TERMINUS_SITE_NAME }}
+          env: live
+      - name: Install Lando
+        run: |
+          sudo curl -fsSL -o /usr/local/bin/lando "https://files.lando.dev/cli/lando-linux-x64-v3.11.0"
+          sudo chmod +x /usr/local/bin/lando
+      - name: Start Lando
+        run: |
+          echo "$lando_env" > .env
+          echo "GITHUB_TOKEN=$GITHUB_ACTOR:$GITHUB_TOKEN" >> .env
+          lando destroy -y
+          lando start
+        env:
+          lando_env: ${{ secrets.LANDO_ENV }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+      - name: Config diff
+        run: |
+          git remote set-url origin https://$username:$gh_token@github.com/protitude-pcrc/pcrc_pantheon.git
+          git config --global user.email "$username"
+          git config --global user.name "$email"
+          git fetch
+          current_branch=main
+          git checkout $(git rev-list --tags --max-count=1)
+          git checkout $current_branch
+          git branch
+          date=$(date '+%y%m%d')
+          git branch md-$date
+          git checkout md-$date
+          lando composer config -g github-oauth.github.com $gh_token
+          composer config -g github-oauth.github.com $gh_token
+          composer install --ignore-platform-reqs
+          lando db-import backups/site.sql.gz
+          mkdir -p web/sites/default/settings
+          cp blt/lando.local.settings.php web/sites/default/settings/local.settings.php
+          echo "" > salt.txt
+          rm -fR web/sites/default/config
+          git checkout web/sites/default/config
+          lando drush cr
+          lando drush cex -y
+          git rev-list --tags --max-count=1
+          rm -fR web/sites/default/config/local
+          git checkout web/sites/default/config/local
+          git checkout .github
+          git status
+          echo 'post status'
+          echo $current_branch
+          git branch
+          git diff --name-status -M100% $(git rev-list --tags --max-count=1)..$current_branch web/sites/default/config/default > checkout.sh
+          sed -i 's/^M./git checkout /g' checkout.sh
+          sed -i 's/^A./git add /g' checkout.sh
+          sed -i 's/^D./rm /g' checkout.sh
+          echo 'echo "end of checkout.sh"' >> checkout.sh
+          cat checkout.sh
+          chmod u+x checkout.sh
+          ./checkout.sh
+          rm checkout.sh
+          status=$(git status --porcelain web/sites/default/config/default)
+          echo "#! /bin/bash
+          if [[ -z '$status' ]]
+          then
+          echo 'no config changes'
+          else
+          git fetch
+          echo 'Adding web/sites/default/config/default'
+          git add web/sites/default/config/default/
+          git commit -m 'config: adding changes from live'
+          echo "Committed changes"
+          git status
+          echo 'pushing changes'
+          git push origin md-$date
+          fi" > commit.sh
+          chmod u+x commit.sh
+          ./commit.sh
+          echo 'commit.sh ran'
+          rm commit.sh
+          git status
+        env:
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.actor }}
+          email: github.actions@palliativecareresearch.org
+          gh_user: ${{ secrets.GH_USER }}
+      - name: Create Pull Request
+        run: |
+          gh pr create --title "[Config sync]" --body "Sync the config from branch"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REPO }}
