@@ -58,9 +58,6 @@ jobs:
           lando drush cr
           lando drush cex -y
           git rev-list --tags --max-count=1
-          rm -fR web/sites/default/config/local
-          git checkout web/sites/default/config/local
-          git checkout .github
           git status
           echo 'post status'
           echo $current_branch
