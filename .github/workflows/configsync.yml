@@ -53,8 +53,8 @@ jobs:
           mkdir -p web/sites/default/settings
           cp blt/lando.local.settings.php web/sites/default/settings/local.settings.php
           echo "" > salt.txt
-          rm -fR web/sites/default/config
-          git checkout web/sites/default/config
+          rm -fR docroot/sites/default/config
+          git checkout docroot/sites/default/config
           lando drush cr
           lando drush cex -y
           git rev-list --tags --max-count=1
