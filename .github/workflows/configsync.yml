@@ -16,7 +16,7 @@ jobs:
         env:
           runner: bkup
           terminus_api: ${{ secrets.TERMINUS_API }}
-          SSH_PRIVATE_KEY: ${{ secrets.PANTHEON_DEPLOY_KEY}}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           site_name: ${{ secrets.TERMINUS_SITE_NAME }}
           env: live
       - name: Install Lando
