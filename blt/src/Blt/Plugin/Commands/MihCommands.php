@@ -191,15 +191,21 @@ GITHUB_TOKEN=$token'>.env");
    * @description Updates through CI.
    */
   public function ciupdate(array $args) {
-    $arrrrgs = implode($args);
+    $module = $args[0];
+    $version = $args[1];
 
     $this->_exec("touch log.txt");
-    if ($arrrrgs == 'drupal/core') {
+    if ($module == 'drupal/core') {
       $this->_exec("composer update drupal/core drupal/core-composer-scaffold drupal/core-dev drupal/core-recommended drupal/core-project-message -W --ignore-platform-req=ext-gd >log.txt 2>&1");
       $this->composer_updates('/Upgrading (drupal)\/core \((.* \=\> .*)\)$/mU');
     }
-    elseif (!empty($arrrrgs)) {
-      $this->_exec("composer update $arrrrgs --no-scripts --ignore-platform-req=ext-gd >log.txt 2>&1");
+    elseif (!empty($module)) {
+      if (!empty($version)) {
+        $this->_exec("composer require $module $version --no-scripts --ignore-platform-req=ext-gd >log.txt 2>&1");
+      }
+      else {
+        $this->_exec("composer update $module --no-scripts --ignore-platform-req=ext-gd >log.txt 2>&1");
+      }
       $this->_exec("cat log.txt");
       $this->composer_updates('/Upgrading .*\/(.*)\((.* \=\> .*)\)$/m');
     }
