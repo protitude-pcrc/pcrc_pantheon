@@ -17,8 +17,8 @@ jobs:
       - name: Create/push tag
         run: |
           git remote set-url origin https://$gh_user:$gh_token@github.com/$gh_repo.git
-          git config user.name "$(git log -n 1 --pretty=format:%an)"
-          git config user.email "$(git log -n 1 --pretty=format:%ae)"
+          git config --global user.email \"$email\"
+          git config --global user.name \"$gh_user\"
           git fetch origin
           latest_sha=$(git rev-list --tags --max-count=1)
           current_version=$(git describe --tags --abbrev=0)
@@ -49,7 +49,8 @@ jobs:
         env:
           set_version: ${{ github.event.inputs.version }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
-          gh_user: ${{ secrets.GH_USER }}
+          gh_user: ${{ github.actor }}
+          email: github.actions@palliativecareresearch.org
           gh_repo: protitude-pcrc/pcrc_pantheon
       - uses: ./.github/actions/dingorunner
         env:
