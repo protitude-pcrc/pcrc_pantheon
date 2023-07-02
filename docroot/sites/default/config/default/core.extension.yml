@@ -53,7 +53,6 @@ module:
   file_browser: 0
   file_download: 0
   file_entity: 0
-  file_mdm: 0
   filter: 0
   google_analytics: 0
   help: 0
@@ -92,7 +91,6 @@ module:
   simple_sitemap: 0
   smart_trim: 0
   smtp: 0
-  sophron: 0
   superfish: 0
   system: 0
   taxonomy: 0
