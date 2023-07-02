@@ -7,5 +7,5 @@ dependencies:
 id: homepage_column_1
 title: 'Homepage Column 1'
 content:
-  value: "<h3>Engage</h3>\r\n\r\n<p>With 630<strong>&nbsp;<a href=\"https://palliativecareresearch.org/members/roster\">members</a></strong> PCRC offers unparalleled access to:</p>\r\n\r\n<ul>\r\n\t<li>The nation's top palliative care researchers,</li>\r\n\t<li>A growing national network of&nbsp;206&nbsp;locations, and</li>\r\n\t<li><a href=\"/node/509\"><strong>A wealth of training resources</strong></a></li>\r\n\t<li>Explore &amp; request to utilize data in one or both of our de-identified <strong><a href=\"node/549\">data repositories</a></strong></li>\r\n</ul>\r\n"
+  value: "<h3>Engage</h3>\r\n\r\n<p>With 630<strong>&nbsp;<a href=\"https://palliativecareresearch.org/members/roster\">members</a></strong> PCRC offers unparalleled access to:</p>\r\n\r\n<ul>\r\n\t<li>The nation's top palliative care researchers,</li>\r\n\t<li>A national network of&nbsp;220&nbsp;locations, and</li>\r\n\t<li><a href=\"/node/509\"><strong>A wealth of training resources</strong></a></li>\r\n\t<li>Explore &amp; request to utilize data in one or both of our de-identified <strong><a href=\"node/549\">data repositories</a></strong></li>\r\n</ul>\r\n"
   format: full_html
