@@ -28,6 +28,7 @@ then
   storeKey
   terminusApi
   current_version=$(git describe --tags --abbrev=0)
+  terminus backup:create --element all --keep-for 15 -- $site_name.$env
   terminus env:deploy --note "Version: $current_version" $flags -- $site_name.$env
   terminus remote:drush $site_name.$env -- deploy
 fi
