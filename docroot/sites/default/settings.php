@@ -24,3 +24,7 @@ $settings['hash_salt'] = $hash;
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 $settings['config_sync_directory'] = 'sites/default/config/default';
+
+$settings['config_exclude_modules'] = [
+  'smtp',
+];
