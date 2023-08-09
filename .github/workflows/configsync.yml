@@ -71,7 +71,7 @@ jobs:
           chmod u+x checkout.sh
           ./checkout.sh
           rm checkout.sh
-          status=$(git status --porcelain web/sites/default/config/default)
+          status=$(git status --porcelain docroot/sites/default/config/default)
           echo "#! /bin/bash
           if [[ -z '$status' ]]
           then

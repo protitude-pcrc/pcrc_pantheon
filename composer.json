@@ -196,6 +196,7 @@
         }
     },
     "require-dev": {
-        "behat/mink": "^1.8"
+        "behat/mink": "^1.8",
+        "drupal/upgrade_status": "^4.0"
     }
 }
