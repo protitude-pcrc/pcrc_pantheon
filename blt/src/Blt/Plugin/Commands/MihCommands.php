@@ -20,7 +20,7 @@ class MihCommands extends BltTasks {
   public function landosetup(array $args) {
     if ($args) {
       $token = $args[0];
-      $uid = $args[1];
+      $uid = $args[1] ?? 1;
     }
     else {
       $token = $this->ask("What is your GitHub token: ");

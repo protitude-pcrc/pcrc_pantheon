@@ -20,7 +20,7 @@ jobs:
           echo "CACHE_DATE=$(date "+%y%m%d")" >> $GITHUB_ENV
       - name: Install Lando
         run: |
-          sudo curl -fsSL -o /usr/local/bin/lando "https://files.lando.dev/cli/lando-linux-x64-v3.18.0"
+          sudo curl -fsSL -o /usr/local/bin/lando "https://files.lando.dev/cli/lando-linux-x64-v3.19.5"
           sudo chmod +x /usr/local/bin/lando
       - name: Spin up site
         run: |

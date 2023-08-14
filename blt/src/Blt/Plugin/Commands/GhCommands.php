@@ -61,7 +61,7 @@ class GhCommands extends BltTasks {
    * Pull latest Database from artifacts.
    */
   private function grabLocation($name) {
-    $artifact_call = $this->ghApiCall("https://api.github.com/repos/protitude-pcrc/pcrc/actions/artifacts");
+    $artifact_call = $this->ghApiCall("https://api.github.com/repos/protitude-pcrc/pcrc_pantheon/actions/artifacts");
     $result = json_decode($artifact_call);
     foreach ($result->artifacts as $artifact) {
       if ($artifact->name == $name) {
@@ -69,7 +69,7 @@ class GhCommands extends BltTasks {
         break;
       }
     }
-    $artifact_zip = $this->ghApiCall("https://api.github.com/repos/protitude-pcrc/pcrc/actions/artifacts/$artifact_id/zip", 1);
+    $artifact_zip = $this->ghApiCall("https://api.github.com/repos/protitude-pcrc/pcrc_pantheon/actions/artifacts/$artifact_id/zip", 1);
     $regex = '/https:\/\/.*/m';
     $location_url_search = preg_match_all($regex, $artifact_zip, $matches);
     $location_url = $matches[0][0];
