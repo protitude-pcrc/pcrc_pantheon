@@ -17,7 +17,6 @@ module:
   captcha: 0
   ckeditor: 0
   ckeditor_codemirror: 0
-  color: 0
   comment: 0
   config: 0
   contact: 0
@@ -75,8 +74,6 @@ module:
   pathauto: 0
   pathologic: 0
   pcrc_tweaks: 0
-  quickedit: 0
-  rdf: 0
   recaptcha: 0
   redirect: 0
   responsive_image: 0
