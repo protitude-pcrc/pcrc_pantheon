@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb200e035835e9d81a100aa3521a11c2",
+    "content-hash": "11f8dbe6b9d52d00596ebe4cda2c5edc",
     "packages": [
         {
             "name": "acquia/blt",
@@ -5331,33 +5331,35 @@
         },
         {
             "name": "drupal/file_entity",
-            "version": "2.0.0-beta9",
+            "version": "2.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/file_entity.git",
-                "reference": "8.x-2.0-beta9"
+                "reference": "8.x-2.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/file_entity-8.x-2.0-beta9.zip",
-                "reference": "8.x-2.0-beta9",
-                "shasum": "f75e45f4046904eb582979c701ffa0a2ccb988dc"
+                "url": "https://ftp.drupal.org/files/projects/file_entity-8.x-2.0-rc1.zip",
+                "reference": "8.x-2.0-rc1",
+                "shasum": "58712745ad340c853bd02885fa134ac89b80c772"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9",
-                "drupal/token": "*"
+                "drupal/core": "^9.3 || ^10",
+                "drupal/token": "^1",
+                "php": ">=8.0"
             },
             "require-dev": {
-                "drupal/pathauto": "*"
+                "drupal/hal": " ^9 || ^1 || ^2",
+                "drupal/pathauto": "^1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta9",
-                    "datestamp": "1625735670",
+                    "version": "8.x-2.0-rc1",
+                    "datestamp": "1684173272",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5366,6 +5368,14 @@
                 "GPL-2.0+"
             ],
             "authors": [
+                {
+                    "name": "aaron",
+                    "homepage": "https://www.drupal.org/user/33420"
+                },
+                {
+                    "name": "arthurf",
+                    "homepage": "https://www.drupal.org/user/27259"
+                },
                 {
                     "name": "Berdir",
                     "homepage": "https://www.drupal.org/user/214652"
@@ -5383,32 +5393,12 @@
                     "homepage": "https://www.drupal.org/user/290182"
                 },
                 {
-                    "name": "Drupal Media Team",
-                    "homepage": "https://www.drupal.org/user/3260690"
-                },
-                {
                     "name": "Drupal media CI",
                     "homepage": "https://www.drupal.org/user/3057985"
                 },
                 {
-                    "name": "JacobSingh",
-                    "homepage": "https://www.drupal.org/user/68912"
-                },
-                {
-                    "name": "JeffM2001",
-                    "homepage": "https://www.drupal.org/user/262092"
-                },
-                {
-                    "name": "ParisLiakos",
-                    "homepage": "https://www.drupal.org/user/1011436"
-                },
-                {
-                    "name": "aaron",
-                    "homepage": "https://www.drupal.org/user/33420"
-                },
-                {
-                    "name": "arthurf",
-                    "homepage": "https://www.drupal.org/user/27259"
+                    "name": "Drupal Media Team",
+                    "homepage": "https://www.drupal.org/user/3260690"
                 },
                 {
                     "name": "dsnopek",
@@ -5423,6 +5413,14 @@
                     "homepage": "https://www.drupal.org/user/78040"
                 },
                 {
+                    "name": "JacobSingh",
+                    "homepage": "https://www.drupal.org/user/68912"
+                },
+                {
+                    "name": "JeffM2001",
+                    "homepage": "https://www.drupal.org/user/262092"
+                },
+                {
                     "name": "joseph.olstad",
                     "homepage": "https://www.drupal.org/user/1321830"
                 },
@@ -5435,6 +5433,10 @@
                     "homepage": "https://www.drupal.org/user/315522"
                 },
                 {
+                    "name": "ParisLiakos",
+                    "homepage": "https://www.drupal.org/user/1011436"
+                },
+                {
                     "name": "robeano",
                     "homepage": "https://www.drupal.org/user/67660"
                 },
@@ -5443,7 +5445,7 @@
                     "homepage": "https://www.drupal.org/user/744628"
                 },
                 {
-                    "name": "taran2L",
+                    "name": "taran2L-1",
                     "homepage": "https://www.drupal.org/user/364424"
                 }
             ],
@@ -5505,29 +5507,26 @@
         },
         {
             "name": "drupal/fontyourface",
-            "version": "3.6.0",
+            "version": "dev-4.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontyourface.git",
-                "reference": "8.x-3.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontyourface-8.x-3.6.zip",
-                "reference": "8.x-3.6",
-                "shasum": "de6593bfe0b4f42c93c1f163cd0fbc97a1723586"
+                "reference": "c9e929c2a5712919400310850c1643cb3b46b837"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^9.4 || ^10.0"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-4.0.x": "4.0.x-dev"
+                },
                 "drupal": {
-                    "version": "8.x-3.6",
-                    "datestamp": "1615217641",
+                    "version": "4.0.x-dev",
+                    "datestamp": "1694111224",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5542,12 +5541,16 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "BarisW",
-                    "homepage": "https://www.drupal.org/user/107229"
+                    "name": "BTMash",
+                    "homepage": "https://www.drupal.org/user/60422"
                 },
                 {
                     "name": "Drave Robber",
                     "homepage": "https://www.drupal.org/user/984338"
+                },
+                {
+                    "name": "hmendes",
+                    "homepage": "https://www.drupal.org/user/3673677"
                 },
                 {
                     "name": "Neslee Canil Pinto",
@@ -14495,6 +14498,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/fontyourface": 20,
         "pcrc/file_download": 20,
         "drupal/core-dev": 10
     },
