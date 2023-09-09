@@ -5,11 +5,11 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - linkit
     - pathologic
     - pcrc_tweaks
     - sc_archetype5
     - shortcode
-    - video_embed_wysiwyg
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
 name: 'Full HTML'
@@ -43,7 +43,7 @@ filters:
   entity_embed:
     id: entity_embed
     provider: entity_embed
-    status: true
+    status: false
     weight: -50
     settings: {  }
   filter_html_escape:
@@ -58,7 +58,7 @@ filters:
     status: false
     weight: -40
     settings:
-      allowed_html: '<a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_image_secure:
@@ -83,7 +83,7 @@ filters:
   shortcode_preprocessor:
     id: shortcode_preprocessor
     provider: sc_archetype5
-    status: true
+    status: false
     weight: -46
     settings: {  }
   shortcode_corrector:
@@ -98,42 +98,28 @@ filters:
     status: true
     weight: -45
     settings:
-      infobox: '1'
-      center: '1'
-      video: '1'
-      toggle-item: '1'
       tooltip: '1'
-      tabs: '1'
-      accordion-item: '1'
-      code: '1'
-      toggle: '1'
-      col: '1'
-      hline: '1'
-      wordrotate: '0'
-      color: '1'
       accordion: '1'
-      notification: '1'
-      hide: '1'
+      infobox: '1'
       small: '1'
-      icon: '1'
-      fn: '1'
-      teaser: '1'
+      accordion-item: '1'
+      hline: '1'
+      video: '1'
       tab-item: '1'
+      teaser: '1'
+      color: '1'
+      tabs: '1'
+      col: '1'
+      wordrotate: '0'
+      icon: '1'
+      code: '1'
+      notification: '1'
+      toggle-item: '1'
+      toggle: '1'
+      hide: '1'
+      fn: '1'
+      center: '1'
       button: '1'
-      link: '1'
-      img: '1'
-      item: '1'
-      quote: '1'
-      highlight: '1'
-      random: '1'
-      clear: '1'
-      dropcap: '1'
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: true
-    weight: -43
-    settings: {  }
   filter_intlinks:
     id: filter_intlinks
     provider: pcrc_tweaks
