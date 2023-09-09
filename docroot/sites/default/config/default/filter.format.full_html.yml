@@ -104,7 +104,7 @@ filters:
       small: '1'
       accordion-item: '1'
       hline: '1'
-      video: '1'
+      video: '0'
       tab-item: '1'
       teaser: '1'
       color: '1'
