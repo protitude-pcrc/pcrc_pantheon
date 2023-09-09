@@ -118,7 +118,6 @@ Feature: check admin structure pages
     Then I should see "PCRC Directory Lists"
     Then I should see "PCRC File Downloads"
     Then I should see "PCRC News"
-    Then I should see "PCRC NIH Extramural Nexus Feeds"
     Then I should see "PCRC Requests"
     Then I should see "PCRC Search Content"
     Then I should see "PCRC Studies Search"

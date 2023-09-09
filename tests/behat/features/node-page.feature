@@ -19,4 +19,3 @@ Feature: test node types
     Then I should see "Random Words"
     Then I should see "ANNOUNCEMENTS"
     Then I should see "TWEETS FROM @PCRCGROUP"
-    Then I should see "NIH EXTRAMURAL NEXUS"
