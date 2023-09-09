@@ -199,5 +199,10 @@
         "behat/mink": "^1.8",
         "drupal/core-dev": "^8.0@beta",
         "drupal/upgrade_status": "^4.0"
+    },
+    "scripts": {
+        "post-drupal-scaffold-cmd": [
+            "patch -p1 < patches/htaccess-ssl.patch"
+        ]
     }
 }
