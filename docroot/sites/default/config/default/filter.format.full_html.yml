@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - linkit
     - pathologic
     - pcrc_tweaks
     - sc_archetype5
@@ -20,131 +21,117 @@ filters:
     id: filter_align
     provider: filter
     status: true
-    weight: -49
+    weight: -50
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: -48
+    weight: -49
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: -41
+    weight: -44
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: -47
+    weight: -48
     settings: {  }
   entity_embed:
     id: entity_embed
     provider: entity_embed
     status: true
-    weight: -50
+    weight: -47
     settings: {  }
   filter_html_escape:
     id: filter_html_escape
     provider: filter
     status: false
-    weight: -39
+    weight: -38
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: false
-    weight: -40
+    weight: -39
     settings:
-      allowed_html: '<a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
-    weight: -36
+    weight: -35
     settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
     status: false
-    weight: -38
+    weight: -37
     settings: {  }
   filter_url:
     id: filter_url
     provider: filter
     status: false
-    weight: -37
+    weight: -36
     settings:
       filter_url_length: 72
   shortcode_preprocessor:
     id: shortcode_preprocessor
     provider: sc_archetype5
-    status: true
-    weight: -46
+    status: false
+    weight: -41
     settings: {  }
   shortcode_corrector:
     id: shortcode_corrector
     provider: shortcode
     status: true
-    weight: -44
+    weight: -45
     settings: {  }
   shortcode:
     id: shortcode
     provider: shortcode
     status: true
-    weight: -45
+    weight: -46
     settings:
-      infobox: '1'
-      center: '1'
-      video: '1'
-      toggle-item: '1'
       tooltip: '1'
-      tabs: '1'
-      accordion-item: '1'
-      code: '1'
-      toggle: '1'
-      col: '1'
-      hline: '1'
-      wordrotate: '0'
-      color: '1'
       accordion: '1'
-      notification: '1'
-      hide: '1'
+      infobox: '1'
       small: '1'
-      icon: '1'
-      fn: '1'
-      teaser: '1'
+      accordion-item: '1'
+      hline: '1'
+      video: '0'
       tab-item: '1'
+      teaser: '1'
+      color: '1'
+      tabs: '1'
+      col: '1'
+      wordrotate: '0'
+      icon: '1'
+      code: '1'
+      notification: '1'
+      toggle-item: '1'
+      toggle: '1'
+      hide: '1'
+      fn: '1'
+      center: '1'
       button: '1'
-      link: '1'
-      img: '1'
-      item: '1'
-      quote: '1'
-      highlight: '1'
-      random: '1'
-      clear: '1'
-      dropcap: '1'
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: true
-    weight: -43
-    settings: {  }
   filter_intlinks:
     id: filter_intlinks
     provider: pcrc_tweaks
     status: false
-    weight: -42
+    weight: -40
     settings: {  }
   filter_pathologic:
     id: filter_pathologic
     provider: pathologic
     status: true
-    weight: 50
+    weight: -42
     settings:
       settings_source: global
       local_settings:
@@ -154,6 +141,18 @@ filters:
     id: linkit
     provider: linkit
     status: true
-    weight: -41
+    weight: -43
     settings:
       title: false
+  filter_caption_credit:
+    id: filter_caption_credit
+    provider: pcrc_tweaks
+    status: false
+    weight: -34
+    settings: {  }
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: false
+    weight: -33
+    settings: {  }
