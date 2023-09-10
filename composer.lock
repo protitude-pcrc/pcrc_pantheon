@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "11f8dbe6b9d52d00596ebe4cda2c5edc",
+    "content-hash": "10d0ff8436ab45d97842c4fbf5bca995",
     "packages": [
         {
             "name": "acquia/blt",
@@ -3164,130 +3164,35 @@
             }
         },
         {
-            "name": "drupal/ckeditor",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor.git",
-                "reference": "1.0.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor-1.0.2.zip",
-                "reference": "1.0.2",
-                "shasum": "fec2ca9ad852a00c7b9584cb6040dc860364c481"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "require-dev": {
-                "drupal/classy": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.2",
-                    "datestamp": "1687261951",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "dczepierga",
-                    "homepage": "https://www.drupal.org/user/911466"
-                },
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                },
-                {
-                    "name": "jcisio",
-                    "homepage": "https://www.drupal.org/user/210762"
-                },
-                {
-                    "name": "Jorrit",
-                    "homepage": "https://www.drupal.org/user/161217"
-                },
-                {
-                    "name": "lauriii",
-                    "homepage": "https://www.drupal.org/user/1078742"
-                },
-                {
-                    "name": "Magnus",
-                    "homepage": "https://www.drupal.org/user/73919"
-                },
-                {
-                    "name": "mkesicki",
-                    "homepage": "https://www.drupal.org/user/922884"
-                },
-                {
-                    "name": "nod_",
-                    "homepage": "https://www.drupal.org/user/598310"
-                },
-                {
-                    "name": "p.wiaderny",
-                    "homepage": "https://www.drupal.org/user/2956619"
-                },
-                {
-                    "name": "vokiel",
-                    "homepage": "https://www.drupal.org/user/2793801"
-                },
-                {
-                    "name": "Wim Leers",
-                    "homepage": "https://www.drupal.org/user/99777"
-                },
-                {
-                    "name": "wwalc",
-                    "homepage": "https://www.drupal.org/user/184556"
-                },
-                {
-                    "name": "xjm",
-                    "homepage": "https://www.drupal.org/user/65776"
-                }
-            ],
-            "description": "WYSIWYG editing for rich text fields using CKEditor.",
-            "homepage": "https://www.drupal.org/project/ckeditor",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor"
-            }
-        },
-        {
             "name": "drupal/ckeditor_codemirror",
-            "version": "2.4.0",
+            "version": "3.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_codemirror.git",
-                "reference": "8.x-2.4"
+                "reference": "3.0.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_codemirror-8.x-2.4.zip",
-                "reference": "8.x-2.4",
-                "shasum": "8909e59baaf1dd8f899c617559ed7807f07d6307"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_codemirror-3.0.0-beta4.zip",
+                "reference": "3.0.0-beta4",
+                "shasum": "d1cf9b27c5af188c1dcf1885e672fed4555c9de7"
             },
             "require": {
-                "drupal/ckeditor": "*",
-                "drupal/core": "^8.8 || ^9.0"
+                "drupal/core": "^9.4 || ^10",
+                "php": ">=8.0"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "phpcompatibility/php-compatibility": "10.x-dev"
+                "phpcompatibility/php-compatibility": "^9.3"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.4",
-                    "datestamp": "1654635495",
+                    "version": "3.0.0-beta4",
+                    "datestamp": "1676407269",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3297,24 +3202,23 @@
             ],
             "authors": [
                 {
-                    "name": "Nickolay Leshchev (Plazik)",
-                    "homepage": "https://www.drupal.org/u/plazik",
+                    "name": "Christopher C. Wells (wells)",
+                    "homepage": "https://www.drupal.org/u/wells",
                     "role": "Maintainer"
                 },
                 {
-                    "name": "Christopher C. Wells (wells)",
-                    "homepage": "https://www.drupal.org/u/wells",
-                    "role": "Co-maintainer"
+                    "name": "wells",
+                    "homepage": "https://www.drupal.org/user/2452278"
                 }
             ],
-            "description": "Adds the CKEditor CodeMirror source syntax highlighter plugin.",
+            "description": "CodeMirror source syntax highlighting for CKEditor 5.",
             "homepage": "https://drupal.org/project/ckeditor_codemirror",
             "keywords": [
                 "Drupal"
             ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ckeditor_codemirror",
-                "issues": "https://www.drupal.org/project/issues/ckeditor_codemirror?version=8.x"
+                "issues": "https://www.drupal.org/project/issues/ckeditor_codemirror"
             }
         },
         {
