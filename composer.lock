@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b779fe10ee03a3b18693f12ec288f199",
+    "content-hash": "11f8dbe6b9d52d00596ebe4cda2c5edc",
     "packages": [
         {
             "name": "acquia/blt",
@@ -5330,66 +5330,6 @@
             }
         },
         {
-            "name": "drupal/file_download",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/file_download.git",
-                "reference": "8.x-1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/file_download-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "eaf0bcf4ebf852dd1a3faca56802794c2bcfe622"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1601527313",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Dave Reid",
-                    "homepage": "https://www.drupal.org/user/53892"
-                },
-                {
-                    "name": "Drupal Media Team",
-                    "homepage": "https://www.drupal.org/user/3260690"
-                },
-                {
-                    "name": "New Zeal",
-                    "homepage": "https://www.drupal.org/user/93571"
-                },
-                {
-                    "name": "slashrsm",
-                    "homepage": "https://www.drupal.org/user/744628"
-                }
-            ],
-            "description": "File Download",
-            "homepage": "http://drupal.org/project/file_download",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/file_download",
-                "issues": "http://drupal.org/project/issues/file_download"
-            }
-        },
-        {
             "name": "drupal/file_entity",
             "version": "2.0.0-rc1",
             "source": {
@@ -9441,6 +9381,30 @@
                 "source": "https://github.com/oomphinc/composer-installers-extender/tree/2.0.1"
             },
             "time": "2021-12-15T12:32:42+00:00"
+        },
+        {
+            "name": "pcrc/file_download",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/protitude/file_download.git",
+                "reference": "b159246458f825ad00c56ec4c6ec2fe3bd0b7153"
+            },
+            "default-branch": true,
+            "type": "drupal-custom-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "File Download",
+            "homepage": "http://drupal.org/project/file_download",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "issues": "http://drupal.org/project/issues/file_download",
+                "source": "http://cgit.drupalcode.org/file_download"
+            },
+            "time": "2023-09-09T23:11:39+00:00"
         },
         {
             "name": "pear/archive_tar",
@@ -14535,6 +14499,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/fontyourface": 20,
+        "pcrc/file_download": 20,
         "drupal/core-dev": 10
     },
     "prefer-stable": true,
