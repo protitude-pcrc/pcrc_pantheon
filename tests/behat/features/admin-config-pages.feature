@@ -32,8 +32,6 @@ Feature: check admin config pages
     Then I should see "Cron"
     When I go to "admin/config/system/entity-clone"
     Then I should see "Entity clone settings"
-    Then I should see "Aggregator feed"
-    Then I should see "Aggregator feed item"
     Then I should see "Custom block"
     Then I should see "Comment"
     Then I should see "Contact message"
@@ -153,9 +151,6 @@ Feature: check admin config pages
     Then I should see "Google Analytics"
     When I go to "admin/config/services/rss-publishing"
     Then I should see "RSS publishing"
-    When I go to "admin/config/services/aggregator"
-    Then I should see "Aggregator"
-    Then I should see "NIH Extramural Nexus"
 
     When I go to "admin/reports/status"
     Then I should see "Status report"

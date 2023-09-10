@@ -27,6 +27,9 @@ jobs:
           composer config -g github-oauth.github.com $gh_token
           composer install --ignore-platform-reqs -n
           vendor/bin/blt mih:landosetup $gh_token $uid
+          ls -al docroot/modules/contrib
+          echo '=-=-=-=-=-=-=-=-=-=-=-=-'
+          ls -al docroot/modules/custom
           sleep 30
         env:
           gh_token: ${{ secrets.GH_TOKEN_REPO }}
