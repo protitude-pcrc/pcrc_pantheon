@@ -207,7 +207,7 @@
     "scripts": {
         "post-drupal-scaffold-cmd": [
             "patch -p1 < patches/htaccess-ssl.patch",
-            "cd docroot/modules/contrib && ln -s ../custom/file_download file_download"
+            "cd docroot/modules/contrib && ln -s ../contrib/file_download file_download"
         ]
     }
 }
