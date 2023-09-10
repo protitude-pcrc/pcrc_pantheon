@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed538110375dd4314c5d0f00522d44dc",
+    "content-hash": "fc9e521ecaa0002019df6f3b2fb857c7",
     "packages": [
         {
             "name": "acquia/blt",
@@ -1110,81 +1110,6 @@
             },
             "license": [
                 "MIT"
-            ]
-        },
-        {
-            "name": "ckeditor/autogrow",
-            "version": "4.21.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.21.0.zip"
-            },
-            "type": "drupal-library",
-            "extra": {
-                "installer-name": "ckeditor.autogrow"
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ]
-        },
-        {
-            "name": "ckeditor/codemirror",
-            "version": "v1.18.7",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/w8tcha/CKEditor-CodeMirror-Plugin/releases/download/v1.18.7/CKEditor-CodeMirror-Plugin.zip"
-            },
-            "type": "drupal-library",
-            "extra": {
-                "installer-name": "ckeditor.codemirror"
-            },
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "ckeditor/fakeobjects",
-            "version": "4.21.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.21.0.zip"
-            },
-            "type": "drupal-library",
-            "extra": {
-                "installer-name": "ckeditor.fakeobjects"
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ]
-        },
-        {
-            "name": "ckeditor/image",
-            "version": "4.21.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://download.ckeditor.com/image/releases/image_4.21.0.zip"
-            },
-            "type": "drupal-library",
-            "extra": {
-                "installer-name": "ckeditor.image"
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ]
-        },
-        {
-            "name": "ckeditor/link",
-            "version": "4.21.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://download.ckeditor.com/link/releases/link_4.21.0.zip"
-            },
-            "type": "drupal-library",
-            "extra": {
-                "installer-name": "ckeditor.link"
-            },
-            "license": [
-                "GPL-2.0-or-later"
             ]
         },
         {
@@ -3291,29 +3216,29 @@
         },
         {
             "name": "drupal/context",
-            "version": "4.1.0",
+            "version": "5.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/context.git",
-                "reference": "8.x-4.1"
+                "reference": "5.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/context-8.x-4.1.zip",
-                "reference": "8.x-4.1",
-                "shasum": "5cfee680f7299d82b584502479c85566bb4285c1"
+                "url": "https://ftp.drupal.org/files/projects/context-5.0.0-rc1.zip",
+                "reference": "5.0.0-rc1",
+                "shasum": "ae1549bc5e5c75c0c6799b7b737d7391cfc5be73"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9"
+                "drupal/core": "^9.3 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-4.1",
-                    "datestamp": "1628187190",
+                    "version": "5.0.0-rc1",
+                    "datestamp": "1677054769",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3359,6 +3284,10 @@
                 {
                     "name": "jmiccolis",
                     "homepage": "https://www.drupal.org/user/31731"
+                },
+                {
+                    "name": "Kristen Pol",
+                    "homepage": "https://www.drupal.org/user/8389"
                 },
                 {
                     "name": "nedjo",
@@ -9772,6 +9701,21 @@
             "time": "2022-10-27T12:14:42+00:00"
         },
         {
+            "name": "popperjs/popperjs",
+            "version": "2.11.6",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "popperjs"
+            },
+            "license": [
+                "MIT"
+            ]
+        },
+        {
             "name": "progress-tracker/progress-tracker",
             "version": "2.0.7",
             "dist": {
@@ -13537,30 +13481,15 @@
             "time": "2022-11-07T18:59:33+00:00"
         },
         {
-            "name": "tippyjs/5.x",
-            "version": "5.2.1",
-            "dist": {
-                "type": "file",
-                "url": "https://unpkg.com/tippy.js@5.2.1/dist/tippy-bundle.iife.min.js"
-            },
-            "type": "drupal-library",
-            "extra": {
-                "installer-name": "tippyjs/5.x"
-            },
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "tippyjs/6.x",
+            "name": "tippyjs/tippyjs",
             "version": "6.3.7",
             "dist": {
-                "type": "file",
-                "url": "https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"
+                "type": "tar",
+                "url": "https://registry.npmjs.org/tippy.js/-/tippy.js-6.3.7.tgz"
             },
             "type": "drupal-library",
             "extra": {
-                "installer-name": "tippyjs/6.x"
+                "installer-name": "tippyjs"
             },
             "license": [
                 "MIT"
