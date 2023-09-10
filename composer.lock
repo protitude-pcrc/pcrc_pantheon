@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc9e521ecaa0002019df6f3b2fb857c7",
+    "content-hash": "049e19f596b59b22b3edae1aa8776144",
     "packages": [
         {
             "name": "acquia/blt",
@@ -3759,6 +3759,10 @@
                 {
                     "name": "Matthew Grasmick",
                     "homepage": "https://www.drupal.org/user/455714"
+                },
+                {
+                    "name": "markdorison",
+                    "homepage": "https://www.drupal.org/user/346106"
                 }
             ],
             "description": "Provides CSV as a serialization format.",
