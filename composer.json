@@ -63,7 +63,7 @@
         "drupal/imagemagick": "^3.4",
         "drupal/libraries": "^4.0.0",
         "drupal/link_attributes": "^2.1.0",
-        "drupal/linkit": "^5.0.0",
+        "drupal/linkit": "^6.0.0 || 6.1.0",
         "drupal/menu_block": "^1.4.0",
         "drupal/name": "^1.0.0-rc1",
         "drupal/pathauto": "^1.6.0",
