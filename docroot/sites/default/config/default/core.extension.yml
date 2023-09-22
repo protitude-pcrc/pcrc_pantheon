@@ -15,7 +15,7 @@ module:
   breakpoint: 0
   captcha: 0
   ckeditor: 0
-  ckeditor_codemirror: 0
+  ckeditor5: 0
   comment: 0
   config: 0
   contact: 0
