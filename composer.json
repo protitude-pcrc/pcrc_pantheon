@@ -32,7 +32,7 @@
         "drupal/admin_toolbar": "^3.2.0",
         "drupal/auto_entitylabel": "^3.0.0-beta3",
         "drupal/blazy": "^2.0.14",
-        "drupal/captcha": "^1.0.0-beta1",
+        "drupal/captcha": "^2.0.0",
         "drupal/ckeditor_codemirror": "^3.0.0",
         "drupal/config_devel": "^1.0.0",
         "drupal/context": "^5.0.0",
