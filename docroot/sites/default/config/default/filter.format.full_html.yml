@@ -121,6 +121,12 @@ filters:
       fn: '1'
       center: '1'
       button: '1'
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: false
+    weight: -33
+    settings: {  }
   filter_intlinks:
     id: filter_intlinks
     provider: pcrc_tweaks
@@ -149,10 +155,4 @@ filters:
     provider: pcrc_tweaks
     status: false
     weight: -34
-    settings: {  }
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: false
-    weight: -33
     settings: {  }

@@ -22,10 +22,10 @@ conditions:
       page: page
   current_theme:
     id: current_theme
-    theme: pcrc_omega
-    negate: 0
+    negate: false
     uuid: e1ea47d3-2ee8-42fb-9bcf-dfb736a6aa76
     context_mapping: {  }
+    theme: pcrc_omega
 reactions:
   blocks:
     id: blocks
