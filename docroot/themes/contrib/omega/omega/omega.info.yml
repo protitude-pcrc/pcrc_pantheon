@@ -1,11 +1,9 @@
 name: Omega
 type: theme
 description: 'A flexible theme with tons of configurable regions and a responsive, mobile-first layout.'
-package: Core
-# version: VERSION
-base theme: classy
+base theme: claro
 hidden: false
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 force_export: true
 regions:
   header: Header
@@ -34,7 +32,3 @@ features:
   favicon: true
   main_menu: true
   secondary_menu: true
-# Information added by Drupal.org packaging script on 2016-07-25
-version: '8.x-5.0-alpha7'
-project: 'omega'
-datestamp: 1469485442
