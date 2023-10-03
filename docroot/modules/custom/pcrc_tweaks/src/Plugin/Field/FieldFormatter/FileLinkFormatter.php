@@ -107,13 +107,13 @@ class FileLinkFormatter extends FormatterBase implements ContainerFactoryPluginI
       '#title' => $this->t('Link text'),
       '#description' => t('This field supports tokens.'),
       '#default_value' => $this->getSetting('link_text'),
-    ];    
+    ];
     $element['link_target'] = [
       '#title' => $this->t('Link target'),
       '#description' => $this->t('Select the where this link will open.'),
       '#type' => 'select',
       '#options' => ['inline' => 'In same window', '_blank' => 'In new window'],
-      '#default_value' => $this->getSetting('link_target'),        
+      '#default_value' => $this->getSetting('link_target'),
     ];
     // If we have the token module available, add the token tree link.
     if ($this->module_handler->moduleExists('token')) {
@@ -140,15 +140,15 @@ class FileLinkFormatter extends FormatterBase implements ContainerFactoryPluginI
     }
     return $summary;
   }
-  
+
   /**
    * {@inheritdoc}
    */
   public static function defaultSettings() {
     return [
       'link_text' => '[file:name]',
-      'link_target' => '',  
-    ] + parent::defaultSettings();    
+      'link_target' => '',
+    ] + parent::defaultSettings();
   }
 
   /**
@@ -163,17 +163,17 @@ class FileLinkFormatter extends FormatterBase implements ContainerFactoryPluginI
         // Prepare the text and the URL of the link.
         $token_data['file'] = $file;
         $link_text = $this->token->replace($this->getSetting('link_text'), $token_data);
-         
+
         $elements[$delta] = [
           '#type' => 'link',
-          '#url' => Url::fromUri(file_create_url($item->value)),
+          '#url' => Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($item->value)),
           '#title' => $link_text,
-          '#attributes' => ['type' => $file->getMimeType() . '; length=' . $file->getSize()],  
+          '#attributes' => ['type' => $file->getMimeType() . '; length=' . $file->getSize()],
         ];
         if ($this->getSetting('link_target') !== 'inline') {
           $elements[$delta]['#attributes']['target'] = $this->getSetting('link_target');
         }
-        
+
         $this->renderer->addCacheableDependency($elements[$delta], $file);
       }
     }

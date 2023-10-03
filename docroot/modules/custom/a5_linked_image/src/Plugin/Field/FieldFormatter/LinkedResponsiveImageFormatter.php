@@ -24,7 +24,7 @@ use Drupal\Core\Entity\Element\EntityAutocomplete;
  * )
  */
 class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
-  
+
   /**
    * {@inheritdoc}
    */
@@ -33,7 +33,7 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
       'link_uri' => '',
     ] + parent::defaultSettings();
   }
-  
+
     /**
    * {@inheritdoc}
    */
@@ -47,7 +47,7 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
 
     $element['link_uri'] = [
       '#type' => 'entity_autocomplete',
-      '#target_type' => 'node',  
+      '#target_type' => 'node',
       '#title' => $this->t('Link location'),
       '#description' => $this->t('Link to internal content or external url.'),
       '#default_value' => static::getUriAsDisplayableString($this->getSetting('link_uri')),
@@ -58,14 +58,14 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
         'visible' => [
           ':input[name="attributes[data-entity-embed-display-settings][image_link]"]' => array('value' => 'custom'),
         ],
-      ],  
+      ],
     ];
-    
+
     $element['#attached']['library'][] = 'core/states';
-    
+
     return $element;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -76,16 +76,16 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
       'content' => t('Linked to content'),
       'file' => t('Linked to file'),
       'custom' => t('Linked to custom link'),
-      'modal' => t('Display original in modal'),  
+      'modal' => t('Display original in modal'),
     ];
     // Display this setting only if image is linked.
     $image_link_setting = $this->getSetting('image_link');
     if (isset($link_types[$image_link_setting])) {
       $summary[] = $link_types[$image_link_setting];
-    }    
+    }
     return $summary;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -135,13 +135,14 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
     foreach ($files as $delta => $file) {
       // Link the <picture> element to the original file.
       if (isset($link_file)) {
-        $url = file_url_transform_relative(file_create_url($file->getFileUri()));
+        $file_url = \Drupal::service('file_url_generator')->generateAbsoluteString($uri);
+        $url = \Drupal::service('file_url_generator')->transformRelative($file_url);
       }
 
       $link_attributes = '';
       if ($image_link_setting == 'modal') {
         $image_uri = $file->getFileUri();
-        $url = Url::fromUri(file_create_url($image_uri))->getUri();
+        $url = Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($image_uri))->getUri();
         $link_attributes = "class=colorbox";
       }
 
@@ -155,12 +156,12 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
         '#theme' => 'responsive_image_formatter',
         '#item' => $item,
         '#item_attributes' => $item_attributes,
-        '#responsive_image_style_id' => $responsive_image_style ? $responsive_image_style->id() : '',          
+        '#responsive_image_style_id' => $responsive_image_style ? $responsive_image_style->id() : '',
         '#url' => $url,
         '#cache' => [
           'tags' => $cache_tags,
         ],
-        '#link_attributes' => $link_attributes,  
+        '#link_attributes' => $link_attributes,
       ];
     }
 
@@ -169,7 +170,7 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
     }
     return $elements;
   }
-  
+
   /**
    * Form element validation handler for the 'uri' element.
    *
@@ -188,7 +189,7 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
       return;
     }
   }
-  
+
   /**
    * Gets the URI without the 'internal:' or 'entity:' scheme.
    *
@@ -280,5 +281,5 @@ class LinkedResponsiveImageFormatter extends ResponsiveImageFormatter {
 
     return $uri;
   }
-  
+
 }
