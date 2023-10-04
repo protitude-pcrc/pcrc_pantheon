@@ -11,7 +11,7 @@ archive: false
 id: request_data_form
 title: 'Request Data Form'
 description: 'Request DiDR data form'
-category: ''
+categories: {  }
 elements: |
   first_name:
     '#type': textfield

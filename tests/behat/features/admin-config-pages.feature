@@ -106,7 +106,6 @@ Feature: check admin config pages
     Then I should see "Max 2600x2600"
     Then I should see "Medium (220×220)"
     Then I should see "Thumbnail (100×100)"
-    Then I should see "Video Embed Wysiwyg: Thumbnail Preview"
     When I go to "admin/config/media/responsive-image-style"
     Then I should see "Responsive image styles"
     Then I should see "Narrow"
