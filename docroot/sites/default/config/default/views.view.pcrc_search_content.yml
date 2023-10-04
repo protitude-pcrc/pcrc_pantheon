@@ -189,7 +189,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span class="type-label {{ type|lower|replace({'' '': ''_''}) }}">{{ type }}</span>'
+            text: "<span class=\"type-label {{ type|lower|replace({' ': '_'}) }}\">{{ type }}</span>"
             make_link: false
             path: ''
             absolute: false
