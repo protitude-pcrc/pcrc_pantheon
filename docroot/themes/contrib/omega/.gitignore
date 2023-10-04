@@ -1,4 +1,6 @@
-codekit-config.json
-vendor
+.idea
 *.css.map
-*.scssc
+node_modules
+.sass-cache
+vendor
+Gemfile.lock
