@@ -203,7 +203,7 @@ class OmegaLayout implements OmegaLayoutInterface {
   /**
    * @inheritdoc
    */
-  public static function compileLayoutScss($layout, $layoutName, $theme = 'omega', $options) {
+  public static function compileLayoutScss($layout, $layoutName, $theme, $options) {
     // get a list of themes
     $themes = \Drupal::service('theme_handler')->listInfo();
     // get the current settings/info for the theme
@@ -654,7 +654,7 @@ class OmegaLayout implements OmegaLayoutInterface {
   /**
    * @inheritdoc
    */
-  public static function layoutAdjust($main, $empty_regions = array(), $cols) {
+  public static function layoutAdjust($main, $empty_regions, $cols) {
     // assign values from $main region's data
     $original_prefix = $prefix = $main['prefix'];
     $original_pull = $pull = $main['pull'];
