@@ -594,7 +594,7 @@ class OmegaLayout implements OmegaLayoutInterface {
       // get all the breakpoint groups available to Drupal
       $all_breakpoint_groups = \Drupal::service('breakpoint.manager')->getGroups();
       // get all the base themes of this theme
-      $baseThemes = \Drupal::theme()->getActiveTheme()->getBaseThemes();
+      $baseThemes = \Drupal::theme()->getActiveTheme()->getBaseThemeExtensions();
 
       $theme_ids = array(
         $theme => \Drupal::theme()->getActiveTheme()->getExtension()->info['name']
