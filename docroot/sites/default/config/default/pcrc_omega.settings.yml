@@ -52,7 +52,6 @@ styles:
   omega/omega_tabs: 1
   omega/omega_taxonomy_terms: 0
   omega/omega_forms: 0
-  omega_starterkit/omega_starterkit: 1
 layout-config:
   non_omegags_info: ''
 node_type_directory_layout: primary

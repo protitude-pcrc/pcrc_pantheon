@@ -24,6 +24,10 @@ settings:
   views_label: ''
   items_per_page: none
 visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
   context_all:
     id: context_all
     negate: null
@@ -43,7 +47,3 @@ visibility:
     id: context
     negate: null
     values: ''
-  request_path:
-    id: request_path
-    negate: false
-    pages: '<front>'
