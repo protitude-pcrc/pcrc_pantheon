@@ -107,7 +107,9 @@
             "drupal/core-project-message": true,
             "wikimedia/composer-merge-plugin": true,
             "acquia/blt": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {

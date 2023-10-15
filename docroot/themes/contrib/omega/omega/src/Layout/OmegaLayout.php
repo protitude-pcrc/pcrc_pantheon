@@ -203,7 +203,7 @@ class OmegaLayout implements OmegaLayoutInterface {
   /**
    * @inheritdoc
    */
-  public static function compileLayoutScss($layout, $layoutName, $theme = 'omega', $options) {
+  public static function compileLayoutScss($layout, $layoutName, $theme, $options) {
     // get a list of themes
     $themes = \Drupal::service('theme_handler')->listInfo();
     // get the current settings/info for the theme
@@ -594,7 +594,7 @@ class OmegaLayout implements OmegaLayoutInterface {
       // get all the breakpoint groups available to Drupal
       $all_breakpoint_groups = \Drupal::service('breakpoint.manager')->getGroups();
       // get all the base themes of this theme
-      $baseThemes = \Drupal::theme()->getActiveTheme()->getBaseThemes();
+      $baseThemes = \Drupal::theme()->getActiveTheme()->getBaseThemeExtensions();
 
       $theme_ids = array(
         $theme => \Drupal::theme()->getActiveTheme()->getExtension()->info['name']
@@ -654,7 +654,7 @@ class OmegaLayout implements OmegaLayoutInterface {
   /**
    * @inheritdoc
    */
-  public static function layoutAdjust($main, $empty_regions = array(), $cols) {
+  public static function layoutAdjust($main, $empty_regions, $cols) {
     // assign values from $main region's data
     $original_prefix = $prefix = $main['prefix'];
     $original_pull = $pull = $main['pull'];

@@ -209,7 +209,7 @@ $form['layout-config']['views-layouts'] = array(
 
 // $result attempts to get only page views.
 $results = [];
-$entity_ids = \Drupal::service('entity.query')->get('view')
+$entity_ids = \Drupal::entityQuery('view')
   ->condition('status', TRUE)
   ->condition("display.*.display_plugin", array('page' => 'page'), 'IN')
   ->execute();

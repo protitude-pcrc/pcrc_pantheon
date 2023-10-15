@@ -65,7 +65,7 @@ interface OmegaLayoutInterface {
    * @param $options
    * @return
    */
-  public static function compileLayoutScss($layout, $layoutName, $theme = 'omega', $options);
+  public static function compileLayoutScss($layout, $layoutName, $theme, $options);
 
   /**
    * Method to compile CSS
@@ -129,7 +129,7 @@ interface OmegaLayoutInterface {
    * @return array contains:
    *  - width, push, pull, prefix and suffix of adjusted primary region
    */
-  public static function layoutAdjust($main, $empty_regions = array(), $cols);
+  public static function layoutAdjust($main, $empty_regions, $cols);
 
   /**
    * Function returns the trimmed name of the breakpoint id

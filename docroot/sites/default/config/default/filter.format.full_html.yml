@@ -10,7 +10,6 @@ dependencies:
     - pcrc_tweaks
     - sc_archetype5
     - shortcode
-    - video_embed_wysiwyg
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
 name: 'Full HTML'
@@ -121,12 +120,6 @@ filters:
       fn: '1'
       center: '1'
       button: '1'
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: false
-    weight: -33
-    settings: {  }
   filter_intlinks:
     id: filter_intlinks
     provider: pcrc_tweaks
