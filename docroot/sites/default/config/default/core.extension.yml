@@ -111,8 +111,6 @@ module:
   views: 10
   standard: 1000
 theme:
-  stable: 0
-  classy: 0
   omega: 0
   pcrc_omega: 0
   claro: 0
