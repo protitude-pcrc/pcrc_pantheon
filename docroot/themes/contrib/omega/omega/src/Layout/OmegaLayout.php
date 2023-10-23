@@ -519,7 +519,7 @@ class OmegaLayout implements OmegaLayoutInterface {
     // if it is a term page, check for and assign alternate layout
     // @todo: Since this view is more specific than the VIEW taxonomy_term_page_1, we should remove that view from the options in the theme settings.
     if ($term) {
-      $vocab = $term->getVocabularyId();
+      $vocab = $term->id();
       $vocabLayout = theme_get_setting('taxonomy_' . $vocab . '_layout');
       $layout = $vocabLayout ? $vocabLayout : $defaultLayout;
     }
