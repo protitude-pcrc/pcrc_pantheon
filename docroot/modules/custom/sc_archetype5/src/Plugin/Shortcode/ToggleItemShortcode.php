@@ -19,17 +19,17 @@ use Drupal\shortcode\Plugin\ShortcodeBase;
  * )
  */
 class ToggleItemShortcode extends ShortcodeBase {
-  
+
   public function process($attributes, $text, $langcode = Language::LANGCODE_NOT_SPECIFIED) {
     $attributes = $this->getAttributes(array(
-      'title'  => '', 
+      'title'  => '',
     ),
       $attributes
     );
-    
-    return '{start-item}<h3 class="toggle-title">' . $attributes['title'] . '</h3><div>' . $text . '</div>{end-item}';
+
+    return '{start-item}<details><summary>' . $attributes['title'] . '</summary><div>' . $text . '</div></details>{end-item}';
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -39,5 +39,5 @@ class ToggleItemShortcode extends ShortcodeBase {
     $output[] = '<p>' . t('Adds an item to your toggle.') . '</p>';
     return implode(' ', $output);
   }
-  
+
 }

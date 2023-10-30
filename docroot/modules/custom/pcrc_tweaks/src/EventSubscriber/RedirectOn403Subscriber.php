@@ -3,7 +3,7 @@
 namespace Drupal\pcrc_tweaks\EventSubscriber;
 
 use Drupal\Core\EventSubscriber\HttpExceptionSubscriberBase;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
@@ -20,7 +20,7 @@ class RedirectOn403Subscriber extends HttpExceptionSubscriberBase {
     return ['html'];
   }
 
-  public function on403(GetResponseForExceptionEvent $event) {
+  public function on403(ExceptionEvent $event) {
     $request = $event->getRequest();
     $is_anonymous = $this->currentUser->isAnonymous();
     $route_name = $request->attributes->get('_route');

@@ -1,9 +1,12 @@
 uuid: 372304bc-f32f-4566-8313-c53ef14f1eb1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 id: request
 label: 'Site User'
 weight: -8
 is_admin: null
-permissions: {  }
+permissions:
+  - 'delete own files'

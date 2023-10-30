@@ -21,8 +21,8 @@ function a5_file_download_help($route_name, \Drupal\Core\Routing\RouteMatchInter
 
 function a5_file_download_log_file_download($entity) {
   $config = \Drupal::config('a5_file_download.settings');
-  $time = REQUEST_TIME;
-  
+  $time = \Drupal::time()->getRequestTime();
+
   // Validate file has extension that should be counted, if not return.
   $extensions = explode(' ', mb_strtolower(trim($config->get('a5_file_download_count_excluded_file_extensions'))));
   if (count($extensions)) {

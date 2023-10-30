@@ -24,7 +24,7 @@ use Drupal\Core\Entity\Element\EntityAutocomplete;
  * )
  */
 class LinkedImageFormatter extends ImageFormatter {
-  
+
   /**
    * {@inheritdoc}
    */
@@ -33,7 +33,7 @@ class LinkedImageFormatter extends ImageFormatter {
       'link_uri' => '',
     ] + parent::defaultSettings();
   }
-  
+
     /**
    * {@inheritdoc}
    */
@@ -47,18 +47,18 @@ class LinkedImageFormatter extends ImageFormatter {
 
     $element['link_uri'] = [
       '#type' => 'entity_autocomplete',
-      '#target_type' => 'node',  
+      '#target_type' => 'node',
       '#title' => $this->t('Link location'),
       '#description' => $this->t('Link to internal content or external url.'),
       '#default_value' => static::getUriAsDisplayableString($this->getSetting('link_uri')),
       '#process_default_value' => FALSE,
       '#attributes' => ['data-autocomplete-first-character-blacklist' => '/#?'],
-      '#element_validate' => [[get_called_class(), 'validateUriElement']],  
+      '#element_validate' => [[get_called_class(), 'validateUriElement']],
     ];
-    
+
     return $element;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -69,7 +69,7 @@ class LinkedImageFormatter extends ImageFormatter {
       'content' => t('Linked to content'),
       'file' => t('Linked to file'),
       'custom' => t('Linked to custom link'),
-      'modal' => t('Display original in modal'),  
+      'modal' => t('Display original in modal'),
     ];
     // Display this setting only if image is linked.
     $image_link_setting = $this->getSetting('image_link');
@@ -78,7 +78,7 @@ class LinkedImageFormatter extends ImageFormatter {
     }
     return $summary;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -129,7 +129,7 @@ class LinkedImageFormatter extends ImageFormatter {
         // context to ensure different file URLs are generated for different
         // sites in a multisite setup, including HTTP and HTTPS versions of the
         // same site. Fix in https://www.drupal.org/node/2646744.
-        $url = Url::fromUri(file_create_url($image_uri));
+        $url = Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($image_uri));
         $cache_contexts[] = 'url.site';
       }
       $cache_tags = Cache::mergeTags($base_cache_tags, $file->getCacheTags());
@@ -137,7 +137,7 @@ class LinkedImageFormatter extends ImageFormatter {
       $link_attributes = '';
       if ($image_link_setting == 'modal') {
         $image_uri = $file->getFileUri();
-        $url = Url::fromUri(file_create_url($image_uri))->getUri();
+        $url = Url::fromUri(\Drupal::service('file_url_generator')->generateAbsoluteString($image_uri))->getUri();
         $link_attributes = "class=colorbox";
       }
 
@@ -157,7 +157,7 @@ class LinkedImageFormatter extends ImageFormatter {
           'tags' => $cache_tags,
           'contexts' => $cache_contexts,
         ],
-        '#link_attributes' => $link_attributes,  
+        '#link_attributes' => $link_attributes,
       ];
     }
 
@@ -166,7 +166,7 @@ class LinkedImageFormatter extends ImageFormatter {
     }
     return $elements;
   }
-  
+
   /**
    * Form element validation handler for the 'uri' element.
    *
@@ -185,7 +185,7 @@ class LinkedImageFormatter extends ImageFormatter {
       return;
     }
   }
-  
+
   /**
    * Gets the URI without the 'internal:' or 'entity:' scheme.
    *
@@ -277,5 +277,5 @@ class LinkedImageFormatter extends ImageFormatter {
 
     return $uri;
   }
-  
+
 }

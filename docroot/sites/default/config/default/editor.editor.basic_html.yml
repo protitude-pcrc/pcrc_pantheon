@@ -34,6 +34,9 @@ settings:
         - heading4
         - heading5
         - heading6
+    ckeditor5_list:
+      reversed: false
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
@@ -52,9 +55,6 @@ settings:
         - '<h5 id>'
         - '<h6 id>'
         - '<a hreflang accesskey target data-entity-type data-entity-uuid data-entity-substitution>'
-    ckeditor5_list:
-      reversed: false
-      startIndex: true
     editor_advanced_link_link:
       enabled_attributes:
         - id
