@@ -47,7 +47,7 @@ jobs:
           cd web
           lando drush cr
           lando drush deploy
-          lando drush sql-sanitize --sanitize-password -y
+          lando drush sql-sanitize --sanitize-password=y -y
           lando drush cr
           cd ..
           lando db-export site.sql
