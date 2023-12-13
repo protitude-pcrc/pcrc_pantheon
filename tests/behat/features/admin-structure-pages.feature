@@ -25,7 +25,6 @@ Feature: check admin structure pages
     Then I should see "Study"
     Then I should see "Upcoming Events & Presentations"
     When I go to "admin/structure/display-modes/form"
-    # Add more here if custom modes added
     Then I should see "Form modes"
     Then I should see "Register"
     When I go to "admin/structure/context"
@@ -47,7 +46,6 @@ Feature: check admin structure pages
     Then I should see "Search Buttons"
     Then I should see "Views headers"
     When I go to "admin/structure/display-modes/view"
-    # Add any custom view modes needed
     Then I should see "View modes"
     Then I should see "Full content"
     Then I should see "Highlighted title"

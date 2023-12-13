@@ -77,6 +77,22 @@ GITHUB_TOKEN=$token'>.env");
   }
 
   /**
+   * Run cypress tests.
+   *
+   * @command mih:cypress
+   * @description Run Cypress.
+   */
+  public function cypress(array $args) {
+    $update = NULL !== $args[0] ? $args[0] : 0;
+    if ($update) {
+      $this->_exec($this->lando() . 'drush updatedb -y');
+      $this->_exec($this->lando() . 'drush cr');
+    }
+
+    $this->_exec('cd tests/cypress && ' . $this->lando() . 'cypress run --config baseUrl=https://pcrc.lndo.site');
+  }
+
+  /**
    * Run behat.
    *
    * @command mih:behat

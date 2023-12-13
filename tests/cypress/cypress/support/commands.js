@@ -46,9 +46,10 @@ Cypress.Commands.add('loginUserByUid', (uid) => {
 * Deletes last node created.
 */
 Cypress.Commands.add('deleteLastNode', () => {
-  cy.visit('/admin/content');
-  cy.get('tbody > :nth-child(1) > .views-field-title > a').click();
-  cy.get('#tab-delete').click({force: true});
+  cy.visit('admin/content');
+  cy.get('#edit-node-bulk-form-0').click();
+  cy.get('#edit-action').select('node_delete_action');
+  cy.get('#edit-submit').click();
   cy.get('[value="Delete"]').click();
 });
 

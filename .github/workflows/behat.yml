@@ -45,7 +45,7 @@ jobs:
           database: ${{ github.event.inputs.database }}
       - name: Run behat tests
         run: |
-          lando blt mih:behat
+          blt mih:behat
         env:
           behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
       - name: Screenshots artifact
