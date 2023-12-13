@@ -57,8 +57,8 @@ jobs:
       - name: Test login data
         uses: actions/upload-artifact@v3
         with:
-          name: login-data
-          path: tests/cypress/cypress/fixtures/login-data.json
+          name: ld
+          path: tests/cypress/cypress/fixtures
           retention-days: 1
       - name: Screenshots artifact
         if: failure()
