@@ -9,7 +9,7 @@ permissions:
   actions: read
   contents: write
 jobs:
-  behat:
+  cypress:
     name: Cypress tests
     runs-on: ubuntu-latest
     steps:
@@ -52,11 +52,9 @@ jobs:
         run: |
           cd tests/cypress
           lando cypress run --config baseUrl=https://pcrc.lndo.site
-        env:
-          behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
-      - name: Test login data
+      - name: 'Tests artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: ld
-          path: tests/cypress/cypress/fixtures
-          retention-days: 1
+          name: cypress
+          path: tests/cypress/cypress
+          retention-days: 2
