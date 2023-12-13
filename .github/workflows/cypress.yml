@@ -27,7 +27,8 @@ jobs:
           composer config -g github-oauth.github.com $gh_token
           composer install --ignore-platform-reqs -n
           vendor/bin/blt mih:landosetup $gh_token $uid
-          echo $CYPRESS_LOGIN_DATA > tests/cypress/cypress/fixtures/login-data.json
+          touch tests/cypress/cypress/fixtures/login-data.json
+          echo $CYPRESS_LOGIN_DATA >> tests/cypress/cypress/fixtures/login-data.json
           ls -al docroot/modules/contrib
           echo '=-=-=-=-=-=-=-=-=-=-=-=-'
           ls -al docroot/modules/custom
@@ -51,7 +52,6 @@ jobs:
         env:
           behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
       - name: Test login data
-        if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: login-data
