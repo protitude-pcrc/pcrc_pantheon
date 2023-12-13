@@ -27,11 +27,13 @@ jobs:
           composer config -g github-oauth.github.com $gh_token
           composer install --ignore-platform-reqs -n
           vendor/bin/blt mih:landosetup $gh_token $uid
-          touch tests/cypress/cypress/fixtures/login-data.json
-          echo $CYPRESS_LOGIN_DATA >> tests/cypress/cypress/fixtures/login-data.json
           ls -al docroot/modules/contrib
           echo '=-=-=-=-=-=-=-=-=-=-=-=-'
           ls -al docroot/modules/custom
+          touch tests/cypress/cypress/fixtures/login-data.json
+          echo $CYPRESS_LOGIN_DATA >> tests/cypress/cypress/fixtures/login-data.json
+          ls tests/cypress/cypress/fixtures/
+          cat tests/cypress/cypress/fixtures/login-data.json
           sleep 5
         env:
           gh_token: ${{ secrets.GH_TOKEN_REPO }}
