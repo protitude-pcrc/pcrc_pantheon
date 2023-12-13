@@ -48,7 +48,8 @@ jobs:
           database: ${{ github.event.inputs.database }}
       - name: Run cypress tests
         run: |
-          vendor/bin/blt mih:cypress
+          cd tests/cypress
+          lando cypress run --config baseUrl=https://pcrc.lndo.site
         env:
           behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
       - name: Test login data
