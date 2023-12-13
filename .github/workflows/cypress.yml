@@ -60,11 +60,3 @@ jobs:
           name: ld
           path: tests/cypress/cypress/fixtures
           retention-days: 1
-      - name: Screenshots artifact
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: screenshots
-          path: tests/cypress/cypress/screenshots
-          retention-days: 1
-
