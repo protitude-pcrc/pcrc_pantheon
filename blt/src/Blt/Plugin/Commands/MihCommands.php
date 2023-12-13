@@ -82,13 +82,7 @@ GITHUB_TOKEN=$token'>.env");
    * @command mih:cypress
    * @description Run Cypress.
    */
-  public function cypress(array $args) {
-    $update = NULL !== $args ? $args[0] : 0;
-    if ($update) {
-      $this->_exec($this->lando() . 'drush updatedb -y');
-      $this->_exec($this->lando() . 'drush cr');
-    }
-
+  public function cypress() {
     $this->_exec('cd tests/cypress && ' . $this->lando() . 'cypress run --config baseUrl=https://pcrc.lndo.site');
   }
 

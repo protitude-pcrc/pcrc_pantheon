@@ -50,6 +50,13 @@ jobs:
           vendor/bin/blt mih:cypress
         env:
           behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
+      - name: Test login data
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: login-data
+          path: tests/cypress/cypress/fixtures/login-data.json
+          retention-days: 1
       - name: Screenshots artifact
         if: failure()
         uses: actions/upload-artifact@v3
