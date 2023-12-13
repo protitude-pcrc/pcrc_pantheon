@@ -83,7 +83,7 @@ GITHUB_TOKEN=$token'>.env");
    * @description Run Cypress.
    */
   public function cypress(array $args) {
-    $update = NULL !== $args[0] ? $args[0] : 0;
+    $update = NULL !== $args ? $args[0] : 0;
     if ($update) {
       $this->_exec($this->lando() . 'drush updatedb -y');
       $this->_exec($this->lando() . 'drush cr');
