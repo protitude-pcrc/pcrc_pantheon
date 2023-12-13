@@ -32,7 +32,7 @@ class MihCommands extends BltTasks {
     $this->_exec("mkdir -p backups");
     $this->_exec("cp blt/lando.local.settings.php web/sites/default/settings/local.settings.php");
     $this->_exec("cp blt/behat.local.yml tests/behat/local.yml");
-    $this->_exec($this->lando() . "composer install --ignore-platform-reqs -n");
+    $this->_exec("composer install --ignore-platform-reqs -n");
     $hash = Crypt::randomBytesBase64(55);
     $this->_exec("echo 'PANTHEON_ENVIRONMENT=local
 DRUPAL_HASH_SALT=$hash
@@ -74,6 +74,16 @@ GITHUB_TOKEN=$token'>.env");
     else {
       $this->say("❗️ GITHUB_TOKEN not set. ❗️");
     }
+  }
+
+  /**
+   * Run cypress tests.
+   *
+   * @command mih:cypress
+   * @description Run Cypress.
+   */
+  public function cypress() {
+    $this->_exec('cd tests/cypress && ' . $this->lando() . 'cypress run --config baseUrl=https://pcrc.lndo.site');
   }
 
   /**

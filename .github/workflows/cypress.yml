@@ -1,4 +1,4 @@
-name: (M) Behat Tests
+name: (M) Cypress Tests
 on:
   pull_request:
   workflow_dispatch:
@@ -9,8 +9,8 @@ permissions:
   actions: read
   contents: write
 jobs:
-  behat:
-    name: Behat tests
+  cypress:
+    name: Cypress tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -30,10 +30,15 @@ jobs:
           ls -al docroot/modules/contrib
           echo '=-=-=-=-=-=-=-=-=-=-=-=-'
           ls -al docroot/modules/custom
-          sleep 30
+          touch tests/cypress/cypress/fixtures/login-data.json
+          echo $CYPRESS_LOGIN_DATA >> tests/cypress/cypress/fixtures/login-data.json
+          ls tests/cypress/cypress/fixtures/
+          cat tests/cypress/cypress/fixtures/login-data.json
+          sleep 5
         env:
           gh_token: ${{ secrets.GH_TOKEN_REPO }}
           uid: ${{ secrets.PCRC_UID }}
+          CYPRESS_LOGIN_DATA: ${{ secrets.CYPRESS_LOGIN_DATA }}
       - name: Custom Database
         if: "${{ github.event.inputs.database != '' }}"
         run: |
@@ -43,16 +48,15 @@ jobs:
           lando drush sql-sanitize --sanitize-password -y
         env:
           database: ${{ github.event.inputs.database }}
-      - name: Run behat tests
+      - name: Run cypress tests
         run: |
-          blt mih:behat
-        env:
-          behat_tag: ${{ github.event.inputs.BEHAT_TAG }}
+          cd tests/cypress
+          lando cypress run --config baseUrl=https://pcrc.lndo.site
       - name: Screenshots artifact
         if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: screenshots
-          path: tests/behat/screenshots
+          path: tests/cypress/cypress/screenshots
           retention-days: 1
 
