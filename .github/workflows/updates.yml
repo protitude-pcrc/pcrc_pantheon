@@ -9,6 +9,11 @@ on:
         default: 'drupal/core'
       version:
         description: 'Require version'
+      no-build:
+        type: boolean
+        description: 'Skip build'
+        default: false
+
 permissions:
   actions: write
   contents: write
@@ -30,9 +35,19 @@ jobs:
           email: github.actions@palliativecareresearch.org
           gh_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
+        if: github.event.inputs.no-build == 'false'
         run: |
           touch prnum.txt
           gh pr create --title "[Composer] $drupal_update" --body "$(git log -1 --pretty=%B)" | sed 's/https:\/\/github.com\/protitude-pcrc\/pcrc_pantheon\/pull\///g' > prnum.txt
+          gh pr merge --auto --merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REPO }}
+          drupal_update: ${{ github.event.inputs.drupal_update }}
+      - name: Create Pull Request (no build)
+        if: github.event.inputs.no-build == 'true'
+        run: |
+          touch prnum.txt
+          gh pr create --title "[Composer] $drupal_update #nobuild" --body "$(git log -1 --pretty=%B)" | sed 's/https:\/\/github.com\/protitude-pcrc\/pcrc_pantheon\/pull\///g' > prnum.txt
           gh pr merge --auto --merge
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_REPO }}
