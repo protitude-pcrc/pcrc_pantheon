@@ -259,7 +259,6 @@ $update_list");
       $this->say("No security updates found.");
       return;
     }
-    $security_updates = json_decode($security_updates, TRUE);
     foreach ($security_updates as $value) {
       $name = $value[0]['packageName'];
       $this->say("Sending update to GitHub composer action for $name");
