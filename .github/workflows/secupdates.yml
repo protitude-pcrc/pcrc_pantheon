@@ -38,4 +38,6 @@ jobs:
       - name: Run blt mih:su
         run: |
           vendor/bin/blt mih:su --no-interaction
+        env:
+          gh_token: ${{ secrets.GH_TOKEN_REPO }}
 
