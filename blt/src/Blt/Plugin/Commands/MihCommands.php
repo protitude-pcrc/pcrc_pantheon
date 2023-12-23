@@ -252,14 +252,16 @@ $update_list");
    * @description Grab security updates and send to GitHub composer action.
    */
   public function su() {
-    $security_updates = shell_exec($this->lando() . "drush pm:security --format=json --no-dev 2>/dev/null | sed -n '/^{/,/^}$/p'");
+    $security_updates = shell_exec("composer audit --format=json --no-dev");
+    $security_updates = json_decode($security_updates, TRUE);
+    $security_updates = $security_updates['advisories'];
     if (empty($security_updates)) {
       $this->say("No security updates found.");
       return;
     }
     $security_updates = json_decode($security_updates, TRUE);
     foreach ($security_updates as $value) {
-      $name = $value['name'];
+      $name = $value[0]['packageName'];
       $this->say("Sending update to GitHub composer action for $name");
       $this->_exec("gh workflow run updates.yml --ref main --repo github.com/protitude-pcrc/pcrc_pantheon -f drupal_update=$name");
     }
