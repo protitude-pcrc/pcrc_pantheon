@@ -59,7 +59,7 @@
         "drupal/file_entity": "^2.0.0-beta7",
         "drupal/fontyourface": "4.0.x-dev@dev",
         "drupal/google_analytics": "^4.0.0",
-        "drupal/imagemagick": "^3.4",
+        "drupal/imagemagick": "^3.6",
         "drupal/libraries": "^4.0.0",
         "drupal/link_attributes": "^2.1.0",
         "drupal/linkit": "^6.0.0 || 6.1.0",
