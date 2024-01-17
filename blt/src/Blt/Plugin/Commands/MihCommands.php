@@ -206,7 +206,7 @@ GITHUB_TOKEN=$token'>.env");
 
     $this->_exec("touch log.txt");
     if ($module == 'drupal/core') {
-      $this->_exec("composer update drupal/core-composer-scaffold drupal/core-recommended drupal/core-project-message -W --ignore-platform-req=ext-gd >log.txt 2>&1");
+      $this->_exec("composer update drupal/core-composer-scaffold drupal/core-recommended drupal/core-project-message drupal/core-dev -W --ignore-platform-req=ext-gd >log.txt 2>&1");
       $this->composer_updates('/Upgrading (drupal)\/core \((.* \=\> .*)\)$/mU');
     }
     elseif (!empty($module)) {
