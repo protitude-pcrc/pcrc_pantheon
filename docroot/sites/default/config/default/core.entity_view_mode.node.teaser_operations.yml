@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.teaser_operations
 label: 'Teaser (operations)'
+description: ''
 targetEntityType: node
 cache: true

@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Therapeutic Areas'
 vid: therapeutic_areas
-description: ''
+description: null
 weight: 0
+new_revision: false

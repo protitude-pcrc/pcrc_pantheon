@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.study_data_requests
 label: 'Study data requests'
+description: ''
 targetEntityType: node
 cache: true

@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Study Setting'
 vid: study_setting
-description: ''
+description: null
 weight: 0
+new_revision: false

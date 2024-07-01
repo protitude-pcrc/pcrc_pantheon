@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.teaser_no_image
 label: 'Teaser (no image)'
+description: ''
 targetEntityType: node
 cache: true

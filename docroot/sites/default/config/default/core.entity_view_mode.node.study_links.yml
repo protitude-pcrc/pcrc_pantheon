@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.study_links
 label: 'Study links'
+description: ''
 targetEntityType: node
 cache: true

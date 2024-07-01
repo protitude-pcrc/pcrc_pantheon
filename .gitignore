@@ -17,6 +17,7 @@ docroot/sites/simpletest/
 # Cypress login users
 tests/cypress/cypress/fixtures/login-data.json
 tests/cypress/node_modules
+tests/cypress/cypress/screenshots
 
 # Salt is in env variables
 salt.txt

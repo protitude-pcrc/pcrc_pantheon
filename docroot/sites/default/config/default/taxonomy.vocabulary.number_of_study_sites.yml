@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Number of Study Sites'
 vid: number_of_study_sites
-description: ''
+description: null
 weight: 0
+new_revision: false
