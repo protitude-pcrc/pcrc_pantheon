@@ -108,7 +108,8 @@
             "acquia/blt": true,
             "oomphinc/composer-installers-extender": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
