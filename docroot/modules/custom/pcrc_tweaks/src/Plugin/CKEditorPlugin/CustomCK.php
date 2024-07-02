@@ -25,7 +25,7 @@ class CustomCK extends CKEditorPluginBase implements CKEditorPluginConfigurableI
   public function __construct(array $configuration, $plugin_id, $plugin_definition) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -36,21 +36,21 @@ class CustomCK extends CKEditorPluginBase implements CKEditorPluginConfigurableI
       $plugin_definition
     );
   }
-  
+
   /**
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state, Editor $editor) {
     return $form;
   }
-  
+
   /**
    * {@inheritdoc}
    */
   public function getButtons() {
     return array();
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -69,8 +69,8 @@ class CustomCK extends CKEditorPluginBase implements CKEditorPluginConfigurableI
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'pcrc_tweaks') . '/js/plugins/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('pcrc_tweaks') . '/js/plugins/plugin.js';
   }
-  
+
 }
 

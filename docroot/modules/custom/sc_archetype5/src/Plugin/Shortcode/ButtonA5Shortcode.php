@@ -22,7 +22,7 @@ use Drupal\Core\Render\Markup;
  * )
  */
 class ButtonA5Shortcode extends ShortcodeBase {
-  
+
   public function process($attributes, $text, $langcode = Language::LANGCODE_NOT_SPECIFIED) {
     $attributes = $this->getAttributes(array(
       'class' => '',
@@ -31,7 +31,7 @@ class ButtonA5Shortcode extends ShortcodeBase {
       'color'   => '',
       'target'  => '',
       'float' => '',
-      'style' => 'solid',  
+      'style' => 'solid',
     ),
       $attributes
     );
@@ -41,13 +41,13 @@ class ButtonA5Shortcode extends ShortcodeBase {
     $class = $this->addClass($class, $attributes['color']);
     $class = $this->addClass($class, $attributes['float']);
     $class = $this->addClass($class, $attributes['style']);
-    
+
     if (empty($attributes['url']) || $attributes['url'] == '#'){
       $attributes['url'] = '<front>';
     }
-    
+
     $markup = Markup::create("<span class='button-outline-top'><span class='button-outline-bottom'><span class='button-text-wrapper'>" . $text . "</span></span></span>");
-    
+
     // Get route name.
     if ($url = \Drupal::service('path.validator')->getUrlIfValid(ltrim($attributes['url'], '/'))) {
       $link = Link::fromTextAndUrl($markup, $url);
@@ -57,13 +57,13 @@ class ButtonA5Shortcode extends ShortcodeBase {
     else {
       $link = [
         '#markup' => $markup,
-        '#prefix' => "<div class='$class'>",  
-        '#suffix'  => '</div>', 
+        '#prefix' => "<div class='$class'>",
+        '#suffix'  => '</div>',
       ];
     }
-    return render($link);
+    return \Drupal::service('renderer')->render($link);
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -78,5 +78,5 @@ class ButtonA5Shortcode extends ShortcodeBase {
     }
     return implode(' ', $output);
   }
-  
+
 }

@@ -19,20 +19,19 @@ use Drupal\shortcode\Plugin\ShortcodeBase;
  * )
  */
 class ToggleShortcode extends ShortcodeBase {
-  
+
   public function process($attributes, $text, $langcode = Language::LANGCODE_NOT_SPECIFIED) {
     $attributes = $this->getAttributes(array(
-      'class' => '',  
+      'class' => '',
     ),
       $attributes
     );
 
     $text = _sc_archetype5_clean_items($text);
-    $class = $this->addClass($attributes['class'], 'toggle');
-    
-    return '<div class="' . $class . '">' . $text . '</div>';
+
+    return $text;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -42,5 +41,5 @@ class ToggleShortcode extends ShortcodeBase {
     $output[] = '<p>' . t('Wraps your content with a toggle div.') . '</p>';
     return implode(' ', $output);
   }
-  
+
 }

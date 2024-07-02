@@ -5,11 +5,11 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - linkit
     - pathologic
     - pcrc_tweaks
     - sc_archetype5
     - shortcode
-    - video_embed_wysiwyg
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
 name: 'Basic HTML'
@@ -22,7 +22,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <a href hreflang !href accesskey id rel target title data-entity-type data-entity-uuid data-entity-substitution> <drupal-entity data-entity-type data-entity-uuid data-entity-substitution data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <span> <img src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <drupal-entity data-entity-type data-entity-uuid data-entity-substitution data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title> <blockquote cite> <ul type> <ol type start> <a hreflang accesskey target data-entity-type data-entity-uuid data-entity-substitution href title id rel> <strong> <em> <code> <li>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
@@ -55,40 +55,32 @@ filters:
     status: false
     weight: -38
     settings:
-      infobox: '1'
-      center: '1'
-      video: '1'
-      toggle-item: '1'
       tooltip: '1'
-      tabs: '1'
-      accordion-item: '1'
-      code: '1'
-      toggle: '1'
-      col: '1'
-      hline: '1'
-      wordrotate: '1'
-      color: '1'
       accordion: '1'
-      notification: '1'
-      hide: '1'
+      infobox: '1'
       small: '1'
-      icon: '1'
-      fn: '1'
-      teaser: '1'
+      accordion-item: '1'
+      hline: '1'
+      video: '1'
       tab-item: '1'
+      teaser: '1'
+      color: '1'
+      tabs: '1'
+      col: '1'
+      wordrotate: '1'
+      icon: '1'
+      code: '1'
+      notification: '1'
+      toggle-item: '1'
+      toggle: '1'
+      hide: '1'
+      fn: '1'
+      center: '1'
       button: '1'
-      link: '1'
-      img: '1'
-      item: '1'
-      quote: '1'
-      highlight: '1'
-      random: '1'
-      clear: '1'
-      dropcap: '1'
   entity_embed:
     id: entity_embed
     provider: entity_embed
-    status: true
+    status: false
     weight: -49
     settings: {  }
   filter_htmlcorrector:
@@ -134,12 +126,6 @@ filters:
     status: false
     weight: -37
     settings: {  }
-  video_embed_wysiwyg:
-    id: video_embed_wysiwyg
-    provider: video_embed_wysiwyg
-    status: false
-    weight: -36
-    settings: {  }
   filter_pathologic:
     id: filter_pathologic
     provider: pathologic
@@ -157,3 +143,9 @@ filters:
     weight: -51
     settings:
       title: false
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -43
+    settings: {  }

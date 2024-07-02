@@ -1,7 +1,5 @@
 <?php
 
-use Drupal\omega\Theme\OmegaSettingsInfo;
-
 // Custom settings in Vertical Tabs container
 $form['subtheme-generator'] = array(
   '#type' => 'vertical_tabs',
@@ -57,7 +55,7 @@ $form['export']['export_details']['theme_machine_name'] = array(
     'replace_pattern' => '[^a-z_]+',
     'replace' => '_',
   ),
-);  
+);
 
 $form['export']['export_details']['export_description'] = array(
   '#type' => 'textfield',
@@ -82,31 +80,71 @@ $form['export']['export_options'] = array(
   '#open' => TRUE,
 );
 
+/**
+ * We will only show the "clone" option if there has been a subtheme of Omega
+ * already created or referenced in the system. This will prevent the confusion
+ * that you might be able to clone Omega.
+ */
+$clone_options = [
+  'clone' => 'Clone',
+  'subtheme' => 'Sub-Theme',
+];
 
+// Get the array of options for the subtheme dropdown.
+$omega_subthemes = $omegaSettings->omegaSubthemesOptionsList();
+
+// If there's not any options, remove the clone option.
+if (sizeof($omega_subthemes) == 0) {
+  unset($clone_options['clone']);
+}
 
 $form['export']['export_options']['export_type'] = array(
   '#type' => 'radios',
   '#title' => t('Create a:'),
-  '#options' => array(
-    'clone' => 'Clone',
-    'subtheme' => 'Sub-Theme',
-  ),
-  '#default_value' => 'clone',
+  '#options' => $clone_options,
+  '#default_value' => 'subtheme',
   '#prefix' => '<div id="export-type-select">',
   '#suffix' => '<span class="separator">of</span>',
 );
 
-$omegaSubThemes = $omegaSettings->omegaSubthemesOptionsList();
+$omegaSubThemes = array('omega' => 'Omega') + $omega_subthemes;
 
 $form['export']['export_options']['export_theme_base'] = array(
   '#type' => 'select',
   '#options' => $omegaSubThemes,
   '#title' => t('Omega Sub-Theme'),
-  // set $theme as default so if we are using the generator inside a subtheme, it will 
+  // set $theme as default so if we are using the generator inside a subtheme, it will
   // auto select the current theme as the new base of a clone/kit.
   '#default_value' => $theme,
+  '#suffix' => '<span class="separator">in</span>',
+);
+
+// @todo: This should potentially be factored a bit better.
+$exportPaths = array(
+  'Recommended Locations' => array(
+    'themes/custom' => 'themes/custom',
+  ),
+  'Other Locations' => array(
+    'themes' => 'themes',
+    'themes/contrib' => 'themes/contrib',
+    'core/themes' => 'core/themes',
+  ),
+);
+
+$form['export']['export_options']['export_destination_path'] = array(
+  '#type' => 'select',
+  '#options' => $exportPaths,
+  '#title' => t('Export Location'),
+  // set $theme as default so if we are using the generator inside a subtheme, it will
+  // auto select the current theme as the new base of a clone/kit.
+  '#default_value' => 'themes/custom',
   '#suffix' => '</div>',
 );
+
+// STATES VARIABLES
+$omega_state__type_clone = array(':input[name="export[export_options][export_type]"]' => array('value' => 'clone'));
+$omega_state__type_subtheme = array(':input[name="export[export_options][export_type]"]' => array('value' => 'subtheme'));
+$omega_state__base_omega = array(':input[name="export[export_options][export_theme_base]"]' => array('value' => 'omega'));
 
 // variable to represent state to apply to clone themes only
 $clone_state = array(
@@ -155,7 +193,7 @@ $form['export']['export_options']['export_install_default'] = array(
   '#disabled' => TRUE,
   '#states' => array(
     'enabled' => array(
-      ':input[name="export[export_options][export_install_auto]"]' => array('checked' => true),
+      ':input[name="export[export_options][export_install_auto]"]' => array('checked' => TRUE),
     ),
   ),
 );
@@ -169,12 +207,22 @@ $form['export']['export_options']['export_include_block_positions'] = array(
   '#states' => $subtheme_state,
 );
 
+
+// This is set to be invisible when Omega is selected as the theme to create a
+// subtheme of. Even if we are starting a 'bare' Omega subtheme, we would NEVER
+// want to use layout provided by Omega as it can't be edited and could be
+// overwritten by updates.
+// @todo: Ensure functionality matches this behavior to NOT inherit layout from Omega.
 $form['export']['export_options']['export_inherit_layout'] = array(
   '#type' => 'checkbox',
   '#title' => t('Inherit Layout from parent theme'),
   '#description' => t('<p>When this option is unchecked, a copy of any layouts in the parent theme will be copied to the new subtheme, allowing each theme to have different layouts. When this option IS checked, all layout settings/css will be inherited from the parent theme. You would likely want this option checked if you are creating a very slim subtheme that will only have a few color changes made to it from the defaults copied/inherited from the parent theme and the layouts between the two themes will always remain consistent.</p><p><em>This also assumes that the regions between the subtheme and parent theme MUST match. If they do not match, unintended consequences are likely</em>.</p>'),
   '#default_value' => 0,
-  '#states' => $subtheme_state,
+  '#states' => array(
+    'invisible' => array(
+      $omega_state__base_omega,
+    ),
+  ),
 );
 
 $form['export']['export_options']['export_include_templates'] = array(
@@ -195,7 +243,7 @@ $form['export']['export_options']['export_enable_scss_support'] = array(
 $form['export']['export_options']['export_enable_configrb'] = array(
   '#type' => 'checkbox',
   '#title' => t('Include config.rb'),
-  '#description' => t('Creating a config.rb in your subtheme will allow you to use Compass to compile your SCSS rather than Omega. <strong>If you are unsure what config.rb is, leave this option unchecked.</strong> For more information on config.rb options, visit <a href="http://compass-style.org/help/documentation/configuration-reference/" target="_blank">compass-style.org</a>'),
+  '#description' => t('Creating a config.rb in your subtheme will allow you to use Compass to compile your SCSS rather than Omega. <strong>If you are unsure what config.rb is, leave this option unchecked.</strong> For more information on config.rb options, visit <a href="http://compass-style.org/help/documentation/configuration-reference/" target="_blank">compass-style.org</a>.'),
   '#default_value' => 0,
   '#states' => $subtheme_state,
 );
@@ -203,7 +251,15 @@ $form['export']['export_options']['export_enable_configrb'] = array(
 $form['export']['export_options']['export_enable_gemfile'] = array(
   '#type' => 'checkbox',
   '#title' => t('Include Gemfile'),
-  '#description' => t('Creating a Gemfile will help install ruby gem dependencies needed using Bundler. <strong>If you are unsure what a Gemfile is, leave this option unchecked.</strong> For more information on Gemfile options, visit <a href="http://bundler.io/gemfile.html" target="_blank">bundler.io</a></a>'),
+  '#description' => t('Creating a Gemfile will help install ruby gem dependencies needed using Bundler. <strong>If you are unsure what a Gemfile is, leave this option unchecked.</strong> For more information on Gemfile options, visit <a href="http://bundler.io/gemfile.html" target="_blank">bundler.io</a>.'),
+  '#default_value' => 0,
+  '#states' => $subtheme_state,
+);
+
+$form['export']['export_options']['export_enable_gruntfile'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Include Gruntfile.js'),
+  '#description' => t('Grunt is a JavaScript Task Runner. It will allow you to streamline repetitive tasks like minification, compilation, unit testing, linting, etc. <strong>If you are unsure what Grunt is, leave this option unchecked.</strong> For more information on Gruntfile.js options, visit <a href="http://gruntjs.com/getting-started" target="_blank">gruntjs.com</a>.'),
   '#default_value' => 0,
   '#states' => $subtheme_state,
 );
@@ -216,18 +272,15 @@ $form['export']['export_options']['export_include_blank_library'] = array(
   '#states' => $subtheme_state,
 );
 
-$form['export']['export_options']['export_include_themefile_samples'] = array(
-  '#type' => 'checkbox',
-  '#title' => t('Include samples in your .theme file'),
-  '#description' => t('This will place some basic preprocess functions and hook samples in the .theme file of the theme you are creating. Unselecting this option will include a blank .theme file.'),
-  '#default_value' => 0,
-  '#states' => $subtheme_state,
-);
-
 $form['export']['export_options']['export_include_theme_settings_php'] = array(
   '#type' => 'checkbox',
   '#title' => t('Include theme-settings.php'),
-  '#description' => t('This will create a blank theme-settings.php file in your new theme, and include basic hook information and usage.'),
+  '#description' => t('This will create a <strong>theme-settings.php</strong> file in your new theme, and include basic hook information and usage.'),
   '#default_value' => 0,
-  '#states' => $subtheme_state,
+  '#states' => array(
+    'visible' => array(
+      $omega_state__type_subtheme,
+      $omega_state__type_clone
+    ),
+  ),
 );

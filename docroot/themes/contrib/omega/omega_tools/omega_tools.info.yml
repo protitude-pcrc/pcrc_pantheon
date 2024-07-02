@@ -2,8 +2,4 @@ type: module
 name: Omega Tools
 description: 'Omega helper functions only available to the module layer.'
 package: Theme Enhancements
-core_version_requirement: ^8 || ^9
-# Information added by Drupal.org packaging script on 2016-07-25
-version: '8.x-5.0-alpha7'
-project: 'omega'
-datestamp: 1469485442
+core_version_requirement: ^9 || ^10

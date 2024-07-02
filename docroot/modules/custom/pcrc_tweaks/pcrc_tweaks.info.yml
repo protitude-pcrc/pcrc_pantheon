@@ -1,5 +1,5 @@
 name: PCRC Tweaks
 type: module
 description: Site tweaks and customisations for Palliative Care Research Cooperative
-core_version_requirement: ^8.7.7 || ^9
+core_version_requirement: ^9.4 || ^10
 package: PCRC

@@ -80,3 +80,4 @@ hidden:
   field_supporting_documentation: true
   field_therapeutic_area: true
   field_total_enrollment: true
+  search_api_excerpt: true

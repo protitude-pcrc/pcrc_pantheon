@@ -14,6 +14,10 @@ local.blt.yml
 *.code-workspace
 docroot/sites/simpletest/
 
+# Cypress login users
+tests/cypress/cypress/fixtures/login-data.json
+tests/cypress/node_modules
+
 # Salt is in env variables
 salt.txt
 
@@ -32,17 +36,7 @@ docroot/sites/*/private
 docroot/modules/contrib
 #docroot/themes/contrib
 docroot/profiles/contrib
-docroot/modules/custom/cu_rave_alerts
-docroot/modules/custom/liaison
-docroot/modules/custom/phish
-docroot/modules/custom/servicenow
-docroot/modules/custom/shentity
-docroot/modules/custom/step
-docroot/modules/custom/step5
-docroot/modules/custom/sympa
-docroot/modules/custom/tutorial
-docroot/modules/custom/oit
-docroot/modules/custom/oit_dev
+docroot/modules/custom/file_download/
 docroot/libraries
 drush/Commands
 

@@ -1,7 +1,7 @@
 name: Shortcode Archetype5
 type: module
 description: Custom shortcodes for use on A5 projects
-core_version_requirement: ^8.7.7 || ^9
+core_version_requirement: ^9 || ^10
 package: 'Input filters'
 dependencies:
   - shortcode

@@ -28,7 +28,9 @@ then
   storeKey
   terminusApi
   current_version=$(git describe --tags --abbrev=0)
+  terminus backup:create --element all --keep-for 15 -- $site_name.$env
   terminus env:deploy --note "Version: $current_version" $flags -- $site_name.$env
+  terminus remote:drush $site_name.$env -- deploy
 fi
 
 if [ "$runner" = bkup ];
@@ -76,7 +78,7 @@ then
   git config --global user.name \"$username\"
   composer config -g github-oauth.github.com $gh_token
   composer install --no-dev --ignore-platform-reqs
-  $blt mih:ciupdate "$drupal_update" --no-interaction --verbose
+  $blt mih:ciupdate "$drupal_update $version" --no-interaction --verbose
   git push origin $drupal_update
 fi
 

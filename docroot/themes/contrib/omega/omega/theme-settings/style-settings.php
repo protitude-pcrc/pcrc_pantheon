@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\omega\Style\OmegaStyle;
+
 $form['styles'] = array(
   '#type' => 'details',
   '#attributes' => array('class' => array('styles')),
@@ -15,7 +17,7 @@ $form['styles']['styles_info'] = array(
 );
 $form['styles']['styles_info']['#markup'] .= '<div class="messages messages--warning omega-styles-info">By enabling libraries in this section, you can greatly alter the visual appearance of your site. Many libraries contain simple CSS enhancements, while others include both CSS and JavaScript to alter/enhance your theme. If you are building a highly customized subtheme of Omega, you will likely turn most of these off. However, if you are creating a theme with minimal customization, leaving them enabled will provide a decent set of core styles and behaviors.</div>';
 
-$toggleLibraries = _omega_optional_libraries($theme);
+$toggleLibraries = OmegaStyle::getOptionalLibraries($theme);
 
 $form['styles']['styles_toggle'] = array(
   //'#prefix' => '<div class="messages messages--warning omega-styles-info">',
@@ -23,13 +25,11 @@ $form['styles']['styles_toggle'] = array(
   //'#suffix' => '</div>',
   '#weight' => -999,
 );
-//dpm($form['styles']);
-foreach($toggleLibraries as $id => $data) {
+foreach ($toggleLibraries as $id => $data) {
   // let's organize all the libraries a bit
   $libraryParts = explode('/', $id);
   $themeProvidingLibrary = $libraryParts[0];
-  //dpm($themeProvidingLibrary);
-  
+
   // let's create a wrapper for this theme's libraries if it hasn't been made in a previous loop
   // this creates a collapsible element for each theme/parent theme to make the form more usable
   // for themes with sub-sub, sub-sub-sub or further subtheming needs.
@@ -43,9 +43,8 @@ foreach($toggleLibraries as $id => $data) {
       //'#tree' => FALSE,
     );
   }
-  
-  
-  
+
+
   // Let's create the checkbox that will enable/disable the library
   $form['styles'][$themeProvidingLibrary][$id] = array(
     '#type' => 'checkbox',
@@ -56,8 +55,8 @@ foreach($toggleLibraries as $id => $data) {
     '#tree' => TRUE,
     '#parents' => array('styles', $id),
   );
-  
-  if($data['allow_disable'] === FALSE) {
+
+  if ($data['allow_disable'] === FALSE) {
     // this library has been set to NOT be allowed to be disabled by any subthemes.
     // set some things accordingly.
     $form['styles'][$themeProvidingLibrary][$id]['#default_value'] = 1;

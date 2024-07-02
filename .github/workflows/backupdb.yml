@@ -47,12 +47,24 @@ jobs:
           cd web
           lando drush cr
           lando drush deploy
-          lando drush sql-sanitize --sanitize-password -y
+          lando drush sql-sanitize --sanitize-password=y -y
           lando drush cr
           cd ..
+          lando drush user-create therealrick --mail="therealrick@rickmorty.cn" --password="$pass"
+          lando drush user-add-role "administrator" therealrick
+          lando drush user-create therealmorty --mail="therealmorty@rickmorty.cn" --password="$pass"
+          lando drush user-add-role "site_admin" therealmorty
+          lando drush user-create therealbeth --mail="therealbeth@rickmorty.cn" --password="$pass"
+          lando drush user-add-role "content_editor" therealbeth
+          lando drush user-create theRealSummer --mail="therealsummer@rickmorty.cn" --password="$pass"
+          lando drush user-add-role "pcrc_member" theRealSummer
+          lando drush user-create therealjerry --mail="therealjerry@rickmorty.cn" --password="$pass"
+          lando drush user-create therealbutterrobot --mail="therealbutterrobot@rickmorty.cn" --password="$pass"
+          lando drush user-add-role "request" therealbutterrobot
           lando db-export site.sql
         env:
           gh_token: ${{ secrets.GH_TOKEN_REPO }}
+          pass: ${{ secrets.TEST_USERS_PASSWORD }}
       - name: 'Upload Backup Artifact'
         uses: actions/upload-artifact@v3
         with:
