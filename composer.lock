@@ -4269,7 +4269,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontyourface.git",
-                "reference": "c9e929c2a5712919400310850c1643cb3b46b837"
+                "reference": "4f1a14d9c607702dd9768c799c43fbb99017de0d"
             },
             "require": {
                 "drupal/core": "^9.4 || ^10.0"
@@ -4280,8 +4280,8 @@
                     "dev-4.0.x": "4.0.x-dev"
                 },
                 "drupal": {
-                    "version": "4.0.x-dev",
-                    "datestamp": "1694111224",
+                    "version": "4.0.0+1-dev",
+                    "datestamp": "1710423172",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
