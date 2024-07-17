@@ -16,24 +16,6 @@ name: 'Full HTML'
 format: full_html
 weight: -10
 filters:
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: -50
-    settings: {  }
-  filter_caption:
-    id: filter_caption
-    provider: filter
-    status: true
-    weight: -49
-    settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: -44
-    settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
@@ -46,11 +28,29 @@ filters:
     status: true
     weight: -47
     settings: {  }
-  filter_html_escape:
-    id: filter_html_escape
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -50
+    settings: {  }
+  filter_autop:
+    id: filter_autop
     provider: filter
     status: false
-    weight: -38
+    weight: -37
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -49
+    settings: {  }
+  filter_caption_credit:
+    id: filter_caption_credit
+    provider: pcrc_tweaks
+    status: false
+    weight: -34
     settings: {  }
   filter_html:
     id: filter_html
@@ -61,18 +61,46 @@ filters:
       allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -38
+    settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: false
     weight: -35
     settings: {  }
-  filter_autop:
-    id: filter_autop
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
     provider: filter
-    status: false
-    weight: -37
+    status: true
+    weight: -44
     settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: -47
+    settings: {  }
+  filter_intlinks:
+    id: filter_intlinks
+    provider: pcrc_tweaks
+    status: false
+    weight: -40
+    settings: {  }
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: -42
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''
   filter_url:
     id: filter_url
     provider: filter
@@ -80,18 +108,13 @@ filters:
     weight: -36
     settings:
       filter_url_length: 72
-  shortcode_preprocessor:
-    id: shortcode_preprocessor
-    provider: sc_archetype5
-    status: false
-    weight: -41
-    settings: {  }
-  shortcode_corrector:
-    id: shortcode_corrector
-    provider: shortcode
+  linkit:
+    id: linkit
+    provider: linkit
     status: true
-    weight: -45
-    settings: {  }
+    weight: -43
+    settings:
+      title: false
   shortcode:
     id: shortcode
     provider: shortcode
@@ -120,38 +143,15 @@ filters:
       fn: '1'
       center: '1'
       button: '1'
-  filter_intlinks:
-    id: filter_intlinks
-    provider: pcrc_tweaks
-    status: false
-    weight: -40
+  shortcode_corrector:
+    id: shortcode_corrector
+    provider: shortcode
+    status: true
+    weight: -45
     settings: {  }
-  filter_pathologic:
-    id: filter_pathologic
-    provider: pathologic
-    status: true
-    weight: -42
-    settings:
-      settings_source: global
-      local_settings:
-        protocol_style: full
-        local_paths: ''
-  linkit:
-    id: linkit
-    provider: linkit
-    status: true
-    weight: -43
-    settings:
-      title: false
-  filter_caption_credit:
-    id: filter_caption_credit
-    provider: pcrc_tweaks
+  shortcode_preprocessor:
+    id: shortcode_preprocessor
+    provider: sc_archetype5
     status: false
-    weight: -34
-    settings: {  }
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
-    status: true
-    weight: -47
+    weight: -41
     settings: {  }

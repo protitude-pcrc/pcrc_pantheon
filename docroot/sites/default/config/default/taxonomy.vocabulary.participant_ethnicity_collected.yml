@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Participant Ethnicity Collected'
 vid: participant_ethnicity_collected
-description: ''
+description: null
 weight: 0
+new_revision: false

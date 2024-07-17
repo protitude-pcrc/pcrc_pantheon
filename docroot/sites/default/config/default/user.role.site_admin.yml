@@ -48,6 +48,7 @@ dependencies:
     - file_entity
     - filter
     - google_analytics
+    - help
     - node
     - path
     - recaptcha
@@ -72,6 +73,7 @@ permissions:
   - 'access contextual links'
   - 'access file download'
   - 'access files overview'
+  - 'access help pages'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access taxonomy overview'

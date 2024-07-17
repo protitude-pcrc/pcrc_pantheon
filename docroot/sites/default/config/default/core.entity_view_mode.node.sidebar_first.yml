@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.sidebar_first
 label: 'Sidebar first'
+description: ''
 targetEntityType: node
 cache: true

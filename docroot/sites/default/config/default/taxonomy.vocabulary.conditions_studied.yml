@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Conditions Studied'
 vid: conditions_studied
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -33,12 +33,12 @@ class ViewHeaderBlock extends BlockBase {
         if (!empty($view->display_handler->handlers['header']['area'])) {
           $header = $view->display_handler->handlers['header']['area']->render();
           $header['#prefix'] = "<div class='subtitle'>";
-          $header['suffix'] = '</div>';
+          $header['#suffix'] = '</div>';
         }
       }
       return [
         'title' => ['#markup' => $title],
-        'subtitle' => $header,  
+        //'subtitle' => $header,
       ];
     }
   }

@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Study Design'
 vid: study_design
-description: ''
+description: null
 weight: 0
+new_revision: false
