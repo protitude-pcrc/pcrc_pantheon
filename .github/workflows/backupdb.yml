@@ -27,6 +27,8 @@ jobs:
           echo "$lando_env" > .env
           mkdir -p web/sites/default/settings
           cp blt/lando.local.settings.php web/sites/default/settings/local.settings.php
+          docker -v
+          docker-compose -v
           lando destroy -y
           lando start
         env:
