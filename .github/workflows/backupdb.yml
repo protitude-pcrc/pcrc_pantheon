@@ -24,6 +24,7 @@ jobs:
             ${{ runner.os }}-lando-${{ github.ref }}
       - name: Start Lando
         run: |
+          alias docker-compose='docker compose'
           echo "$lando_env" > .env
           mkdir -p web/sites/default/settings
           cp blt/lando.local.settings.php web/sites/default/settings/local.settings.php
