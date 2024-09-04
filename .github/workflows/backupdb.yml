@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-lando-${{ github.ref }}
       - name: Start Lando
         run: |
-          echo 'docker compose --compatibility "$@"' > bin/docker-compose
+          echo 'docker compose --compatibility "$@"' > /bin/docker-compose
           chmod +x /bin/docker-compose
           docker-compose -v
           echo "$lando_env" > .env
